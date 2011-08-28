@@ -1,40 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
 <title>libevent</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 <style type="text/css">
 <!--
 * { font-family: arial, helvetica, sans-serif; }
 h1,h2,h3,h4,h5 { font-weight: bold; }
 pre { font-family: monospace; }
 li ul { font-size: smaller; }
+body { background-color: white; }
+h1#head { background-color: #0880b8; text-align: center; color: #50d0ff;
+ font-size: 200%; margin-bottom: .5em; font-weight: normal;
+ letter-spacing: 0.1em; }
+table { border-style: none; }
+div#maindiv { background-color: #eee;
+              padding-left: 1.5em; padding-right: 1em; }
+td.introtext { width: 80%; }
+td#sidebar { width: 200px; }
+td#download { background-color: #cec; width: 40%; border-right: 1em solid white; }
+td#benchmark { background-color: #ddd; }
 -->
 </style>
 </head>
-<body bgcolor="#ffffff">
-    <table border="0" cellspacing="0" cellpadding="2" width="96%">
-      <tr>
-          <td bgcolor="#0880b8">
-            <center>
-              <font size="+3" face="verdana,arial,helvetica" color="#50d0ff">
-                libevent - an event notification library
-              </font>
-            </center>
-          </td>
-            <td bgcolor="#0880b8">
-              &nbsp;&nbsp;
-            </td>
-        </tr>
-        <tr>
-          <td>
-            &nbsp;
-          </td>
-        </tr>
-        <tr>
-          <td bgcolor="#eeeeee">
-            <dl>
-              <dd>
-<table border="0" cellspacing="2" cellpadding="2">
-<tr><td valign="top" width="80%">
+<body>
+<h1 id="head">
+   libevent &ndash; an event notification library
+</h1>
+
+<div id="maindiv">
+
+<!-- table 1: -->
+<table cellspacing="2" cellpadding="2">
+<tr><td valign="top" class="introtext">
 The <i>libevent</i> API provides a mechanism to execute a callback
 function when a specific event occurs on a file descriptor or after a
 timeout has been reached.  Furthermore, <i>libevent</i> also support
@@ -72,11 +71,11 @@ web page.
 A <a href="http://archives.seul.org/libevent/users/">mailing list for libevent</a> is now available.
 
 Libevent is maintained by <a href="http://www.wangafu.net/~nickm/">Nick Mathewson</a> and <a href="http://www.citi.umich.edu/u/provos/">Niels Provos</a>.
-<td bgcolor="#eeeeee" valign="top" width="180">
+
+<td valign="top" id="sidebar">&nbsp;
+<!--
 <center>
 &nbsp;<br>
-
-<!--
 
 <table border="0" bgcolor="#000000" cellpadding="0" cellspacing="1">
 <tr><td valign="top" align="center" bgcolor="#aaaacc">
@@ -143,21 +142,19 @@ Libevent is maintained by <a href="http://www.wangafu.net/~nickm/">Nick Mathewso
 </font>
 </td></tr>
 </table>
-
+</center>
 -->
 
 
-</center>
+
+
 </td></tr>
 </table>
+<!-- end of table 1 -->
 
-
-<table border="0" cellspacing="2" cellpadding="2">
-<tr><td valign="top" width="80%">
-
-<table border="0" cellspacing="0" cellpadding="2" width="100%">
+<table cellspacing="2" cellpadding="2">
 <tr>
-<td valign="top" bgcolor="#cceecc" width="50%">
+<td valign="top" id="download">
 <h3>Documentation and Support</h3>
 Documentation: <a href="doxygen-1.4.10/">1.4.10-stable</a> <a href="doxygen-2.0.1/">2.0.1-alpha</a><br>
 Sample Application: <a href="event-test.c">event-test.c</a>.<br>
@@ -374,17 +371,14 @@ Mailing List: <a href="http://archives.seul.org/libevent/users/">Info</a> <a hre
 </ul><br>
 Libevent has been released under a <a href="LICENSE">3-clause BSD license</a>.
 Information on public <a href="http://sourceforge.net/git/?group_id=50884">git</a> access.
-</td><td valign="top">
-&nbsp;&nbsp;
-</td><td valign="top" bgcolor="#dddddd">
-&nbsp;&nbsp;
-</td><td valign="top" bgcolor="#dddddd">
+</td>
+<td valign="top" id="benchmark">
 <h3>Benchmark</h3>
 Performance comparison using different event notification
 mechansims in Libevent.
 We declare interest in a large number of connections
 of which most are cold and only a few are active.
-<table border="0" cellspacing="0" cellpadding="0">
+<table cellspacing="0" cellpadding="0">
 <tr>
 <td align="center" valign="top">
 <img src="http://monkey.org/~provos/libevent/libevent-benchmarks.jpg" alt="Benchmarks with one active connection">
@@ -406,31 +400,8 @@ thousand writes and reads have happened.  It exercises the
 event loop several times.
 </td></tr>
 </table>
+
 <p>
-<!--<div style="width: 75%; border: 1px solid; padding: 0.5em; background: white">
-<b>Contributions</b><br>
-If you like, use or appreciate libevent, you can contribute to continued
-development of the library.  Funds are going to be used for development infrastructure.
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_xclick">
-<input type="hidden" name="business" value="provos@citi.umich.edu">
-<input type="hidden" name="item_name" value="libevent">
-<input type="hidden" name="item_number" value="libevent">
-<p>Contribution: USD
-<input type="text" size="10" align="right" name="amount" value="25.00">
-<input type="hidden" name="no_shipping" value="1">
-<input type="hidden" name="cn" value="Comments">
-<input type="hidden" name="currency_code" value="USD">
-<input type="hidden" name="tax" value="0">
-<input type="hidden" name="lc" value="US">
-<input type="hidden" name="bn" value="PP-DonationsBF">
-<input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but21.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"><img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-</div>-->
-</td><td valign="top" bgcolor="#dddddd">
-&nbsp;&nbsp;
-</td></tr>
-</table>
 
 <h3>Programs using libevent</h3>
 The usefulness of libevent API is demonstrated by
@@ -460,24 +431,21 @@ solutions, which reset the machine.</li>
 <li><a href="http://monkey.org/~provos/dnsscan/">dnsscan</a> -  a fast scanner for identifying open recursive dns resolvers</li>
 <li><a href="http://code.google.com/p/kargo-event/">Kargo Event</a> - a PHP extension for libevent.</li>
 </ul>
-</td></tr>
+
 </table>
-</dd></dl>
-</td><td bgcolor="#eeeeee">
-&nbsp;
-</td></tr>
-</table>
+
+</div> <!-- End of "maindiv" -->
 <hr>
-<table border="0" cellspacing="0" cellpadding="0" width="95%" id="endtable">
-<tr><td>
-    <address><a href="mailto:provos@citi.umich.edu">Niels Provos</a></address>
+
+<div id="coda">
+<p>
+ <address><a href="mailto:nickm@alum.mit.edu">Nick Mathewson</a></address>
+ <address><a href="mailto:provos@citi.umich.edu">Niels Provos</a></address>
 <!-- Created: Mon Mar 11 12:43:06 EST 2002 -->
 <!-- hhmts start -->
-Last modified: Wed Apr  7 23:19:27 EDT 2004
+Last modified: 28 Aug 2011
 <!-- hhmts end -->
-</td><td>
-&nbsp;
-</td>
+
 <!--
 <td bgcolor="#ddffdd" align="center">
 You can keep me happy while hacking by reducing my
@@ -492,14 +460,14 @@ Wishlists:
 <img src="../pictures/ol-get-00-en-mic.gif" alt="[Get Opera!]" width="88" height="31"></a>
 </td>
 -->
-</tr>
-</table> <!--endtable-->
 <!--
 <hr>
 <font size=-1>
 NB: configure magic as always provided by <a href="http://www.monkey.org/~dugsong">Dug Song</a>, though I am learning.
 </font>
 -->
+</div> <!-- end of coda -->
+
 </body>
 </html>
 
