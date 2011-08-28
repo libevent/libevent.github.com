@@ -9,16 +9,18 @@
 * { font-family: arial, helvetica, sans-serif; }
 h1,h2,h3,h4,h5 { font-weight: bold; }
 pre { font-family: monospace; }
+ul.tight { padding-left: 1.5em;  }
 li ul { font-size: smaller; }
 body { background-color: white; }
 h1#head { background-color: #0880b8; text-align: center; color: #50d0ff;
  font-size: 200%; margin-bottom: .5em; font-weight: normal;
  letter-spacing: 0.1em; }
+h3 { margin-bottom: .2em; margin-top: .5em; }
 table { border-style: none; }
 div#maindiv { background-color: #eee;
               padding-left: 1.5em; padding-right: 1em; }
-td.introtext { width: 80%; }
-td#sidebar { width: 200px; }
+td#introtext { width: 77%; border-right: 1em solid white; }
+td#sidebar { background-color: #cec; }
 td#download { background-color: #cec; width: 40%; border-right: 1em solid white; }
 td#benchmark { background-color: #ddd; }
 -->
@@ -33,7 +35,7 @@ td#benchmark { background-color: #ddd; }
 
 <!-- table 1: -->
 <table cellspacing="2" cellpadding="2">
-<tr><td valign="top" class="introtext">
+<tr><td valign="top" id="introtext">
 The <i>libevent</i> API provides a mechanism to execute a callback
 function when a specific event occurs on a file descriptor or after a
 timeout has been reached.  Furthermore, <i>libevent</i> also support
@@ -72,7 +74,13 @@ A <a href="http://archives.seul.org/libevent/users/">mailing list for libevent</
 
 Libevent is maintained by <a href="http://www.wangafu.net/~nickm/">Nick Mathewson</a> and <a href="http://www.citi.umich.edu/u/provos/">Niels Provos</a>.
 
-<td valign="top" id="sidebar">&nbsp;
+<td valign="top" id="sidebar">
+<h3>Support</h3>
+Bug Tracking: <a href="https://sourceforge.net/tracker/?group_id=50884&amp;atid=461322">Bugs</a> <a href="http://sourceforge.net/tracker/?group_id=50884&amp;atid=461325">Features</a><br>
+Mailing List: <a href="http://archives.seul.org/libevent/users/">Info</a><br>
+Git Repository: <a href="http://sourceforge.net/git/?group_id=50884">sourceforge</a> <a href="https://github.com/libevent/libevent">github</a><br>
+License: <a href="LICENSE">3-clause BSD</a>
+
 <!--
 <center>
 &nbsp;<br>
@@ -146,8 +154,6 @@ Libevent is maintained by <a href="http://www.wangafu.net/~nickm/">Nick Mathewso
 -->
 
 
-
-
 </td></tr>
 </table>
 <!-- end of table 1 -->
@@ -155,12 +161,15 @@ Libevent is maintained by <a href="http://www.wangafu.net/~nickm/">Nick Mathewso
 <table cellspacing="2" cellpadding="2">
 <tr>
 <td valign="top" id="download">
-<h3>Documentation and Support</h3>
-Documentation: <a href="doxygen-1.4.10/">1.4.10-stable</a> <a href="doxygen-2.0.1/">2.0.1-alpha</a><br>
-Sample Application: <a href="event-test.c">event-test.c</a>.<br>
-Bug Tracking: <a href="https://sourceforge.net/tracker/?group_id=50884&amp;atid=461322">Bugs</a> <a href="http://sourceforge.net/tracker/?group_id=50884&amp;atid=461325">Features</a><br>
-Mailing List: <a href="http://archives.seul.org/libevent/users/">Info</a> <a href="http://www.provos.org/">Blog</a>
-<p>
+<h3>Documentation</h3>
+Book: <a href="http://www.wangafu.net/~nickm/libevent-book/">Programming with Libevent</a><br>
+Reference:
+  <a href="http://www.wangafu.net/~nickm/libevent-1.4/doxygen/html">1.4.x-stable</a>
+  <a href="http://www.wangafu.net/~nickm/libevent-2.0/doxygen/html">2.0.x-stable</a>
+  <a href="http://www.wangafu.net/~nickm/libevent-2.1/doxygen/html">2.1.x-alpha</a>
+ </br>
+<!-- Sample Application: <a href="event-test.c">event-test.c</a> -->
+
 <h3>Download</h3>
 <ul>
 	<li><a href="http://monkey.org/~provos/libevent-2.0.13-stable.tar.gz">libevent-2.0.13-stable.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-2.0.13-stable.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-Release&nbsp;2011-07-18</li>
@@ -413,9 +422,9 @@ the following applications:
 <li><a href="http://www.honeyd.org/">Honeyd</a> &ndash; a virtual honeynet daemon &ndash; can be used to <a href="http://www.honeyd.org/worms.php">fight Internet worms</a>.</li>
 <li><a href="http://www.monkey.org/~dugsong/fragroute/">Fragroute</a> &ndash; an IDS testing tool</li>
 <li><a href="http://monkey.org/~marius/nylon/">Nylon</a> &ndash; nested proxy server</li>
-<li><a href="/~provos/disconcert/">Disconcert</a> &ndash; a Distributed Computing Framework for Loosely-Coupled Workstations.</li>
+<li><a href="http://monkey.org/~provos/disconcert/">Disconcert</a> &ndash; a Distributed Computing Framework for Loosely-Coupled Workstations.</li>
 <li><a href="http://plb.sunsite.dk/">PLB</a> &ndash; pure load balancer: a free high-performance load balancer for Unix.</li>
-<li><a href="/~marius/trickle/">Trickle</a> &ndash; a lightweight userspace bandwidth shaper.</li>
+<li><a href="http://monkey.org/~marius/trickle/">Trickle</a> &ndash; a lightweight userspace bandwidth shaper.</li>
 <li><a href="http://www.danga.com/memcached">Memcached</a> &ndash; a high-performance, distributed memory object caching system.</li>
 <li><a href="http://oss.digirati.com.br/watchcatd/">watchcatd</a> &ndash;
 software watchdog designed to take actions not as drastic as the usual
