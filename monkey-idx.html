@@ -19,8 +19,8 @@ h3 { margin-bottom: .2em; margin-top: .5em; }
 table { border-style: none; }
 div#maindiv { background-color: #eee;
               padding-left: 1.5em; padding-right: 1em; }
-td#introtext { width: 77%; border-right: 1em solid #eee; }
-div#sidebar { background-color: #bbf; }
+div#sidebar { background-color: #bbf; float: right; border: 1px solid black;
+              margin-left: .5em; padding-left: .5em; padding-right: .5em; }
 td#download { background-color: #cec; width: 40%; border-right: 1em solid #eee; }
 td#benchmark { background-color: #ddd; }
 -->
@@ -34,8 +34,18 @@ td#benchmark { background-color: #ddd; }
 <div id="maindiv">
 
 <!-- table 1: -->
-<table cellspacing="2" cellpadding="2">
-<tr><td valign="top" id="introtext">
+<div id="introtext">
+
+<div id="sidebar">
+<h3>Support &amp; Info</h3>
+Bug Tracking: <a href="https://sourceforge.net/tracker/?group_id=50884&amp;atid=461322">Bugs</a> <a href="http://sourceforge.net/tracker/?group_id=50884&amp;atid=461325">Features</a><br>
+Mailing List: <a href="http://archives.seul.org/libevent/users/">Info</a><br>
+Git Repository: <a href="http://sourceforge.net/git/?group_id=50884">sourceforge</a> <a href="https://github.com/libevent/libevent">github</a><br>
+License: <a href="LICENSE">3-clause BSD</a><br>
+IRC: #libevent on <a href="oftc.net">OFTC</a>
+</div>
+
+
 The <i>libevent</i> API provides a mechanism to execute a callback
 function when a specific event occurs on a file descriptor or after a
 timeout has been reached.  Furthermore, <i>libevent</i> also support
@@ -52,7 +62,7 @@ Currently, <i>libevent</i> supports
 <i><a href="http://developers.sun.com/solaris/articles/event_completion.html">event ports</a></i>,
 <a href="http://manpages.debian.net/cgi-bin/man.cgi?query=select">POSIX <i>select(2)</i></a>,
 <a href="http://msdn.microsoft.com/en-us/library/ms740141(v=vs.85).aspx">Windows <i>select()</i></a>,
-<a href="http://manpages.debian.net/cgi-bin/man.cgi?query=poll"><i>poll(2)</i>,
+<a href="http://manpages.debian.net/cgi-bin/man.cgi?query=poll"><i>poll(2)</i></a>,
 and <i><a href="http://www.xmailserver.org/linux-patches/epoll.txt">epoll(4)</a></i>.
 
 The internal event mechanism is completely independent of the exposed
@@ -81,16 +91,6 @@ web page.
 A <a href="http://archives.seul.org/libevent/users/">mailing list for libevent</a> is now available.
 
 Libevent is maintained by <a href="http://www.wangafu.net/~nickm/">Nick Mathewson</a> and <a href="http://www.citi.umich.edu/u/provos/">Niels Provos</a>.
-
-<td valign="top">
-<div id="sidebar">
-<h3>Support</h3>
-Bug Tracking: <a href="https://sourceforge.net/tracker/?group_id=50884&amp;atid=461322">Bugs</a> <a href="http://sourceforge.net/tracker/?group_id=50884&amp;atid=461325">Features</a><br>
-Mailing List: <a href="http://archives.seul.org/libevent/users/">Info</a><br>
-Git Repository: <a href="http://sourceforge.net/git/?group_id=50884">sourceforge</a> <a href="https://github.com/libevent/libevent">github</a><br>
-License: <a href="LICENSE">3-clause BSD</a><br>
-IRC: #libevent on <a href="oftc.net">OFTC</a>
-</div>
 
 <!--
 <center>
@@ -164,10 +164,8 @@ IRC: #libevent on <a href="oftc.net">OFTC</a>
 </center>
 -->
 
-
-</td></tr>
-</table>
-<!-- end of table 1 -->
+<!-- end of initial text. -->
+</div>
 
 <table cellspacing="2" cellpadding="2">
 <tr>
@@ -177,8 +175,8 @@ Book: <a href="http://www.wangafu.net/~nickm/libevent-book/">Programming with Li
 Reference:
   <a href="http://www.wangafu.net/~nickm/libevent-1.4/doxygen/html">1.4.x-stable</a>
   <a href="http://www.wangafu.net/~nickm/libevent-2.0/doxygen/html">2.0.x-stable</a>
-  <a href="http://www.wangafu.net/~nickm/libevent-2.1/doxygen/html">2.1.x-alpha</a>
- </br>
+  <a href="http://www.wangafu.net/~nickm/libevent-2.1/doxygen/html">2.1.x-alpha</a><br>
+
 <!-- Sample Application: <a href="event-test.c">event-test.c</a> -->
 
 <h3>Download</h3>
