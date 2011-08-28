@@ -12,7 +12,8 @@ pre { font-family: monospace; }
   text-align: center;
   border: thin solid black;
   background-color: #ddddcc; color: red;
-  width: 80%;
+  width: 80%; }
+li ul { font-size: smaller; }
 -->
 </style>
 </head>
@@ -204,157 +205,157 @@ Mailing List: <a href="http://archives.seul.org/libevent/users/">Info</a> <a hre
 	<li><a href="http://monkey.org/~provos/libevent-1.4.3-stable.tar.gz">libevent-1.4.3-stable.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.4.3-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="http://levent.svn.sourceforge.net/viewvc/levent/branches/patches-1.4/libevent/ChangeLog?revision=698&amp;view=markup">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-04-07
 	</li>
 	<li><a href="http://monkey.org/~provos/libevent-1.4.2-rc.tar.gz">libevent-1.4.2-rc.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.4.2-rc.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="http://levent.svn.sourceforge.net/viewvc/levent/branches/patches-1.4/libevent/ChangeLog?revision=664&amp;view=markup">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-02-25
-	<font size="-1"><ul>
+	<ul>
 	  <li>make Solaris event subsystems more reliable; from W.C.A. Wijngaards</li>
 	  <li>event_base_get_method(); from Springande Ulv</li>
 	  <li>fix HTTP/1.1 chunk formatting; from "propanbutan"</li>
 	  <li>allow 64-bit content lengths; from Scott Lamb</li>
 	  <li>and more...</li>
-         </ul></font></li>
+         </ul></li>
 	<li><a href="http://monkey.org/~provos/libevent-1.4.1-beta.tar.gz">libevent-1.4.1-beta.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.4.1-beta.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="http://levent.svn.sourceforge.net/viewvc/levent/branches/patches-1.4/libevent/ChangeLog?revision=610&amp;view=markup">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2007-12-21
-	<font size="-1"><ul>
+	<ul>
 	  <li>fixed some memory leaks and other misc cleanup; from Christopher Layne, Scott Lamb and Charles Kerr</li>
 	  <li>introduced event_reinit to deal with fork()</li>
 	  <li>improved efficiency of generated RPC structure</li>
 	  <li>performance improvements to Win32 backend</li>
 	  <li>and many more...</li>
-         </ul></font></li>
+         </ul></li>
 	<li><a href="http://monkey.org/~provos/libevent-1.4.0-beta.tar.gz">libevent-1.4.0-beta.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.4.0-beta.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="http://levent.svn.sourceforge.net/viewvc/levent/branches/patches-1.4/libevent/ChangeLog?revision=523&amp;view=markup">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2007-11-11
-	<font size="-1"><ul>
+	<ul>
 	  <li>a new RPC subsytem for writing distributed clients and servers</li>
 	  <li>almost everything is documented via Doxygen now</li>
 	  <li>many fixes and improvements to evdns and evhttp</li>
 	  <li>libevent now builds two additional libraries: libevent_core (containing only the event core) and libevent_extras (contained evdns, evhttp and evrpc)</li>
 	  <li>performance improvements due to using a heap instead of red-black trees for timeouts</li>
 	  <li>Solaris' event ports are better supported</li>
-         </ul></font></li>
+         </ul></li>
 	<li><a href="http://monkey.org/~provos/libevent-1.3e.tar.gz">libevent-1.3e.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.3e.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="http://levent.svn.sourceforge.net/viewvc/levent/branches/patches-1.3/libevent/ChangeLog?revision=431&amp;view=markup">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2007-09-24
-	<font size="-1"><ul>
+	<ul>
 	  <li>Fix compilation on Solaris; from Magne Mahre</li>
 	  <li>Add a "Date" header to HTTP responses when it's missing, as required by HTTP 1.1. Original Patch from Ralph Moritz.</li>
 	  <li>Fix a memory leak in which failed HTTP connections whould not free the request object.</li>
 	  <li>Fix a memory leak in the DNS server.</li>
 	  <li>Handle NULL timeouts correctly on Solaris; from Trond Norbye</li>
 	  <li>Recalculate pending events properly when reallocating event array on Solaris; from Trond Norbye</li>
-	</ul></font></li>
+	</ul></li>
 	<li><a href="http://monkey.org/~provos/libevent-1.3d.tar.gz">libevent-1.3d.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.3d.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2007-08-16
-	<font size="-1"><ul>
+	<ul>
 	<li>Bug fixes in the HTTP layer.</li>
-	</ul></font></li>
+	</ul></li>
 	<li><a href="http://monkey.org/~provos/libevent-1.3c.tar.gz">libevent-1.3c.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.3c.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2007-07-30
-	<font size="-1"><ul>
+	<ul>
 	<li>Small bug and portability fixes.</li>
-	</ul></font></li>
+	</ul></li>
 	<li><a href="http://monkey.org/~provos/libevent-1.3b.tar.gz">libevent-1.3b.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.3b.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2007-03-03
-	<font size="-1"><ul>
+	<ul>
 	<li>Fixes when using signals in multi-threaded applications from Scott Lamb.</li>
 	<li>Other small bug fixes.</li>
-	</ul></font></li>
+	</ul></li>
 	<li><a href="http://monkey.org/~provos/libevent-1.3a.tar.gz">libevent-1.3a.tar.gz</a>-&nbsp;Release&nbsp;2007-02-17
-	<font size="-1"><ul>
+	<ul>
 	<li>Small bug and performances fixes to evhttp layer.</li>
-	</ul></font></li>
+	</ul></li>
 	<li><a href="http://monkey.org/~provos/libevent-1.3.tar.gz">libevent-1.3.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.3.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2007-02-15
-	<font size="-1"><ul>
+	<ul>
 	<li>DNS Server from Adam Langley and Nick Mathewson</li>
 	<li>Chunked transfer encoding for HTTP/1.1 from Dug Song.</li>
 	<li>DNS DDoS fix; bug report from Jon Oberheide.</li>
         <li>Various small improvements.</li>
-	</ul></font>
+	</ul>
 	<li><a href="http://monkey.org/~provos/libevent-1.2a.tar.gz">libevent-1.2a.tar.gz</a>-&nbsp;Release&nbsp;2006-12-02
-	<font size="-1"><ul>
+	<ul>
 	<li>Made HTTP support more usable</li>
 	<li>Various portability fixes.</li>
-	</ul></font></li>
+	</ul></li>
 	<li><a href="http://monkey.org/~provos/libevent-1.2.tar.gz">libevent-1.2.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.2.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2006-10-15
-	<font size="-1"><ul>
+	<ul>
 	<li>Support for non-blocking DNS resolution; from Adam Langley and Nick Mathewson.</li>
 	<li>Support for lightweight HTTP clients and servers.</li>
 	<li>Support for Sun's Event Ports from David Pacheco of Sun.</li>
-        </ul></font>
+        </ul>
         </li>
 	<li><a href="http://monkey.org/~provos/libevent-1.1b.tar.gz">libevent-1.1b.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.1b.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2006-08-09
-	<font size="-1"><ul>
+	<ul>
 	<li>Bug fixes - thanks to Nick Mathewson for helping.</li>
-        </ul></font>
+        </ul>
         </li>
 	<li><a href="http://monkey.org/~provos/libevent-1.1a.tar.gz">libevent-1.1a.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.1a.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-06-12
-	<font size="-1"><ul>
+	<ul>
 	<li>Minor reliability fixes.</li>
-        </ul></font>
+        </ul>
         </li>
 	<li><a href="http://monkey.org/~provos/libevent-1.1.tar.gz">libevent-1.1.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.1.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-05-14
-	<font size="-1"><ul>
+	<ul>
 	<li>Performance improvements from Nick Mathewson.</li>
 	<li>Work around for kqueue bug in Mac OS X 10.4.</li>
-        </ul></font>
+        </ul>
         </li>
 	<li><a href="http://monkey.org/~provos/libevent-1.0e.tar.gz">libevent-1.0e.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.0e.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-04-26
-	<font size="-1"><ul>
+	<ul>
 	<li>Important fix to bug in poll implementation introduced in 1.0d.</li>
-        </ul></font>
+        </ul>
         </li>
 	<li><a href="http://monkey.org/~provos/libevent-1.0d.tar.gz">libevent-1.0d.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.0d.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-04-22
-	<font size="-1"><ul>
+	<ul>
 	<li>Several minor bug fixes and building of shared libraries.</li>
-        </ul></font>
+        </ul>
         </li>
 	<li><a href="http://monkey.org/~provos/libevent-1.0c.tar.gz">libevent-1.0c.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.0c.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-04-03
-	<font size="-1"><ul>
+	<ul>
 	<li>Bug fixes for Windows, Solaris and improved logging interface.</li>
-        </ul></font>
+        </ul>
         </li>
 	<li><a href="http://monkey.org/~provos/libevent-1.0b.tar.gz">libevent-1.0b.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.0b.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-01-13
-	<font size="-1"><ul>
+	<ul>
 	<li>Bug fixes for backwards compatibility.</li>
-        </ul></font>
+        </ul>
         </li>
 	<li><a href="http://monkey.org/~provos/libevent-1.0a.tar.gz">libevent-1.0a.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.0a.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-01-03
-	<font size="-1"><ul>
+	<ul>
 	<li>Bug fixes for threaded applications.  Thanks to Andrew Danforth.</li>
-        </ul></font>
+        </ul>
         </li>
 	<li><a href="http://monkey.org/~provos/libevent-1.0.tar.gz">libevent-1.0.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-1.0.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2004-12-05
-	<font size="-1"><ul>
+	<ul>
 	<li>Support for multi-threaded applications - experimental.</li>
 	<li>Event priorities with priority queues.</li>
 	<li>Don't forget my <a href="http://www.citi.umich.edu/u/provos/wishlists/amazon.html">wishlists</a> :-).</li>
-        </ul></font>
+        </ul>
         </li>
 <!--
 	<li><a href="http://monkey.org/~provos/libevent-0.9.tar.gz">libevent-0.9.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-0.9.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2004-07-30
-	<font size="-1"><ul>
+	<ul>
 	<li>Support for /dev/poll in Solaris.</li>
-        </ul></font>
+        </ul>
         </li>
 	<li><a href="http://monkey.org/~provos/libevent-0.8a.tar.gz">libevent-0.8a.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-0.8a.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2004-06-12
-	<font size="-1"><ul>
+	<ul>
 	<li>Fixes compile problems on Solaris.</li>
-        </ul></font>
+        </ul>
 </li>
 	<li><a href="http://monkey.org/~provos/libevent-0.8.tar.gz">libevent-0.8.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-0.8.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2004-04-03
-	<font size="-1"><ul>
+	<ul>
 	<li>Buffered event abstraction to make writing network applications
 	    easier; see <a href="http://monkey.org/~provos/libio/">libio</a> for the predecessor of
 	    this idea.</li>
-        </ul></font>
+        </ul>
        </li>
 	<li><a href="http://monkey.org/~provos/libevent-0.7c.tar.gz">libevent-0.7c.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-0.7c.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2003-10-25
-	<font size="-1"><ul>
+	<ul>
 	<li>Bug fixes in Linux epoll and poll support.</li>
-        </ul></font>
+        </ul>
 </li>
 	<li><a href="http://monkey.org/~provos/libevent-0.7b.tar.gz">libevent-0.7b.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-0.7b.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2003-10-5
-	<font size="-1"><ul>
+	<ul>
 	<li><a href="LICENSE">3-clause BSD-license</a>.</li>
         <li>Experimental support for real-time signals.  Likely to be buggy.</li>
 	<li>Experimental support for Windows from Mike Davis.</li>
-        </ul></font>
+        </ul>
 	</li>
 	<li><a href="http://monkey.org/~provos/libevent-0.7a.tar.gz">libevent-0.7a.tar.gz</a>&nbsp;-&nbsp;Release&nbsp;2003-05-04
-	<font size="-1"><ul><li>
+	<ul><li>
 	Requires level-triggered <a href="http://groups.google.com/groups?q=lt+epoll+rfc&hl=en&lr=&ie=UTF-8&safe=off&selm=20030310201011%240290%40gated-at.bofh.it&rnum=1">epoll patch</a> for Linux epoll support.
-	</li></ul></font>
+	</li></ul>
 	</li>
 	<li><a href="http://monkey.org/~provos/libevent-0.6.tar.gz">libevent-0.6.tar.gz</a>&nbsp;-&nbsp;Release&nbsp;2002-09-15
 	</li>
