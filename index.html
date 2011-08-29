@@ -18,9 +18,13 @@ h1#head { background-color: #0880b8; text-align: center; color: #50d0ff;
 h3 { margin-bottom: .2em; margin-top: .5em; }
 table { border-style: none; }
 div#maindiv { background-color: #eee;
-              padding-left: 1.5em; padding-right: 1em; }
-div#sidebar { background-color: #bbf; float: right; border: 1px solid black;
-              margin-left: .5em; padding-left: .5em; padding-right: .5em; }
+              padding: 1em 1em 1em 3em; }
+div#sidebar { float: right;
+              margin-left: .5em; width: 18em; }
+div#support { background-color: #bbf;  border: 1px solid black;
+              padding-left: .5em; padding-right: .5em; }
+div#wishlists { background-color: #bbf;  border: 1px solid black;
+              margin-top: 1em; padding-left: .5em; padding-right: .5em; }
 td#download { background-color: #cec; width: 50%; border-right: 1em solid #eee; }
 td#benchmark { background-color: #ddd; }
 -->
@@ -37,6 +41,7 @@ td#benchmark { background-color: #ddd; }
 <div id="introtext">
 
 <div id="sidebar">
+<div id="support">
 <h3>Support &amp; Info</h3>
 Bug Tracking: <a href="https://sourceforge.net/tracker/?group_id=50884&amp;atid=461322">Bugs</a> <a href="http://sourceforge.net/tracker/?group_id=50884&amp;atid=461325">Features</a><br>
 Mailing List: <a href="http://archives.seul.org/libevent/users/">Info</a><br>
@@ -44,7 +49,15 @@ Git Repository: <a href="http://sourceforge.net/git/?group_id=50884">sourceforge
 License: <a href="LICENSE.txt">3-clause BSD</a><br>
 IRC: #libevent on <a href="oftc.net">OFTC</a>
 </div>
-
+<!--
+<div id="wishlists">
+<h3>Happy Hacking</h3>
+You can make Libevent developers happy by reducing our wishlists!
+<a href="Foobar">Nick's list</a> &ndash;
+<a href="http://www.citi.umich.edu/u/provos/wishlists/amazon.html">Niels's list</a>
+</div>
+-->
+</div>
 
 The <i>libevent</i> API provides a mechanism to execute a callback
 function when a specific event occurs on a file descriptor or after a
@@ -91,78 +104,6 @@ web page.
 A <a href="http://archives.seul.org/libevent/users/">mailing list for libevent</a> is now available.
 
 Libevent is maintained by <a href="http://www.wangafu.net/~nickm/">Nick Mathewson</a> and <a href="http://www.citi.umich.edu/u/provos/">Niels Provos</a>.
-
-<!--
-<center>
-&nbsp;<br>
-
-<table border="0" bgcolor="#000000" cellpadding="0" cellspacing="1">
-<tr><td valign="top" align="center" bgcolor="#aaaacc">
-<font color="#333377" size="+0.5" face="verdana,arial,helvetica">
-&nbsp;<a href="http://www.citi.umich.edu/u/provos/wishlists/amazon.html">Happpy&nbsp;Hacking</a>&nbsp;
-</font>
-</td></tr>
-<tr>
-<td valign="top" align="left" bgcolor="#ccccee">
-<font color="#101044" size="+0.5" face="verdana,arial,helvetica">
-&nbsp;Keep&nbsp;me&nbsp;happy&nbsp;while<br>
-&nbsp;hacking&nbsp;on&nbsp;libevent.&nbsp;
-</font>
-</td></tr>
-<tr><td valign="top" align="center" bgcolor="#aaaacc">
-<font color="#333377" size="+0.5" face="verdana,arial,helvetica">
-&nbsp;<a href="http://www.citi.umich.edu/u/provos/wishlists/amazon.html">Reduce&nbsp;my&nbsp;wishlist!</a>&nbsp;
-</font>
-</td></tr>
-</table>
--->
-
-<!--
-<p>
-<table border="0" bgcolor="#000000" cellpadding="0" cellspacing="1">
-<tr><td valign="top" align="center" bgcolor="#aaaacc">
-<font color="#333377" size="+0.5" face="verdana,arial,helvetica">
-&nbsp;<a href="http://www.citi.umich.edu/u/provos/wishlists/amazon.html">Support&nbsp;Libevent</a>&nbsp;
-</font>
-</td></tr>
-<tr><td valign="bottom" align="left" bgcolor="#ccccee">
-<font color="#101044" size="+0.5">
-<form method="get" action="http://www.amazon.com/exec/obidos/external-search">
-<table border="0" cellpadding="1" cellspacing="0" align="center" bgcolor="#ccccee">
-<tr border="0">
-<td bgcolor="#ccccee" align="right" valign="center"><font face="verdana,arial,helvetica" size="-2"><B>Search:</B></font></TD>
-<td bgcolor="#CCCCEE" align="left" valign="center"><font face="verdana,arial,helvetica" size="-2">
-<SELECT NAME="mode">
-<OPTION VALUE="books">Books
-<OPTION VALUE="music">Music
-<OPTION VALUE="dvd">DVD
-<OPTION VALUE="toys">Toys & Games
-<OPTION VALUE="videogames">Computer Games
-<OPTION VALUE="electronics">Electronics
-<OPTION VALUE="software">Software
-<OPTION VALUE="photo">Camera & Photo
-<OPTION VALUE="pc-hardware">Computers
-</select>
-</font></td></tr>
-<tr border="0" cellpadding="0" cellspacing="0">
-<TD BGCOLOR="#CCCCEE" align="RIGHT" valign="center">
-<font face="verdana,arial,helvetica" size="-2"><B>Keywords:</B></font></TD>
-<td bgcolor="#ccccee" align="left" valign="center">
-<font face="verdana,arial,helvetica" size="-2">
-<INPUT TYPE="text" NAME="keyword" SIZE="10" VALUE="">
-<INPUT TYPE="hidden" NAME="tag" VALUE="honeyd-20">
-<INPUT TYPE="submit" width="21" height="21" border="0" value="Go" name="Go" align="absmiddle">
-</font></td></TR>
-</table></form></font></td></tr>
-<tr><td valign="top" align="center" bgcolor="#aaaacc">
-<font color="#333377" size="+0.5" face="verdana,arial,helvetica">
-&nbsp;<a href="http://www.amazon.com/exec/obidos/redirect-home/honeyd-20">Search Amazon</a>
-&nbsp;
-</font>
-</td></tr>
-</table>
-</center>
--->
 
 <!-- end of initial text. -->
 </div>
@@ -465,27 +406,6 @@ solutions, which reset the machine.</li>
 <!-- hhmts start -->
 Last modified: 28 Aug 2011
 <!-- hhmts end -->
-
-<!--
-<td bgcolor="#ddffdd" align="center">
-You can keep me happy while hacking by reducing my
-Wishlists:
-<a href="http://www.citi.umich.edu/u/provos/wishlists/amazon.html">Books</a>,
-<a href="http://www.citi.umich.edu/u/provos/wishlists/cdnow.html">Music</a><br>
-</td>
--->
-<!--
-<td bgcolor="#ddffdd" align="center">
-<a href="https://secure.bmtmicro.com/opera/buy-opera.html?AID=620358">
-<img src="../pictures/ol-get-00-en-mic.gif" alt="[Get Opera!]" width="88" height="31"></a>
-</td>
--->
-<!--
-<hr>
-<font size=-1>
-NB: configure magic as always provided by <a href="http://www.monkey.org/~dugsong">Dug Song</a>, though I am learning.
-</font>
--->
 </div> <!-- end of coda -->
 
 </body>
