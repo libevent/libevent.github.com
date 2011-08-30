@@ -14,7 +14,7 @@ li ul { font-size: smaller; }
 body { background-color: white; }
 h1#head { background-color: #0880b8; text-align: center; color: #50d0ff;
  font-size: 200%; margin-bottom: .5em; font-weight: normal;
- letter-spacing: 0.1em; }
+ letter-spacing: 0.1em; margin: 0; }
 h3 { margin-bottom: .2em; margin-top: .5em; }
 table { border-style: none; }
 div#maindiv { background-color: #eee;
@@ -157,7 +157,7 @@ What's new in: <a href="https://raw.github.com/libevent/libevent/patches-1.4/wha
       </ul>
 	<li><a href="http://monkey.org/~provos/libevent-2.0.10-stable.tar.gz">libevent-2.0.10-stable.tar.gz</a> [<a href="http://monkey.org/~provos/libevent-2.0.10-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.10-stable/ChangeLog">ChangeLog</a><br>Released 2010-12-16
       <ul>
-        <li>First stable 2.0.x release! See <a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">"What's new in 2.0.x-stable"</a> for changes since 1.4.x.
+        <li><b>First stable 2.0.x release!</b> See <a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">"What's new in 2.0.x-stable"</a> for changes since 1.4.x.
         <li>Minor fix for IOCP shutdown handling fix (Kelly Brock)
         <li>Correctly notify the main thread when activating an event from a subthread
         <li>Reject overlong http requests early when Expect:100-continue is set (Constantine Verutin)
@@ -241,7 +241,9 @@ event loop several times.
 The usefulness of libevent API is demonstrated by
 the following applications:
 <ul>
-<li><a href="http://www.memcached.org">Memcached</a> &ndash; a high-performance, distributed memory object caching system.</li>
+<li><a href="http://www.memcached.org">Memcached</a> &ndash; a high-performance, distributed memory object caching system
+<li><a href="http://www.ntp.org">NTP</a> &ndash; the network time protocol that makes your clock right
+<li><a href="http://tmux.sourceforge.net">tmux</a> &ndash; A clean, modern, BSD-licensed terminal multiplexer, similar to GNU screen
 <li><a href="https://www.torproject.org/">Tor</a> &ndash; an anonymous Internet communication system.</li>
 <li><a href="http://monkey.org/~provos/vomit/">Vomit</a> &ndash; Voice Over Misconfigured Internet Telephones</li>
 <li><a href="http://monkey.org/~provos/crawl/">Crawl</a> &ndash; A Small and Efficient HTTP Crawler</li>

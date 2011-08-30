@@ -14,7 +14,7 @@ li ul { font-size: smaller; }
 body { background-color: white; }
 h1#head { background-color: #0880b8; text-align: center; color: #50d0ff;
  font-size: 200%; margin-bottom: .5em; font-weight: normal;
- letter-spacing: 0.05em; }
+ letter-spacing: 0.05em;  margin: 0; }
 h3 { margin-bottom: .2em; margin-top: .5em; }
 table { border-style: none; }
 div#maindiv { background-color: #eee;
@@ -84,13 +84,22 @@ td#benchmark { background-color: #ddd; }
       </ul>
 	<li><a href="http://monkey.org/~provos/libevent-2.0.10-stable.tar.gz">libevent-2.0.10-stable.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-2.0.10-stable.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.10-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-12-16
       <ul>
-        <li>First stable 2.0.x release! See <a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">"What's new in 2.0.x-stable"</a> for changes since 1.4.x.
+        <li><b>First stable 2.0.x release!</b> See <a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">"What's new in 2.0.x-stable"</a> for changes since 1.4.x.
         <li>Minor fix for IOCP shutdown handling fix (Kelly Brock)
         <li>Correctly notify the main thread when activating an event from a subthread
         <li>Reject overlong http requests early when Expect:100-continue is set (Constantine Verutin)
         <li>Other small compilation and code fixes.
       </ul>
-	<li><a href="http://monkey.org/~provos/libevent-2.0.9-rc.tar.gz">libevent-2.0.9-rc.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-2.0.9-rc.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.9-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-11-30</li>
+	<li><a href="http://monkey.org/~provos/libevent-2.0.9-rc.tar.gz">libevent-2.0.9-rc.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-2.0.9-rc.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.9-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-11-30
+      <ul>
+        <li>Avoid race-condition when initializing global locks (b683cae)
+        <li>Fix bug in SSL bufferevents backed by a bev with a write high-watermarks (Joachim Bauch)
+        <li>Speed up evbuffers when there are no callbacks (Mark Ellzey)
+        <li>Fix incorrect results from evbuffer_search_eol(EOL_LF)
+        <li>Correctness fixes for kqueue.
+        <li>Greatly improved doxygen
+        <li>Miscellaneous portability and bug fixes
+      </ul>
 	<li><a href="http://monkey.org/~provos/libevent-2.0.8-rc.tar.gz">libevent-2.0.8-rc.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-2.0.8-rc.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.8-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-10-14</li>
 	<li><a href="http://monkey.org/~provos/libevent-2.0.7-rc.tar.gz">libevent-2.0.7-rc.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-2.0.7-rc.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="http://levent.git.sourceforge.net/git/gitweb.cgi?p=levent/levent;a=blob;f=ChangeLog;hb=fe008ed656766266b93cdf2083f5b8bc50e6aad3">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-09-09</li>
 	<li><a href="http://monkey.org/~provos/libevent-2.0.6-rc.tar.gz">libevent-2.0.6-rc.tar.gz</a>&nbsp;[<a href="http://monkey.org/~provos/libevent-2.0.6-rc.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="http://levent.git.sourceforge.net/git/gitweb.cgi?p=levent/levent;a=blob;f=ChangeLog;h=b382b6ad2002470c86403655fc1f47efd96a5486;hb=556d0f4001ae5dae2e98584a7b23e3def6339681">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-08-07</li>
