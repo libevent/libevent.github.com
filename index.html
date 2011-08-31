@@ -122,7 +122,17 @@ What's new in: <a href="https://raw.github.com/libevent/libevent/patches-1.4/wha
 
 <h3>Download</h3>
 <ul class="tight">
-	<li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.13-stable.tar.gz">libevent-2.0.13-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.13-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.13-stable/ChangeLog">ChangeLog</a><br>Released 2011-07-18
+	<li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.14-stable.tar.gz">libevent-2.0.14-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.14-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.14-stable/ChangeLog">ChangeLog</a><br>Released 2011-08-31
+      <ul>
+        <li>Several SSL bufferevent fixes from Joachim Bauch
+        <li>A Solaris sendfile bugfix from Michael Herf
+        <li>A few other IOCP and rate-limiting bufferevent fixes
+        <li>Memory leak fixes from Leonid Evdokimov
+        <li>Coverity fixes from Harlan Stenn
+        <li>Portability and build fixes from Dave Hart and Mitchell Livingston
+        <li>and more...
+      </ul>
+	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.13-stable.tar.gz">libevent-2.0.13-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.13-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.13-stable/ChangeLog">ChangeLog</a><br>Released 2011-07-18
       <ul>
         <li>Avoid race-condition when initializing global locks (b683cae)
         <li>Fix bug in SSL bufferevents backed by a bev with a write high-watermarks (Joachim Bauch)
