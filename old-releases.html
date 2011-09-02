@@ -110,9 +110,37 @@ td#benchmark { background-color: #ddd; }
         <li>Greatly improved doxygen
         <li>Miscellaneous portability and bug fixes
       </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.8-rc.tar.gz">libevent-2.0.8-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.8-rc.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.8-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-10-14</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.7-rc.tar.gz">libevent-2.0.7-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.7-rc.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.7-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-09-09</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.6-rc.tar.gz">libevent-2.0.6-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.6-rc.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.6-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-08-07</li>
+	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.8-rc.tar.gz">libevent-2.0.8-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.8-rc.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.8-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-10-14
+      <ul>
+        <li>New error callback and threadsafety capabilities for evconnlistener
+        <li>Fixed behavior for disabling filtering bufferevents
+        <li>More threadsafety in the signal background
+        <li>Do not search outside of the system directory for windows DLLs
+        <li>Fix a spurious-call bug on epoll.c
+        <li>Fix an EINVAL on evbuffer_write_iovec on OpenSolaris
+        <li>Fix serious bugs in per-bufferevent rate-limiting code
+        <li>And more...
+      </ul>
+	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.7-rc.tar.gz">libevent-2.0.7-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.7-rc.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.7-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-09-09
+      <ul>
+        <li>New function for tuning IOCP thread pools
+        <li>New function for adding nameserver by sockaddr
+        <li>Detect more kinds of user error, and fail more gracefully
+        <li>Fix an issue with forking and signal socketpairs in select/poll backends
+        <li>MSVC build fixes
+        <li>Numerous threading bugfixes
+        <li>and more...
+      </ul>
+	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.6-rc.tar.gz">libevent-2.0.6-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.6-rc.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.6-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-08-07
+      <ul>
+        <li>Remove the obsolete evthread interfaces (c5bab56)
+        <li>Let evhttp_send_error infer the right error reasons
+        <li>Add a function to retrieve the other side of a bufferevent pair
+        <li>Add bufferevent_lock()/bufferevent_unlock() (215e629)
+        <li>Replace (unused,always 0) is_tcp argument to evdns_add_server_port*() with flags
+        <li>Numerous bugfixes and build fixes
+        <li>and more...
+      </ul>
 	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.5-beta.tar.gz">libevent-2.0.5-beta.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.5-beta.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.5-beta/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-05-11</li>
 	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.4-alpha.tar.gz">libevent-2.0.4-alpha.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.4-alpha.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.4-alpha/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-03-01</li>
 	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.3-alpha.tar.gz">libevent-2.0.3-alpha.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.3-alpha.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.3-alpha/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2009-11-19</li>
