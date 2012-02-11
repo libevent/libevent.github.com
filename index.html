@@ -120,7 +120,15 @@ What's new in: <a href="https://raw.github.com/libevent/libevent/patches-1.4/wha
 
 <h3>Download</h3>
 <ul class="tight">
-	<li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.16-stable.tar.gz">libevent-2.0.16-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.16-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.16-stable/ChangeLog">ChangeLog</a><br>Released 2011-11-18
+	<li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz">libevent-2.0.17-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.17-stable/ChangeLog">ChangeLog</a><br>Released 2012-02-10
+      <ul>
+       <li>Fix some subtle crash bugs in signals, win64.
+       <li>Avoid spurious EV_READ events from nonexistent fds when using kqueue.
+       <li>Fix a nasty list-corruption bug in event_reinit().
+       <li>Prevent stalls in filtering SSL connections (Maseeb Abdul Qadir and Mark Ellzey)
+       <li>and more...
+      </ul>
+	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.16-stable.tar.gz">libevent-2.0.16-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.16-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.16-stable/ChangeLog">ChangeLog</a><br>Released 2011-11-18
       <ul>
        <li>Construct an event_base more reliably on Windows when threading is disabled.
        <li>Fix for a crash in evbuffer_remove_buffer() by Greg Hazel
@@ -157,35 +165,6 @@ What's new in: <a href="https://raw.github.com/libevent/libevent/patches-1.4/wha
         <li>Miscellaneous portability and bug fixes
       </ul>
       </li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.12-stable.tar.gz">libevent-2.0.12-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.12-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.12-stable/ChangeLog">ChangeLog</a><br>Released 2011-06-04
-      <ul>
-        <li>Fix a warn-and-fail bug in the kqueue backend
-        <li>Fix an assert-inducing fencepost bug in the select backend
-        <li>Fix failing http assertion (Kevin Ko)
-        <li>Fix a bug that prevented us from configuring IPv6 nameservers
-        <li>Improve over/underflow checking in evhttp (Mansour Moufid, Mark Ellzey)
-        <li>Lots of portability and build fixes
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.11-stable.tar.gz">libevent-2.0.11-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.11-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.11-stable/ChangeLog">ChangeLog</a><br>Released 2011-04-28
-      <ul>
-        <li>Fix evport handling of POLLHUP and POLLERR (b42ce4b)
-        <li>Check for POLLERR, POLLHUP and POLLNVAL for Solaris event ports (Trond Norbye)
-        <li>Correctly detect and stop non-chunked http requests when the body is too long
-        <li>Have event_base_gettimeofday_cached() always return wall-clock time
-        <li>Fix a crash bugs in evhttp, evdns.
-        <li>Fix possible NULL-derefs in evhttp, evdns
-        <li>Make URI parser able to tolerate nonconformant URIs
-        <li>Build correctly on more HPUX systems.
-        <li>Other bugfixes, build fixes, leak fixes, and test fixes too numerous to list
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.10-stable.tar.gz">libevent-2.0.10-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.10-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.10-stable/ChangeLog">ChangeLog</a><br>Released 2010-12-16
-      <ul>
-        <li><b>First stable 2.0.x release!</b> See <a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">"What's new in 2.0.x-stable"</a> for changes since 1.4.x.
-        <li>Minor fix for IOCP shutdown handling fix (Kelly Brock)
-        <li>Correctly notify the main thread when activating an event from a subthread
-        <li>Reject overlong http requests early when Expect:100-continue is set (Constantine Verutin)
-        <li>Other small compilation and code fixes.
-      </ul>
 
 	<li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz">libevent-1.4.14b-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz.sig">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-1.4.14b-stable/ChangeLog">ChangeLog</a><br>Released 2010-06-07
 
@@ -209,20 +188,6 @@ What's new in: <a href="https://raw.github.com/libevent/libevent/patches-1.4/wha
           <li>Do not drop data from evbuffer when out of memory
           <li>Fix compilation on Android, HPUX, GNU/kFreeBSD
           <li>When running set[ug]id, don't check the environment
-          <li>and more...
-        </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.12-stable.tar.gz">libevent-1.4.12-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.12-stable.tar.gz.sig">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-1.4.12-stable/ChangeLog">ChangeLog</a><br>Released 2009-07-24
-        <ul>
-          <li>Activate fd events in a pseudorandom order with O(N) backends, so that we don't systematically favor low fds (select) or earlier-added fds (poll, win32)
-          <li>Fix a pair of fencepost bugs in epoll.c (Adam Langley)
-          <li>Disable strict aliasing with GCC
-          <li>and more...
-        </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.11-stable.tar.gz">libevent-1.4.11-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.11-stable.tar.gz.sig">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-1.4.11-stable/ChangeLog">ChangeLog</a><br>Released 2009-05-14
-        <ul>
-          <li>Fix a bug when removing a timeout from the heap. (Marko Kreen)
-          <li>Remove the limit on size of HTTP headers by removing static buffers.
-          <li>Fix a nasty dangling pointer bug in epoll.c (Kevin Springborn)
           <li>and more...
         </ul>
 </ul>
