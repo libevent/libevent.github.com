@@ -50,7 +50,14 @@ td#benchmark { background-color: #ddd; }
 <h2><a name="2.0">Libevent 2.0.x</a></h2>
 [ <a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">What's new in 2.0</a> | <a href="https://raw.github.com/libevent/libevent/patches-2.0/ChangeLog">2.0.x ChangeLog</a> ]
 <ul>
-	<li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz">libevent-2.0.17-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.17-stable/ChangeLog">ChangeLog</a><br>Released 2012-02-10
+	<li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.18-stable.tar.gz">libevent-2.0.18-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.18-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.18-stable/ChangeLog">ChangeLog</a><br>Released 2012-03-22
+      <ul>
+       <li>Fix a crash bug in evdns.
+       <li>Fix a class of confusing, hard-to-diagnose kqueue errors.
+       <li>and more...
+      </ul>
+
+	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz">libevent-2.0.17-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.17-stable/ChangeLog">ChangeLog</a><br>Released 2012-02-10
       <ul>
        <li>Fix some subtle crash bugs in signals, win64.
        <li>Avoid spurious EV_READ events from nonexistent fds when using kqueue.

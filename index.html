@@ -120,7 +120,15 @@ What's new in: <a href="https://raw.github.com/libevent/libevent/patches-1.4/wha
 
 <h3>Download</h3>
 <ul class="tight">
-	<li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz">libevent-2.0.17-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.17-stable/ChangeLog">ChangeLog</a><br>Released 2012-02-10
+
+	<li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.18-stable.tar.gz">libevent-2.0.18-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.18-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.18-stable/ChangeLog">ChangeLog</a><br>Released 2012-03-22
+      <ul>
+       <li>Fix a crash bug in evdns.
+       <li>Fix a class of confusing, hard-to-diagnose kqueue errors.
+       <li>and more...
+      </ul>
+
+	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz">libevent-2.0.17-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.17-stable/ChangeLog">ChangeLog</a><br>Released 2012-02-10
       <ul>
        <li>Fix some subtle crash bugs in signals, win64.
        <li>Avoid spurious EV_READ events from nonexistent fds when using kqueue.
@@ -153,18 +161,6 @@ What's new in: <a href="https://raw.github.com/libevent/libevent/patches-1.4/wha
         <li>Portability and build fixes from Dave Hart and Mitchell Livingston
         <li>and more...
       </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.13-stable.tar.gz">libevent-2.0.13-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.13-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.13-stable/ChangeLog">ChangeLog</a><br>Released 2011-07-18
-      <ul>
-        <li>Avoid race-condition when initializing global locks (b683cae)
-        <li>Fix bug in SSL bufferevents backed by a bev with a write high-watermarks (Joachim Bauch)
-        <li>Speed up evbuffers when there are no callbacks (Mark Ellzey)
-        <li>Fix incorrect results from evbuffer_search_eol(EOL_LF)
-        <li>Correctness fixes for kqueue
-        <li>Greatly improved doxygen
-        <li>Build correctly on more AIX systems
-        <li>Miscellaneous portability and bug fixes
-      </ul>
-      </li>
 
 	<li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz">libevent-1.4.14b-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz.sig">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-1.4.14b-stable/ChangeLog">ChangeLog</a><br>Released 2010-06-07
 
