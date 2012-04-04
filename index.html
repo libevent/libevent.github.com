@@ -11,6 +11,7 @@ h1,h2,h3,h4,h5 { font-weight: bold; }
 pre { font-family: monospace; }
 ul.tight { padding-left: 1.5em;  }
 li ul { font-size: smaller; }
+p.releasenote { font-size: smaller; }
 body { background-color: white; }
 h1#head { background-color: #0880b8; text-align: center; color: #50d0ff;
  font-size: 200%; margin-bottom: .5em; font-weight: normal;
@@ -114,14 +115,18 @@ Libevent is maintained by <a href="http://www.wangafu.net/~nickm/">Nick Mathewso
 Book: <a href="http://www.wangafu.net/~nickm/libevent-book/">Programming with Libevent</a>.<br>
 Reference:
   <a href="http://www.wangafu.net/~nickm/libevent-1.4/doxygen/html">1.4.x-stable</a>&ensp;<a href="http://www.wangafu.net/~nickm/libevent-2.0/doxygen/html">2.0.x-stable</a>&ensp;<a href="http://www.wangafu.net/~nickm/libevent-2.1/doxygen/html">2.1.x-alpha</a>.<br>
-What's new in: <a href="https://raw.github.com/libevent/libevent/patches-1.4/whatsnew-14.txt">1.4.x-stable</a>&ensp;<a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">2.0.x-stable</a>.
+What's new in: <a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">2.0.x-stable</a>&ensp;<a href="https://raw.github.com/libevent/libevent/master/whatsnew-2.1.txt">2.1.x-alpha</a>.
 
 <!-- Sample Application: <a href="event-test.c">event-test.c</a> -->
 
-<h3>Download</h3>
-<ul class="tight">
+<h3>Download&ndash;Stable releases</h4>
 
-	<li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.18-stable.tar.gz">libevent-2.0.18-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.18-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.18-stable/ChangeLog">ChangeLog</a><br>Released 2012-03-22
+<p class="releasenote">
+   These are the ones you probably want for software development, unless you
+   like to track the latest development versions and report bugs in them.
+
+<ul class="tight">
+   <li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.18-stable.tar.gz">libevent-2.0.18-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.18-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.18-stable/ChangeLog">ChangeLog</a><br>Released 2012-03-22
       <ul>
        <li>Fix a crash bug in evdns.
        <li>Fix a class of confusing, hard-to-diagnose kqueue errors.
@@ -187,7 +192,26 @@ What's new in: <a href="https://raw.github.com/libevent/libevent/patches-1.4/wha
           <li>and more...
         </ul>
 </ul>
-<h3><a href="old-releases.html">Older Releases</a></h3>
+
+<h4>Download&ndash;Alpha releases</h4>
+
+<p class="releasenote">This is alpha code. If you find any bugs, please let
+   us know!
+
+<ul class="tight">
+   <li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz">libevent-2.1.1-alpha.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.1.1-alpha/ChangeLog">ChangeLog</a><br>Released 2012-04-03
+      <ul>
+       <li>First alpha release in the 2.1.x series.
+       <li>Useful features for controlling the event loop and avoiding priority inversion
+       <li>New debugging features.
+       <li>New evbuffer functionality, including an improved sendfile/mmap wrapper, the ability to add one evbuffer to another, and more ways to avoid needless copies.
+       <li>Numerous small performance improvements and data structure tweaks throughout the codebase.
+       <li><a href="https://raw.github.com/libevent/libevent/master/whatsnew-2.1.txt">and much more...</a>
+      </ul>
+</ul>
+
+
+<h4><a href="old-releases.html">Older Releases</a></h3>
 
 <p>
 Libevent has been released under a <a href="LICENSE.txt">3-clause BSD license</a>.
