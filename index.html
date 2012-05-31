@@ -21,11 +21,14 @@ table { border-style: none; }
 div#maindiv { background-color: #eee;
               padding: 1em 1em 1em 3em; }
 div#sidebar { float: right;
-              margin-left: .5em; width: 18em; }
+              margin-left: .5em; width: 20em; }
 div#support { background-color: #bbf;  border: 1px solid black;
               padding-left: .5em; padding-right: .5em; }
 div#wishlists { background-color: #bbf;  border: 1px solid black;
               margin-top: 1em; padding: 0 .5em .5em .5em; }
+div#sponsors { background-color: #fff;  border: 1px solid black;
+              margin-top: 1em; padding: 0 .5em .5em .5em; }
+img#appnexus-logo { float: right; padding: .5em; }
 td#download { background-color: #cec; width: 50%; border-right: 1em solid #eee; }
 td#benchmark { background-color: #ddd; }
 a.latest { font-weight: bold; font-size: 110%; }
@@ -57,12 +60,19 @@ You can make Libevent developers happy by reducing our wishlists!<br>
 <a href="http://www.amazon.com/gp/registry/wishlist/WKACB1E0HNRA">Nick's list</a> &ndash;
 <a href="http://www.citi.umich.edu/u/provos/wishlists/amazon.html">Niels's list</a>
 </div>
+<div id="sponsors">
+<h3>Sponsors</h3>
+<a href="http://appnexus.com/"><img id="appnexus-logo"
+      src="sm-web-appnexus-logo.png" alt="AppNexus Logo"></a>Thanks
+to <a href="http://appnexus.com/">AppNexus</a> for sponsoring Libevent
+development in 2012!
+</div>
 </div>
 
-The <i>libevent</i> API provides a mechanism to execute a callback
-function when a specific event occurs on a file descriptor or after a
-timeout has been reached.  Furthermore, <i>libevent</i> also support
-callbacks due to <b>signals</b> or regular <b>timeouts</b>.
+The <i>libevent</i> API provides a mechanism to execute a callback function
+when a specific event occurs on a file descriptor or after a timeout has been
+reached.  Furthermore, <i>libevent</i> also support callbacks due
+to <b>signals</b> or regular <b>timeouts</b>.
 <p>
 <i>libevent</i> is meant to replace the event loop found
 in event driven network servers.  An application just needs to call
@@ -119,7 +129,7 @@ What's new in: <a href="https://raw.github.com/libevent/libevent/patches-2.0/wha
 
 <!-- Sample Application: <a href="event-test.c">event-test.c</a> -->
 
-<h3>Download&ndash;Stable releases</h4>
+<h3>Download&ndash;Stable releases</h3>
 
 <p class="releasenote">
    These are the ones you probably want for software development, unless you
@@ -218,7 +228,7 @@ What's new in: <a href="https://raw.github.com/libevent/libevent/patches-2.0/wha
 </ul>
 
 
-<h4><a href="old-releases.html">Older Releases</a></h3>
+<h3><a href="old-releases.html">Older Releases</a></h3>
 
 <p>
 Libevent has been released under a <a href="LICENSE.txt">3-clause BSD license</a>.
@@ -304,7 +314,7 @@ solutions, which reset the machine.</li>
  <address><a href="mailto:nickm@alum.mit.edu">Nick Mathewson</a></address>
  <address><a href="mailto:provos@citi.umich.edu">Niels Provos</a></address>
  (Please do not mail us directly for technical support. Instead, please
- use the mailing list or the IRC channel.)<br/>
+ use the mailing list or the IRC channel.)<br>
 <!-- Created: Mon Mar 11 12:43:06 EST 2002 -->
 <!-- hhmts start -->
 Last modified: 19 Oct 2011
