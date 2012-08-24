@@ -66,7 +66,16 @@ td#benchmark { background-color: #ddd; }
 [ <a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">What's new in 2.0</a> | <a href="https://raw.github.com/libevent/libevent/patches-2.0/ChangeLog">2.0.x ChangeLog</a> ]
 <ul>
 
-   <li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.19-stable.tar.gz">libevent-2.0.19-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.19-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.19-stable/ChangeLog">ChangeLog</a><br>Released 2012-05-03
+   <li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz">libevent-2.0.20-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.20-stable/ChangeLog">ChangeLog</a><br>Released 2012-08-23
+      <ul>
+       <li>Fix a crash on windows.
+       <li>Make event_pending() threadsafe.
+       <li>Another SSL callback behavior fixes
+       <li>Avoid an evdns segfault (Greg Hazel)
+       <li>and more...
+      </ul>
+
+   <li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.19-stable.tar.gz">libevent-2.0.19-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.19-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.19-stable/ChangeLog">ChangeLog</a><br>Released 2012-05-03
       <ul>
        <li>Fix periodic timeout behavior when time jumps forward
        <li>Avoid certain priority inversions
