@@ -162,39 +162,6 @@ What's new in: <a href="https://raw.github.com/libevent/libevent/patches-2.0/wha
        <li>and more...
       </ul>
 
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz">libevent-2.0.17-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.17-stable/ChangeLog">ChangeLog</a><br>Released 2012-02-10
-      <ul>
-       <li>Fix some subtle crash bugs in signals, win64.
-       <li>Avoid spurious EV_READ events from nonexistent fds when using kqueue.
-       <li>Fix a nasty list-corruption bug in event_reinit().
-       <li>Prevent stalls in filtering SSL connections (Maseeb Abdul Qadir and Mark Ellzey)
-       <li>and more...
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.16-stable.tar.gz">libevent-2.0.16-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.16-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.16-stable/ChangeLog">ChangeLog</a><br>Released 2011-11-18
-      <ul>
-       <li>Construct an event_base more reliably on Windows when threading is disabled.
-       <li>Fix for a crash in evbuffer_remove_buffer() by Greg Hazel
-       <li>Fixes for CPU-spinning problems during SSL reads by Mark Ellzey
-       <li>and more...
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.15-stable.tar.gz">libevent-2.0.15-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.15-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.15-stable/ChangeLog">ChangeLog</a><br>Released 2011-10-12
-      <ul>
-        <li>evbuffer_add_file now works with SSL bufferevents
-        <li>DNS fixes from Leonid Evdokimov
-        <li>An evbuffer callback bugfix from Alex
-        <li>Correct behavior for event_base_loop() from a signal event's callback
-        <li>and more...
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.14-stable.tar.gz">libevent-2.0.14-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.14-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.14-stable/ChangeLog">ChangeLog</a><br>Released 2011-08-31
-      <ul>
-        <li>Several SSL bufferevent fixes from Joachim Bauch
-        <li>A Solaris sendfile bugfix from Michael Herf
-        <li>A few other IOCP and rate-limiting bufferevent fixes
-        <li>Memory leak fixes from Leonid Evdokimov
-        <li>Coverity fixes from Harlan Stenn
-        <li>Portability and build fixes from Dave Hart and Mitchell Livingston
-        <li>and more...
-      </ul>
 
 	<li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz">libevent-1.4.14b-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz.sig">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-1.4.14b-stable/ChangeLog">ChangeLog</a><br>Released 2010-06-07
          <ul>
@@ -208,15 +175,6 @@ What's new in: <a href="https://raw.github.com/libevent/libevent/patches-2.0/wha
           <li>Define _REENTRANT as needed on Solaris, elsewhere (6cbea13)
           <li>Other bugfixes for http, memory management, and cleanup.
          </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.13-stable.tar.gz">libevent-1.4.13-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.13-stable.tar.gz.sig">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-1.4.13-stable/ChangeLog">ChangeLog</a><br>Released 2009-11-17
-         <ul>
-          <li>If the kernel tells us that there are a negative number of bytes to read from a socket, do not believe it  (Alexander Pronchenkov)
-          <li>Use less memory in epoll backend and priority system
-          <li>Do not drop data from evbuffer when out of memory
-          <li>Fix compilation on Android, HPUX, GNU/kFreeBSD
-          <li>When running set[ug]id, don't check the environment
-          <li>and more...
-        </ul>
 </ul>
 
 <h4>Download&ndash;Alpha releases</h4>
