@@ -136,7 +136,15 @@ What's new in: <a href="https://raw.github.com/libevent/libevent/patches-2.0/wha
    like to track the latest development versions and report bugs in them.
 
 <ul class="tight">
-   <li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz">libevent-2.0.20-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.20-stable/ChangeLog">ChangeLog</a><br>Released 2012-08-23
+   <li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz">libevent-2.0.21-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.21-stable/ChangeLog">ChangeLog</a><br>Released 2012-11-18
+      <ul>
+       <li>Several SSL correctness and performance fixes.
+       <li>Build fixes for mingw64
+       <li>Avoid a few resource leaks
+       <li>and more...
+      </ul>
+
+   <li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz">libevent-2.0.20-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.20-stable/ChangeLog">ChangeLog</a><br>Released 2012-08-23
       <ul>
        <li>Fix a crash on windows.
        <li>Make event_pending() threadsafe.
@@ -183,7 +191,22 @@ What's new in: <a href="https://raw.github.com/libevent/libevent/patches-2.0/wha
    us know!
 
 <ul class="tight">
-   <li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz">libevent-2.1.1-alpha.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.1.1-alpha/ChangeLog">ChangeLog</a><br>Released 2012-04-03
+   <li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz">libevent-2.1.2-alpha.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.1.2-alpha/ChangeLog">ChangeLog</a><br>Released 2012-11-18
+      <ul>
+       <li>Various new functions in the core, evbuffer, and bufferevent APIs
+       <li>Even more backends can now use portable monotonic timers.
+       <li>Updated autotools build infrastructure for faster builds.
+       <li>More reliable unit tests
+       <li>Internal event-callback interface now refactored for flexibility
+           and performance
+       <li>Faster notification with kqueue, faster/more precise timers on Linux
+       <li>Numerous small performance improvements and data structure tweaks
+           throughout the codebase
+       <li>Various bugfixes against 2.1.1-alpha
+       <li><a href="https://raw.github.com/libevent/libevent/master/whatsnew-2.1.txt">and much more...</a>
+      </ul>
+
+   <li><a href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz">libevent-2.1.1-alpha.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.1.1-alpha/ChangeLog">ChangeLog</a><br>Released 2012-04-03
       <ul>
        <li>First alpha release in the 2.1.x series.
        <li>Useful features for controlling the event loop and avoiding priority inversion
