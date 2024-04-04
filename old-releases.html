@@ -1,510 +1,811 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
 <html>
 <head>
-<title>libevent</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-<style type="text/css">
-<!--
-* { font-family: arial, helvetica, sans-serif; }
-h2,h3,h4,h5 { font-weight: bold; }
-pre { font-family: monospace; }
-ul.tight { padding-left: 1.5em;  }
-li ul { font-size: smaller; }
-body { background-color: white; }
-h1#head { background-color: #0880b8; text-align: center; color: #50d0ff;
- font-size: 200%; margin-bottom: .5em; font-weight: normal;
- letter-spacing: 0.05em;  margin: 0; }
-h3 { margin-bottom: .2em; margin-top: .5em; }
-table { border-style: none; }
-div#maindiv { background-color: #eee;
-              padding: 1em 1em 1em 3em; }
-div#sidebar { float: right;
-              margin-left: .5em; width: 18em; }
-div#support { background-color: #bbf;  border: 1px solid black;
-              padding-left: .5em; padding-right: .5em; }
-div#wishlists { background-color: #bbf;  border: 1px solid black;
-              margin-top: 1em;
-              padding: 0em .5em .5em .5em; }
-td#download { background-color: #cec; width: 50%; border-right: 1em solid #eee; }
-td#benchmark { background-color: #ddd; }
--->
-</style>
+	<title>libevent</title>
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+	<link rel="stylesheet" href="style.css" type="text/css">
 </head>
+
 <body>
-<h1 id="head">
-  libevent &ndash; an event notification library
-</h1>
+	<h1 id="head">libevent – an event notification library</h1>
 
-<div id="maindiv">
-<h2>Old releases</h2>
-<ul><li><a href="#2.1">2.1.x</a>
-    <li><a href="#2.0">2.0.x</a>
-    <li><a href="#1.4">1.4.x</a>
-    <li><a href="#1.3">1.3</a>
-    <li><a href="#1.2">1.2</a>
-    <li><a href="#1.1">1.1</a>
-    <li><a href="#1.0">1.0</a>
-    <li><a href="#0.x">0.x</a>
-</ul>
+	<div id="maindiv">
+		<h2>Old releases</h2>
 
-<h2><a name="2.1">Libevent 2.1.x</a></h2>
-[ <a href="https://raw.github.com/libevent/libevent/master/whatsnew-2.1.txt">What's new in 2.1</a> | <a href="https://raw.github.com/libevent/libevent/master/ChangeLog">2.1.x ChangeLog</a> ]
-<ul>
-   <li><a class="latest" href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.4-alpha.tar.gz/download">libevent-2.1.4-alpha.tar.gz</a> [<a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.4-alpha.tar.gz.asc/download">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.1.4-alpha/ChangeLog">ChangeLog</a><br>Released 2014-03-21
-      <ul>
-       <li>Several new utility APIs in libevent core, bufferevents, and evhttp.
-       <li>Detect closes early with EPOLLRDHUP.
-       <li>(Optional) support for buildint with cmake.
-       <li>Bugfixes too numerous to mention.
-       <li><a href="https://raw.github.com/libevent/libevent/master/whatsnew-2.1.txt">and much more...</a>
-      </ul>
+		<ul>
+			<li><a href="#2.1">2.1.x</a></li>
 
-   <li><a class="latest" href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.3-alpha.tar.gz/download">libevent-2.1.3-alpha.tar.gz</a> [<a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.3-alpha.tar.gz.asc/download">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.1.3-alpha/ChangeLog">ChangeLog</a><br>Released 2013-05-01
-      <ul>
-       <li>New finalization API with fix for bufferevent deadlock issue.
-       <li>New evdns and evhttp option.
-       <li>Several new unit tests.
-       <li>Bugfixes and portability fixes and build fixes too numerous to mention.
-       <li><a href="https://raw.github.com/libevent/libevent/master/whatsnew-2.1.txt">and much more...</a>
-      </ul>
+			<li><a href="#2.0">2.0.x</a></li>
 
-   <li><a href="https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz">libevent-2.1.2-alpha.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.1.2-alpha/ChangeLog">ChangeLog</a><br>Released 2012-11-18
-      <ul>
-       <li>Various new functions in the core, evbuffer, and bufferevent APIs
-       <li>Even more backends can now use portable monotonic timers.
-       <li>Updated autotools build infrastructure for faster builds.
-       <li>More reliable unit tests
-       <li>Internal event-callback interface now refactored for flexibility
-           and performance
-       <li>Faster notification with kqueue, faster/more precise timers on Linux
-       <li>Numerous small performance improvements and data structure tweaks
-           throughout the codebase
-       <li>Various bugfixes against 2.1.1-alpha
-       <li><a href="https://raw.github.com/libevent/libevent/master/whatsnew-2.1.txt">and much more...</a>
-      </ul>
+			<li><a href="#1.4">1.4.x</a></li>
 
-   <li><a href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz">libevent-2.1.1-alpha.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.1.1-alpha/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Released 2012-04-03
-      <ul>
-       <li>First alpha release in the 2.1.x series.
-       <li>Useful features for controlling the event loop and avoiding priority inversion
-       <li>New debugging features.
-       <li>New evbuffer functionality, including an improved sendfile/mmap wrapper, the ability to add one evbuffer to another, and more ways to avoid needless copies.
-       <li>Numerous small performance improvements and data structure tweaks throughout the codebase.
-       <li><a href="https://raw.github.com/libevent/libevent/master/whatsnew-2.1.txt">and much more...</a>
-      </ul>
-</ul>
+			<li><a href="#1.3">1.3</a></li>
 
-<h2><a name="2.0">Libevent 2.0.x</a></h2>
-[ <a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">What's new in 2.0</a> | <a href="https://raw.github.com/libevent/libevent/patches-2.0/ChangeLog">2.0.x ChangeLog</a> ]
-<ul>
-   <li><a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz">libevent-2.0.21-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.21-stable/ChangeLog">ChangeLog</a><br>Released 2012-11-18
-      <ul>
-       <li>Several SSL correctness and performance fixes.
-       <li>Build fixes for mingw64
-       <li>Avoid a few resource leaks
-       <li>and more...
-      </ul>
+			<li><a href="#1.2">1.2</a></li>
 
-   <li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz">libevent-2.0.20-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.20-stable/ChangeLog">ChangeLog</a><br>Released 2012-08-23
-      <ul>
-       <li>Fix a crash on windows.
-       <li>Make event_pending() threadsafe.
-       <li>Another SSL callback behavior fixes
-       <li>Avoid an evdns segfault (Greg Hazel)
-       <li>and more...
-      </ul>
+			<li><a href="#1.1">1.1</a></li>
 
-   <li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.19-stable.tar.gz">libevent-2.0.19-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.19-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.19-stable/ChangeLog">ChangeLog</a><br>Released 2012-05-03
-      <ul>
-       <li>Fix periodic timeout behavior when time jumps forward
-       <li>Avoid certain priority inversions
-       <li>More OpenSSL callback behavior fixes (Mark Ellzey)
-       <li>More evdns improvements (Greg Hazel)
-       <li>Fix a compilation bug with MSVC
-       <li>and more...
-      </ul>
+			<li><a href="#1.0">1.0</a></li>
 
+			<li><a href="#0.x">0.x</a></li>
+		</ul>
 
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.18-stable.tar.gz">libevent-2.0.18-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.18-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.18-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Released 2012-03-22
-      <ul>
-       <li>Fix a crash bug in evdns.
-       <li>Fix a class of confusing, hard-to-diagnose kqueue errors.
-       <li>and more...
-      </ul>
+		<h2><a name="2.1">Libevent 2.1.x</a></h2>[ <a href="https://raw.github.com/libevent/libevent/master/whatsnew-2.1.txt">What's new in 2.1</a> | <a href="https://raw.github.com/libevent/libevent/master/ChangeLog">2.1.x ChangeLog</a> ]
 
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz">libevent-2.0.17-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.17-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Released 2012-02-10
-      <ul>
-       <li>Fix some subtle crash bugs in signals, win64.
-       <li>Avoid spurious EV_READ events from nonexistent fds when using kqueue.
-       <li>Fix a nasty list-corruption bug in event_reinit().
-       <li>Prevent stalls in filtering SSL connections (Maseeb Abdul Qadir and Mark Ellzey)
-       <li>and more...
-      </ul>
+		<ul>
+			<li>
+				<a class="latest" href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.4-alpha.tar.gz/download">libevent-2.1.4-alpha.tar.gz</a> [<a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.4-alpha.tar.gz.asc/download">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.1.4-alpha/ChangeLog">ChangeLog</a><br>
+				Released 2014-03-21
 
-        <li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.16-stable.tar.gz">libevent-2.0.16-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.16-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.16-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Released 2011-11-18
-      <ul>
-       <li>Construct an event_base more reliably on Windows when threading is disabled.
-       <li>Fix for a crash in evbuffer_remove_buffer() by Greg Hazel
-       <li>Fixes for CPU-spinning problems during SSL reads by Mark Ellzey
-       <li>and more...
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.15-stable.tar.gz">libevent-2.0.15-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.15-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.15-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Released 2011-10-12
-      <ul>
-        <li>evbuffer_add_file now works with SSL bufferevents
-        <li>DNS fixes from Leonid Evdokimov
-        <li>An evbuffer callback bugfix from Alex
-        <li>Correct behavior for event_base_loop() from a signal event's callback
-        <li>and more...
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.14-stable.tar.gz">libevent-2.0.14-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.14-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.14-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Released 2011-08-31
-      <ul>
-        <li>Several SSL bufferevent fixes from Joachim Bauch
-        <li>A Solaris sendfile bugfix from Michael Herf
-        <li>A few other IOCP and rate-limiting bufferevent fixes
-        <li>Memory leak fixes from Leonid Evdokimov
-        <li>Coverity fixes from Harlan Stenn
-        <li>Portability and build fixes from Dave Hart and Mitchell Livingston
-        <li>and more...
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.13-stable.tar.gz">libevent-2.0.13-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.13-stable.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.13-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2011-07-18
-      <ul>
-        <li>Avoid race-condition when initializing global locks (b683cae)
-        <li>Fix bug in SSL bufferevents backed by a bev with a write high-watermarks (Joachim Bauch)
-        <li>Speed up evbuffers when there are no callbacks (Mark Ellzey)
-        <li>Fix incorrect results from evbuffer_search_eol(EOL_LF)
-        <li>Correctness fixes for kqueue.
-        <li>Greatly improved doxygen
-        <li>Miscellaneous portability and bug fixes
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.12-stable.tar.gz">libevent-2.0.12-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.12-stable.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.12-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2011-06-04
-      <ul>
-        <li>Fix a warn-and-fail bug in the kqueue backend
-        <li>Fix an assert-inducing fencepost bug in the select backend
-        <li>Fix failing http assertion (Kevin Ko)
-        <li>Fix a bug that prevented us from configuring IPv6 nameservers
-        <li>Improve over/underflow checking in evhttp (Mansour Moufid, Mark Ellzey)
-        <li>Lots of portability and build fixes.
-      </ul>
-      </li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.11-stable.tar.gz">libevent-2.0.11-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.11-stable.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.11-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2011-04-28
-      <ul>
-        <li>Fix evport handling of POLLHUP and POLLERR (b42ce4b)
-        <li>Check for POLLERR, POLLHUP and POLLNVAL for Solaris event ports (Trond Norbye)
-        <li>Correctly detect and stop non-chunked http requests when the body is too long
-        <li>Have event_base_gettimeofday_cached() always return wall-clock time
-        <li>Fix a crash bugs in evhttp, evdns.
-        <li>Fix possible NULL-derefs in evhttp, evdns
-        <li>Make URI parser able to tolerate nonconformant URIs
-        <li>Build correctly on more HPUX systems.
-        <li>Other bugfixes, build fixes, leak fixes, and test fixes too numerous to list
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.10-stable.tar.gz">libevent-2.0.10-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.10-stable.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.10-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-12-16
-      <ul>
-        <li><b>First stable 2.0.x release!</b> See <a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">"What's new in 2.0.x-stable"</a> for changes since 1.4.x.
-        <li>Minor fix for IOCP shutdown handling fix (Kelly Brock)
-        <li>Correctly notify the main thread when activating an event from a subthread
-        <li>Reject overlong http requests early when Expect:100-continue is set (Constantine Verutin)
-        <li>Other small compilation and code fixes.
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.9-rc.tar.gz">libevent-2.0.9-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.9-rc.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.9-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-11-30
-      <ul>
-        <li>Avoid race-condition when initializing global locks (b683cae)
-        <li>Fix bug in SSL bufferevents backed by a bev with a write high-watermarks (Joachim Bauch)
-        <li>Speed up evbuffers when there are no callbacks (Mark Ellzey)
-        <li>Fix incorrect results from evbuffer_search_eol(EOL_LF)
-        <li>Correctness fixes for kqueue.
-        <li>Greatly improved doxygen
-        <li>Miscellaneous portability and bug fixes
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.8-rc.tar.gz">libevent-2.0.8-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.8-rc.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.8-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-10-14
-      <ul>
-        <li>New error callback and threadsafety capabilities for evconnlistener
-        <li>Fixed behavior for disabling filtering bufferevents
-        <li>More threadsafety in the signal background
-        <li>Do not search outside of the system directory for windows DLLs
-        <li>Fix a spurious-call bug on epoll.c
-        <li>Fix an EINVAL on evbuffer_write_iovec on OpenSolaris
-        <li>Fix serious bugs in per-bufferevent rate-limiting code
-        <li>And more...
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.7-rc.tar.gz">libevent-2.0.7-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.7-rc.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.7-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-09-09
-      <ul>
-        <li>New function for tuning IOCP thread pools
-        <li>New function for adding nameserver by sockaddr
-        <li>Detect more kinds of user error, and fail more gracefully
-        <li>Fix an issue with forking and signal socketpairs in select/poll backends
-        <li>MSVC build fixes
-        <li>Numerous threading bugfixes
-        <li>and more...
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.6-rc.tar.gz">libevent-2.0.6-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.6-rc.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.6-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-08-07
-      <ul>
-        <li>Remove the obsolete evthread interfaces (c5bab56)
-        <li>Let evhttp_send_error infer the right error reasons
-        <li>Add a function to retrieve the other side of a bufferevent pair
-        <li>Add bufferevent_lock()/bufferevent_unlock() (215e629)
-        <li>Replace (unused,always 0) is_tcp argument to evdns_add_server_port*() with flags
-        <li>Numerous bugfixes and build fixes
-        <li>and more...
-      </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.5-beta.tar.gz">libevent-2.0.5-beta.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.5-beta.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.5-beta/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-05-11</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.4-alpha.tar.gz">libevent-2.0.4-alpha.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.4-alpha.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.4-alpha/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-03-01</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.3-alpha.tar.gz">libevent-2.0.3-alpha.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.3-alpha.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.3-alpha/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2009-11-19</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.2-alpha.tar.gz">libevent-2.0.2-alpha.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.2-alpha.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.2-alpha/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2009-07-24
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.1-alpha.tar.gz">libevent-2.0.1-alpha.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.1-alpha.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">What's new</a>&nbsp;-&nbsp;Release&nbsp;2009-04-17
-</ul>
+				<ul>
+					<li>Several new utility APIs in libevent core, bufferevents, and evhttp.</li>
 
+					<li>Detect closes early with EPOLLRDHUP.</li>
 
-<h2><a name="1.4">Libevent 1.4.x</a></h2>
-[ <a href="https://raw.github.com/libevent/libevent/patches-1.4/whatsnew-14.txt">What's new in 1.4</a> | <a href="https://raw.github.com/libevent/libevent/patches-1.4/ChangeLog">1.4.x ChangeLog</a> ]
-<ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz">libevent-1.4.14b-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.14b-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-06-07<
-         <ul>
-          <li>Backport evbuffer_readln()
-          <li>Fix a crash when reading badly formatted resolve.conf (Yasuoka Masahiko)
-          <li>Make evutil_make_socket_nonblocking() leave any other flags alone (Jardel Weyrich)
-          <li>Adjusted fcntl() retval comparison on evutil_make_socket_nonblocking() (Jardel Weyrich)
-          <li>Re-add event_siglcb; some old code _was_ still using it. :(
-          <li>Make Libevent 1.4 build on win32 with Unicode enabled. (Brodie Thiesfield)
-          <li>Distribute nmake makefile for 1.4
-          <li>Define _REENTRANT as needed on Solaris, elsewhere (6cbea13)
-          <li>Other bugfixes for http, memory management, and cleanup.
-         </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.13-stable.tar.gz">libevent-1.4.13-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.13-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.13-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2009-11-17
-         <ul>
-          <li>If the kernel tells us that there are a negative number of bytes to read from a socket, do not believe it  (Alexander Pronchenkov)
-          <li>Use less memory in epoll backend and priority system.
-          <li>Do not drop data from evbuffer when out of memory
-          <li>Fix compilation on Android, HPUX, GNU/kFreeBSD
-          <li>When running set[ug]id, don't check the environment.
-          <li>and more...
-        </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.12-stable.tar.gz">libevent-1.4.12-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.12-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.12-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2009-07-24
-        <ul>
-          <li>Activate fd events in a pseudorandom order with O(N) backends, so that we don't systematically favor low fds (select) or earlier-added fds (poll, win32)
-          <li>Fix a pair of fencepost bugs in epoll.c (Adam Langley)
-          <li>Disable strict aliasing with GCC
-          <li>and more...
-        </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.11-stable.tar.gz">libevent-1.4.11-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.11-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.11-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2009-05-14
-        <ul>
-          <li>Fix a bug when removing a timeout from the heap. (Marko Kreen)
-          <li>Remove the limit on size of HTTP headers by removing static buffers.
-          <li>Fix a nasty dangling pointer bug in epoll.c (Kevin Springborn)
-          <li>and more...
-        </ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.10-stable.tar.gz">libevent-1.4.10-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.10-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.10-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2009-04-17
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.9-stable.tar.gz">libevent-1.4.9-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.9-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.9-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-12-12
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.8-stable.tar.gz">libevent-1.4.8-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.8-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.8-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-09-13
-	</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.7-stable.tar.gz">libevent-1.4.7-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.7-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.7-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-08-25
-	</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.6-stable.tar.gz">libevent-1.4.6-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.6-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.6/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-07-24
-	</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.5-stable.tar.gz">libevent-1.4.5-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.5-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.5-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-06-25
-	</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.4-stable.tar.gz">libevent-1.4.4-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.4-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.4-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-05-13
-	</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.3-stable.tar.gz">libevent-1.4.3-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.3-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.3-stable">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-04-07
-	</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.2-rc.tar.gz">libevent-1.4.2-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.2-rc.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.2-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-02-25
-	<ul>
-	  <li>make Solaris event subsystems more reliable; from W.C.A. Wijngaards</li>
-	  <li>event_base_get_method(); from Springande Ulv</li>
-	  <li>fix HTTP/1.1 chunk formatting; from "propanbutan"</li>
-	  <li>allow 64-bit content lengths; from Scott Lamb</li>
-	  <li>and more...</li>
-         </ul></li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.1-beta.tar.gz">libevent-1.4.1-beta.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.1-beta.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.1-beta/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2007-12-21
-	<ul>
-	  <li>fixed some memory leaks and other misc cleanup; from Christopher Layne, Scott Lamb and Charles Kerr</li>
-	  <li>introduced event_reinit to deal with fork()</li>
-	  <li>improved efficiency of generated RPC structure</li>
-	  <li>performance improvements to Win32 backend</li>
-	  <li>and many more...</li>
-         </ul></li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.0-beta.tar.gz">libevent-1.4.0-beta.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.0-beta.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.0-beta/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2007-11-11
-	<ul>
-	  <li>a new RPC subsytem for writing distributed clients and servers</li>
-	  <li>almost everything is documented via Doxygen now</li>
-	  <li>many fixes and improvements to evdns and evhttp</li>
-	  <li>libevent now builds two additional libraries: libevent_core (containing only the event core) and libevent_extras (contained evdns, evhttp and evrpc)</li>
-	  <li>performance improvements due to using a heap instead of red-black trees for timeouts</li>
-	  <li>Solaris' event ports are better supported</li>
-         </ul></li>
-</ul>
+					<li>(Optional) support for buildint with cmake.</li>
 
-<h2><a name="1.3">Libevent 1.3</a></h2>
-<ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.3e.tar.gz">libevent-1.3e.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.3e.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.3e/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2007-09-24
-	<ul>
-	  <li>Fix compilation on Solaris; from Magne Mahre</li>
-	  <li>Add a "Date" header to HTTP responses when it's missing, as required by HTTP 1.1. Original Patch from Ralph Moritz.</li>
-	  <li>Fix a memory leak in which failed HTTP connections whould not free the request object.</li>
-	  <li>Fix a memory leak in the DNS server.</li>
-	  <li>Handle NULL timeouts correctly on Solaris; from Trond Norbye</li>
-	  <li>Recalculate pending events properly when reallocating event array on Solaris; from Trond Norbye</li>
-	</ul></li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.3d.tar.gz">libevent-1.3d.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.3d.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2007-08-16
-	<ul>
-	<li>Bug fixes in the HTTP layer.</li>
-	</ul></li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.3c.tar.gz">libevent-1.3c.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.3c.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2007-07-30
-	<ul>
-	<li>Small bug and portability fixes.</li>
-	</ul></li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.3b.tar.gz">libevent-1.3b.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.3b.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2007-03-03
-	<ul>
-	<li>Fixes when using signals in multi-threaded applications from Scott Lamb.</li>
-	<li>Other small bug fixes.</li>
-	</ul></li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.3a.tar.gz">libevent-1.3a.tar.gz</a>-&nbsp;Release&nbsp;2007-02-17
-	<ul>
-	<li>Small bug and performances fixes to evhttp layer.</li>
-	</ul></li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.3.tar.gz">libevent-1.3.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.3.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2007-02-15
-	<ul>
-	<li>DNS Server from Adam Langley and Nick Mathewson</li>
-	<li>Chunked transfer encoding for HTTP/1.1 from Dug Song.</li>
-	<li>DNS DDoS fix; bug report from Jon Oberheide.</li>
-        <li>Various small improvements.</li>
-        </ul>
-</ul>
+					<li>Bugfixes too numerous to mention.</li>
 
-<h2><a name="1.2">Libevent 1.2</a></h2>
-<ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.2a.tar.gz">libevent-1.2a.tar.gz</a>-&nbsp;Release&nbsp;2006-12-02
-	<ul>
-	<li>Made HTTP support more usable</li>
-	<li>Various portability fixes.</li>
-	</ul></li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.2.tar.gz">libevent-1.2.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.2.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2006-10-15
-	<ul>
-	<li>Support for non-blocking DNS resolution; from Adam Langley and Nick Mathewson.</li>
-	<li>Support for lightweight HTTP clients and servers.</li>
-	<li>Support for Sun's Event Ports from David Pacheco of Sun.</li>
-        </ul>
-        </li>
-</ul>
+					<li><a href="https://raw.github.com/libevent/libevent/master/whatsnew-2.1.txt">and much more...</a></li>
+				</ul>
+			</li>
 
-<h2><a name="1.1">Libevent 1.1</a></h2>
-<ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.1b.tar.gz">libevent-1.1b.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.1b.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2006-08-09
-	<ul>
-	<li>Bug fixes - thanks to Nick Mathewson for helping.</li>
-        </ul>
-        </li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.1a.tar.gz">libevent-1.1a.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.1a.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-06-12
-	<ul>
-	<li>Minor reliability fixes.</li>
-        </ul>
-        </li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.1.tar.gz">libevent-1.1.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.1.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-05-14
-	<ul>
-	<li>Performance improvements from Nick Mathewson.</li>
-	<li>Work around for kqueue bug in Mac OS X 10.4.</li>
-        </ul>
-        </li>
-</ul>
+			<li>
+				<a class="latest" href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.3-alpha.tar.gz/download">libevent-2.1.3-alpha.tar.gz</a> [<a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.3-alpha.tar.gz.asc/download">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.1.3-alpha/ChangeLog">ChangeLog</a><br>
+				Released 2013-05-01
 
+				<ul>
+					<li>New finalization API with fix for bufferevent deadlock issue.</li>
 
-<h2><a name="1.0">Libevent 1.0</a></h2>
-<ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.0e.tar.gz">libevent-1.0e.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.0e.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-04-26
-	<ul>
-	<li>Important fix to bug in poll implementation introduced in 1.0d.</li>
-        </ul>
-        </li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.0d.tar.gz">libevent-1.0d.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.0d.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-04-22
-	<ul>
-	<li>Several minor bug fixes and building of shared libraries.</li>
-        </ul>
-        </li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.0c.tar.gz">libevent-1.0c.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.0c.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-04-03
-	<ul>
-	<li>Bug fixes for Windows, Solaris and improved logging interface.</li>
-        </ul>
-        </li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.0b.tar.gz">libevent-1.0b.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.0b.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-01-13
-	<ul>
-	<li>Bug fixes for backwards compatibility.</li>
-        </ul>
-        </li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.0a.tar.gz">libevent-1.0a.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.0a.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-01-03
-	<ul>
-	<li>Bug fixes for threaded applications.  Thanks to Andrew Danforth.</li>
-        </ul>
-        </li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.0.tar.gz">libevent-1.0.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.0.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2004-12-05
-	<ul>
-	<li>Support for multi-threaded applications - experimental.</li>
-	<li>Event priorities with priority queues.</li>
-	<li>Don't forget my <a href="http://www.citi.umich.edu/u/provos/wishlists/amazon.html">wishlists</a> :-).</li>
-        </ul>
-        </li>
-</ul>
+					<li>New evdns and evhttp option.</li>
 
-<h2><a name="0.x">Libevent 0.x</a></h2>
-<ul>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.9.tar.gz">libevent-0.9.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-0.9.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2004-07-30
-	<ul>
-	<li>Support for /dev/poll in Solaris.</li>
-        </ul>
-        </li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.8a.tar.gz">libevent-0.8a.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-0.8a.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2004-06-12
-	<ul>
-	<li>Fixes compile problems on Solaris.</li>
-        </ul>
-</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.8.tar.gz">libevent-0.8.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-0.8.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2004-04-03
-	<ul>
-	<li>Buffered event abstraction to make writing network applications
-	    easier; see <a href="http://monkey.org/~provos/libio/">libio</a> for the predecessor of
-	    this idea.</li>
-        </ul>
-       </li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.7c.tar.gz">libevent-0.7c.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-0.7c.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2003-10-25
-	<ul>
-	<li>Bug fixes in Linux epoll and poll support.</li>
-        </ul>
-</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.7b.tar.gz">libevent-0.7b.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-0.7b.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2003-10-5
-	<ul>
-	<li><a href="LICENSE.txt">3-clause BSD-license</a>.</li>
-        <li>Experimental support for real-time signals.  Likely to be buggy.</li>
-	<li>Experimental support for Windows from Mike Davis.</li>
-        </ul>
-	</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.7a.tar.gz">libevent-0.7a.tar.gz</a>&nbsp;-&nbsp;Release&nbsp;2003-05-04
-	<ul><li>
-	Requires level-triggered <a href="http://groups.google.com/groups?q=lt+epoll+rfc&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;safe=off&amp;selm=20030310201011%240290%40gated-at.bofh.it&amp;rnum=1">epoll patch</a> for Linux epoll support.
-	</li></ul>
-	</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.6.tar.gz">libevent-0.6.tar.gz</a>&nbsp;-&nbsp;Release&nbsp;2002-09-15
-	</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.5.tar.gz">libevent-0.5.tar.gz</a>
-	- Release 2002-06-12
-	</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.4.tar.gz">libevent-0.4.tar.gz</a>
-	- Release 2002-04-09
-	</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.3d.tar.gz">libevent-0.3d.tar.gz</a>
-	- Release 2001-06-04
-	</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.3c.tar.gz">libevent-0.3c.tar.gz</a>
-	- Release 2001-04-05
-	</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.2b.tar.gz">libevent-0.2b.tar.gz</a>
-	- Release 2000-11-22
-	</li>
-	<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.1.tar.gz">libevent-0.1.tar.gz</a>
-	- Release 2000-11-14
-	</li>
-</ul>
+					<li>Several new unit tests.</li>
 
-</div> <!-- end of coda -->
+					<li>Bugfixes and portability fixes and build fixes too numerous to mention.</li>
 
+					<li><a href="https://raw.github.com/libevent/libevent/master/whatsnew-2.1.txt">and much more...</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz">libevent-2.1.2-alpha.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.1.2-alpha/ChangeLog">ChangeLog</a><br>
+				Released 2012-11-18
+
+				<ul>
+					<li>Various new functions in the core, evbuffer, and bufferevent APIs</li>
+
+					<li>Even more backends can now use portable monotonic timers.</li>
+
+					<li>Updated autotools build infrastructure for faster builds.</li>
+
+					<li>More reliable unit tests</li>
+
+					<li>Internal event-callback interface now refactored for flexibility and performance</li>
+
+					<li>Faster notification with kqueue, faster/more precise timers on Linux</li>
+
+					<li>Numerous small performance improvements and data structure tweaks throughout the codebase</li>
+
+					<li>Various bugfixes against 2.1.1-alpha</li>
+
+					<li><a href="https://raw.github.com/libevent/libevent/master/whatsnew-2.1.txt">and much more...</a></li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz">libevent-2.1.1-alpha.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.1.1-alpha/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Released 2012-04-03
+
+				<ul>
+					<li>First alpha release in the 2.1.x series.</li>
+
+					<li>Useful features for controlling the event loop and avoiding priority inversion</li>
+
+					<li>New debugging features.</li>
+
+					<li>New evbuffer functionality, including an improved sendfile/mmap wrapper, the ability to add one evbuffer to another, and more ways to avoid needless copies.</li>
+
+					<li>Numerous small performance improvements and data structure tweaks throughout the codebase.</li>
+
+					<li><a href="https://raw.github.com/libevent/libevent/master/whatsnew-2.1.txt">and much more...</a></li>
+				</ul>
+			</li>
+		</ul>
+
+		<h2><a name="2.0">Libevent 2.0.x</a></h2>[ <a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">What's new in 2.0</a> | <a href="https://raw.github.com/libevent/libevent/patches-2.0/ChangeLog">2.0.x ChangeLog</a> ]
+
+		<ul>
+			<li>
+				<a class="latest" href="https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz">libevent-2.0.21-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.21-stable/ChangeLog">ChangeLog</a><br>
+				Released 2012-11-18
+
+				<ul>
+					<li>Several SSL correctness and performance fixes.</li>
+
+					<li>Build fixes for mingw64</li>
+
+					<li>Avoid a few resource leaks</li>
+
+					<li>and more...</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz">libevent-2.0.20-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.20-stable/ChangeLog">ChangeLog</a><br>
+				Released 2012-08-23
+
+				<ul>
+					<li>Fix a crash on windows.</li>
+
+					<li>Make event_pending() threadsafe.</li>
+
+					<li>Another SSL callback behavior fixes</li>
+
+					<li>Avoid an evdns segfault (Greg Hazel)</li>
+
+					<li>and more...</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.19-stable.tar.gz">libevent-2.0.19-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.19-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.19-stable/ChangeLog">ChangeLog</a><br>
+				Released 2012-05-03
+
+				<ul>
+					<li>Fix periodic timeout behavior when time jumps forward</li>
+
+					<li>Avoid certain priority inversions</li>
+
+					<li>More OpenSSL callback behavior fixes (Mark Ellzey)</li>
+
+					<li>More evdns improvements (Greg Hazel)</li>
+
+					<li>Fix a compilation bug with MSVC</li>
+
+					<li>and more...</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.18-stable.tar.gz">libevent-2.0.18-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.18-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.18-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Released 2012-03-22
+
+				<ul>
+					<li>Fix a crash bug in evdns.</li>
+
+					<li>Fix a class of confusing, hard-to-diagnose kqueue errors.</li>
+
+					<li>and more...</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz">libevent-2.0.17-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.17-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.17-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Released 2012-02-10
+
+				<ul>
+					<li>Fix some subtle crash bugs in signals, win64.</li>
+
+					<li>Avoid spurious EV_READ events from nonexistent fds when using kqueue.</li>
+
+					<li>Fix a nasty list-corruption bug in event_reinit().</li>
+
+					<li>Prevent stalls in filtering SSL connections (Maseeb Abdul Qadir and Mark Ellzey)</li>
+
+					<li>and more...</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.16-stable.tar.gz">libevent-2.0.16-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.16-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.16-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Released 2011-11-18
+
+				<ul>
+					<li>Construct an event_base more reliably on Windows when threading is disabled.</li>
+
+					<li>Fix for a crash in evbuffer_remove_buffer() by Greg Hazel</li>
+
+					<li>Fixes for CPU-spinning problems during SSL reads by Mark Ellzey</li>
+
+					<li>and more...</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.15-stable.tar.gz">libevent-2.0.15-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.15-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.15-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Released 2011-10-12
+
+				<ul>
+					<li>evbuffer_add_file now works with SSL bufferevents</li>
+
+					<li>DNS fixes from Leonid Evdokimov</li>
+
+					<li>An evbuffer callback bugfix from Alex</li>
+
+					<li>Correct behavior for event_base_loop() from a signal event's callback</li>
+
+					<li>and more...</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.14-stable.tar.gz">libevent-2.0.14-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.14-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.github.com/libevent/libevent/release-2.0.14-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Released 2011-08-31
+
+				<ul>
+					<li>Several SSL bufferevent fixes from Joachim Bauch</li>
+
+					<li>A Solaris sendfile bugfix from Michael Herf</li>
+
+					<li>A few other IOCP and rate-limiting bufferevent fixes</li>
+
+					<li>Memory leak fixes from Leonid Evdokimov</li>
+
+					<li>Coverity fixes from Harlan Stenn</li>
+
+					<li>Portability and build fixes from Dave Hart and Mitchell Livingston</li>
+
+					<li>and more...</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.13-stable.tar.gz">libevent-2.0.13-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.13-stable.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.13-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2011-07-18
+
+				<ul>
+					<li>Avoid race-condition when initializing global locks (b683cae)</li>
+
+					<li>Fix bug in SSL bufferevents backed by a bev with a write high-watermarks (Joachim Bauch)</li>
+
+					<li>Speed up evbuffers when there are no callbacks (Mark Ellzey)</li>
+
+					<li>Fix incorrect results from evbuffer_search_eol(EOL_LF)</li>
+
+					<li>Correctness fixes for kqueue.</li>
+
+					<li>Greatly improved doxygen</li>
+
+					<li>Miscellaneous portability and bug fixes</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.12-stable.tar.gz">libevent-2.0.12-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.12-stable.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.12-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2011-06-04
+
+				<ul>
+					<li>Fix a warn-and-fail bug in the kqueue backend</li>
+
+					<li>Fix an assert-inducing fencepost bug in the select backend</li>
+
+					<li>Fix failing http assertion (Kevin Ko)</li>
+
+					<li>Fix a bug that prevented us from configuring IPv6 nameservers</li>
+
+					<li>Improve over/underflow checking in evhttp (Mansour Moufid, Mark Ellzey)</li>
+
+					<li>Lots of portability and build fixes.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.11-stable.tar.gz">libevent-2.0.11-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.11-stable.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.11-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2011-04-28
+
+				<ul>
+					<li>Fix evport handling of POLLHUP and POLLERR (b42ce4b)</li>
+
+					<li>Check for POLLERR, POLLHUP and POLLNVAL for Solaris event ports (Trond Norbye)</li>
+
+					<li>Correctly detect and stop non-chunked http requests when the body is too long</li>
+
+					<li>Have event_base_gettimeofday_cached() always return wall-clock time</li>
+
+					<li>Fix a crash bugs in evhttp, evdns.</li>
+
+					<li>Fix possible NULL-derefs in evhttp, evdns</li>
+
+					<li>Make URI parser able to tolerate nonconformant URIs</li>
+
+					<li>Build correctly on more HPUX systems.</li>
+
+					<li>Other bugfixes, build fixes, leak fixes, and test fixes too numerous to list</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.10-stable.tar.gz">libevent-2.0.10-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.10-stable.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.10-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-12-16
+
+				<ul>
+					<li><b>First stable 2.0.x release!</b> See <a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">"What's new in 2.0.x-stable"</a> for changes since 1.4.x.</li>
+
+					<li>Minor fix for IOCP shutdown handling fix (Kelly Brock)</li>
+
+					<li>Correctly notify the main thread when activating an event from a subthread</li>
+
+					<li>Reject overlong http requests early when Expect:100-continue is set (Constantine Verutin)</li>
+
+					<li>Other small compilation and code fixes.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.9-rc.tar.gz">libevent-2.0.9-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.9-rc.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.9-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-11-30
+
+				<ul>
+					<li>Avoid race-condition when initializing global locks (b683cae)</li>
+
+					<li>Fix bug in SSL bufferevents backed by a bev with a write high-watermarks (Joachim Bauch)</li>
+
+					<li>Speed up evbuffers when there are no callbacks (Mark Ellzey)</li>
+
+					<li>Fix incorrect results from evbuffer_search_eol(EOL_LF)</li>
+
+					<li>Correctness fixes for kqueue.</li>
+
+					<li>Greatly improved doxygen</li>
+
+					<li>Miscellaneous portability and bug fixes</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.8-rc.tar.gz">libevent-2.0.8-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.8-rc.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.8-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-10-14
+
+				<ul>
+					<li>New error callback and threadsafety capabilities for evconnlistener</li>
+
+					<li>Fixed behavior for disabling filtering bufferevents</li>
+
+					<li>More threadsafety in the signal background</li>
+
+					<li>Do not search outside of the system directory for windows DLLs</li>
+
+					<li>Fix a spurious-call bug on epoll.c</li>
+
+					<li>Fix an EINVAL on evbuffer_write_iovec on OpenSolaris</li>
+
+					<li>Fix serious bugs in per-bufferevent rate-limiting code</li>
+
+					<li>And more...</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.7-rc.tar.gz">libevent-2.0.7-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.7-rc.tar.gz.asc">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.7-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-09-09
+
+				<ul>
+					<li>New function for tuning IOCP thread pools</li>
+
+					<li>New function for adding nameserver by sockaddr</li>
+
+					<li>Detect more kinds of user error, and fail more gracefully</li>
+
+					<li>Fix an issue with forking and signal socketpairs in select/poll backends</li>
+
+					<li>MSVC build fixes</li>
+
+					<li>Numerous threading bugfixes</li>
+
+					<li>and more...</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.6-rc.tar.gz">libevent-2.0.6-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.6-rc.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.6-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-08-07
+
+				<ul>
+					<li>Remove the obsolete evthread interfaces (c5bab56)</li>
+
+					<li>Let evhttp_send_error infer the right error reasons</li>
+
+					<li>Add a function to retrieve the other side of a bufferevent pair</li>
+
+					<li>Add bufferevent_lock()/bufferevent_unlock() (215e629)</li>
+
+					<li>Replace (unused,always 0) is_tcp argument to evdns_add_server_port*() with flags</li>
+
+					<li>Numerous bugfixes and build fixes</li>
+
+					<li>and more...</li>
+				</ul>
+			</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.5-beta.tar.gz">libevent-2.0.5-beta.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.5-beta.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.5-beta/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-05-11</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.4-alpha.tar.gz">libevent-2.0.4-alpha.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.4-alpha.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.4-alpha/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-03-01</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.3-alpha.tar.gz">libevent-2.0.3-alpha.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.3-alpha.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.3-alpha/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2009-11-19</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.2-alpha.tar.gz">libevent-2.0.2-alpha.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.2-alpha.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-2.0.2-alpha/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2009-07-24</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-2.0.1-alpha.tar.gz">libevent-2.0.1-alpha.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.1-alpha.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">What's new</a>&nbsp;-&nbsp;Release&nbsp;2009-04-17</li>
+		</ul>
+
+		<h2><a name="1.4">Libevent 1.4.x</a></h2>[ <a href="https://raw.github.com/libevent/libevent/patches-1.4/whatsnew-14.txt">What's new in 1.4</a> | <a href="https://raw.github.com/libevent/libevent/patches-1.4/ChangeLog">1.4.x ChangeLog</a> ]
+
+		<ul>
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz">libevent-1.4.14b-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.14b-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2010-06-07&lt;
+
+				<ul>
+					<li>Backport evbuffer_readln()</li>
+
+					<li>Fix a crash when reading badly formatted resolve.conf (Yasuoka Masahiko)</li>
+
+					<li>Make evutil_make_socket_nonblocking() leave any other flags alone (Jardel Weyrich)</li>
+
+					<li>Adjusted fcntl() retval comparison on evutil_make_socket_nonblocking() (Jardel Weyrich)</li>
+
+					<li>Re-add event_siglcb; some old code _was_ still using it. :(</li>
+
+					<li>Make Libevent 1.4 build on win32 with Unicode enabled. (Brodie Thiesfield)</li>
+
+					<li>Distribute nmake makefile for 1.4</li>
+
+					<li>Define _REENTRANT as needed on Solaris, elsewhere (6cbea13)</li>
+
+					<li>Other bugfixes for http, memory management, and cleanup.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.13-stable.tar.gz">libevent-1.4.13-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.13-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.13-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2009-11-17
+
+				<ul>
+					<li>If the kernel tells us that there are a negative number of bytes to read from a socket, do not believe it (Alexander Pronchenkov)</li>
+
+					<li>Use less memory in epoll backend and priority system.</li>
+
+					<li>Do not drop data from evbuffer when out of memory</li>
+
+					<li>Fix compilation on Android, HPUX, GNU/kFreeBSD</li>
+
+					<li>When running set[ug]id, don't check the environment.</li>
+
+					<li>and more...</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.12-stable.tar.gz">libevent-1.4.12-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.12-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.12-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2009-07-24
+
+				<ul>
+					<li>Activate fd events in a pseudorandom order with O(N) backends, so that we don't systematically favor low fds (select) or earlier-added fds (poll, win32)</li>
+
+					<li>Fix a pair of fencepost bugs in epoll.c (Adam Langley)</li>
+
+					<li>Disable strict aliasing with GCC</li>
+
+					<li>and more...</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.11-stable.tar.gz">libevent-1.4.11-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.11-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.11-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2009-05-14
+
+				<ul>
+					<li>Fix a bug when removing a timeout from the heap. (Marko Kreen)</li>
+
+					<li>Remove the limit on size of HTTP headers by removing static buffers.</li>
+
+					<li>Fix a nasty dangling pointer bug in epoll.c (Kevin Springborn)</li>
+
+					<li>and more...</li>
+				</ul>
+			</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.10-stable.tar.gz">libevent-1.4.10-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.10-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.10-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2009-04-17</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.9-stable.tar.gz">libevent-1.4.9-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.9-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.9-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-12-12</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.8-stable.tar.gz">libevent-1.4.8-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.8-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.8-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-09-13</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.7-stable.tar.gz">libevent-1.4.7-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.7-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.7-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-08-25</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.6-stable.tar.gz">libevent-1.4.6-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.6-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.6/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-07-24</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.5-stable.tar.gz">libevent-1.4.5-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.5-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.5-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-06-25</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.4-stable.tar.gz">libevent-1.4.4-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.4-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.4-stable/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-05-13</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-1.4.3-stable.tar.gz">libevent-1.4.3-stable.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.3-stable.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.3-stable">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-04-07</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.2-rc.tar.gz">libevent-1.4.2-rc.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.2-rc.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.2-rc/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2008-02-25
+
+				<ul>
+					<li>make Solaris event subsystems more reliable; from W.C.A. Wijngaards</li>
+
+					<li>event_base_get_method(); from Springande Ulv</li>
+
+					<li>fix HTTP/1.1 chunk formatting; from "propanbutan"</li>
+
+					<li>allow 64-bit content lengths; from Scott Lamb</li>
+
+					<li>and more...</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.1-beta.tar.gz">libevent-1.4.1-beta.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.1-beta.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.1-beta/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2007-12-21
+
+				<ul>
+					<li>fixed some memory leaks and other misc cleanup; from Christopher Layne, Scott Lamb and Charles Kerr</li>
+
+					<li>introduced event_reinit to deal with fork()</li>
+
+					<li>improved efficiency of generated RPC structure</li>
+
+					<li>performance improvements to Win32 backend</li>
+
+					<li>and many more...</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.0-beta.tar.gz">libevent-1.4.0-beta.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.0-beta.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.4.0-beta/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2007-11-11
+
+				<ul>
+					<li>a new RPC subsytem for writing distributed clients and servers</li>
+
+					<li>almost everything is documented via Doxygen now</li>
+
+					<li>many fixes and improvements to evdns and evhttp</li>
+
+					<li>libevent now builds two additional libraries: libevent_core (containing only the event core) and libevent_extras (contained evdns, evhttp and evrpc)</li>
+
+					<li>performance improvements due to using a heap instead of red-black trees for timeouts</li>
+
+					<li>Solaris' event ports are better supported</li>
+				</ul>
+			</li>
+		</ul>
+
+		<h2><a name="1.3">Libevent 1.3</a></h2>
+
+		<ul>
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.3e.tar.gz">libevent-1.3e.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.3e.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;<a href="https://raw.github.com/libevent/libevent/release-1.3e/ChangeLog">ChangeLog</a>&nbsp;-&nbsp;Release&nbsp;2007-09-24
+
+				<ul>
+					<li>Fix compilation on Solaris; from Magne Mahre</li>
+
+					<li>Add a "Date" header to HTTP responses when it's missing, as required by HTTP 1.1. Original Patch from Ralph Moritz.</li>
+
+					<li>Fix a memory leak in which failed HTTP connections whould not free the request object.</li>
+
+					<li>Fix a memory leak in the DNS server.</li>
+
+					<li>Handle NULL timeouts correctly on Solaris; from Trond Norbye</li>
+
+					<li>Recalculate pending events properly when reallocating event array on Solaris; from Trond Norbye</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.3d.tar.gz">libevent-1.3d.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.3d.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2007-08-16
+
+				<ul>
+					<li>Bug fixes in the HTTP layer.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.3c.tar.gz">libevent-1.3c.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.3c.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2007-07-30
+
+				<ul>
+					<li>Small bug and portability fixes.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.3b.tar.gz">libevent-1.3b.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.3b.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2007-03-03
+
+				<ul>
+					<li>Fixes when using signals in multi-threaded applications from Scott Lamb.</li>
+
+					<li>Other small bug fixes.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.3a.tar.gz">libevent-1.3a.tar.gz</a>-&nbsp;Release&nbsp;2007-02-17
+
+				<ul>
+					<li>Small bug and performances fixes to evhttp layer.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.3.tar.gz">libevent-1.3.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.3.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2007-02-15
+
+				<ul>
+					<li>DNS Server from Adam Langley and Nick Mathewson</li>
+
+					<li>Chunked transfer encoding for HTTP/1.1 from Dug Song.</li>
+
+					<li>DNS DDoS fix; bug report from Jon Oberheide.</li>
+
+					<li>Various small improvements.</li>
+				</ul>
+			</li>
+		</ul>
+
+		<h2><a name="1.2">Libevent 1.2</a></h2>
+
+		<ul>
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.2a.tar.gz">libevent-1.2a.tar.gz</a>-&nbsp;Release&nbsp;2006-12-02
+
+				<ul>
+					<li>Made HTTP support more usable</li>
+
+					<li>Various portability fixes.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.2.tar.gz">libevent-1.2.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.2.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2006-10-15
+
+				<ul>
+					<li>Support for non-blocking DNS resolution; from Adam Langley and Nick Mathewson.</li>
+
+					<li>Support for lightweight HTTP clients and servers.</li>
+
+					<li>Support for Sun's Event Ports from David Pacheco of Sun.</li>
+				</ul>
+			</li>
+		</ul>
+
+		<h2><a name="1.1">Libevent 1.1</a></h2>
+
+		<ul>
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.1b.tar.gz">libevent-1.1b.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.1b.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2006-08-09
+
+				<ul>
+					<li>Bug fixes - thanks to Nick Mathewson for helping.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.1a.tar.gz">libevent-1.1a.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.1a.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-06-12
+
+				<ul>
+					<li>Minor reliability fixes.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.1.tar.gz">libevent-1.1.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.1.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-05-14
+
+				<ul>
+					<li>Performance improvements from Nick Mathewson.</li>
+
+					<li>Work around for kqueue bug in Mac OS X 10.4.</li>
+				</ul>
+			</li>
+		</ul>
+
+		<h2><a name="1.0">Libevent 1.0</a></h2>
+
+		<ul>
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.0e.tar.gz">libevent-1.0e.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.0e.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-04-26
+
+				<ul>
+					<li>Important fix to bug in poll implementation introduced in 1.0d.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.0d.tar.gz">libevent-1.0d.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.0d.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-04-22
+
+				<ul>
+					<li>Several minor bug fixes and building of shared libraries.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.0c.tar.gz">libevent-1.0c.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.0c.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-04-03
+
+				<ul>
+					<li>Bug fixes for Windows, Solaris and improved logging interface.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.0b.tar.gz">libevent-1.0b.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.0b.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-01-13
+
+				<ul>
+					<li>Bug fixes for backwards compatibility.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.0a.tar.gz">libevent-1.0a.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.0a.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2005-01-03
+
+				<ul>
+					<li>Bug fixes for threaded applications. Thanks to Andrew Danforth.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-1.0.tar.gz">libevent-1.0.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-1.0.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2004-12-05
+
+				<ul>
+					<li>Support for multi-threaded applications - experimental.</li>
+
+					<li>Event priorities with priority queues.</li>
+
+					<li>Don't forget my <a href="http://www.citi.umich.edu/u/provos/wishlists/amazon.html">wishlists</a> :-).</li>
+				</ul>
+			</li>
+		</ul>
+
+		<h2><a name="0.x">Libevent 0.x</a></h2>
+
+		<ul>
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-0.9.tar.gz">libevent-0.9.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-0.9.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2004-07-30
+
+				<ul>
+					<li>Support for /dev/poll in Solaris.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-0.8a.tar.gz">libevent-0.8a.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-0.8a.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2004-06-12
+
+				<ul>
+					<li>Fixes compile problems on Solaris.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-0.8.tar.gz">libevent-0.8.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-0.8.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2004-04-03
+
+				<ul>
+					<li>Buffered event abstraction to make writing network applications easier; see <a href="http://monkey.org/~provos/libio/">libio</a> for the predecessor of this idea.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-0.7c.tar.gz">libevent-0.7c.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-0.7c.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2003-10-25
+
+				<ul>
+					<li>Bug fixes in Linux epoll and poll support.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-0.7b.tar.gz">libevent-0.7b.tar.gz</a>&nbsp;[<a href="https://github.com/downloads/libevent/libevent/libevent-0.7b.tar.gz.sig">GPG&nbsp;Sig</a>]&nbsp;-&nbsp;Release&nbsp;2003-10-5
+
+				<ul>
+					<li><a href="LICENSE.txt">3-clause BSD-license</a>.</li>
+
+					<li>Experimental support for real-time signals. Likely to be buggy.</li>
+
+					<li>Experimental support for Windows from Mike Davis.</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="https://github.com/downloads/libevent/libevent/libevent-0.7a.tar.gz">libevent-0.7a.tar.gz</a>&nbsp;-&nbsp;Release&nbsp;2003-05-04
+
+				<ul>
+					<li>Requires level-triggered <a href="http://groups.google.com/groups?q=lt+epoll+rfc&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;safe=off&amp;selm=20030310201011%240290%40gated-at.bofh.it&amp;rnum=1">epoll patch</a> for Linux epoll support.</li>
+				</ul>
+			</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.6.tar.gz">libevent-0.6.tar.gz</a>&nbsp;-&nbsp;Release&nbsp;2002-09-15</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.5.tar.gz">libevent-0.5.tar.gz</a> - Release 2002-06-12</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.4.tar.gz">libevent-0.4.tar.gz</a> - Release 2002-04-09</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.3d.tar.gz">libevent-0.3d.tar.gz</a> - Release 2001-06-04</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.3c.tar.gz">libevent-0.3c.tar.gz</a> - Release 2001-04-05</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.2b.tar.gz">libevent-0.2b.tar.gz</a> - Release 2000-11-22</li>
+
+			<li><a href="https://github.com/downloads/libevent/libevent/libevent-0.1.tar.gz">libevent-0.1.tar.gz</a> - Release 2000-11-14</li>
+		</ul>
+	</div><!-- end of coda -->
 </body>
 </html>
-

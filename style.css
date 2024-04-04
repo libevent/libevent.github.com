@@ -1,0 +1,100 @@
+* {
+	font-family: arial, helvetica, sans-serif;
+}
+
+h1,h2,h3,h4,h5 {
+	font-weight: bold;
+}
+
+pre {
+	font-family: monospace;
+}
+
+ul.tight {
+	padding-left: 1.5em;
+}
+
+li ul {
+	font-size: smaller;
+}
+
+p.releasenote {
+	font-size: smaller;
+}
+
+body {
+	background-color: white;
+}
+
+h1#head {
+	background-color: #0880b8;
+	text-align: center;
+	color: #50d0ff;
+	font-size: 200%;
+	margin-bottom: .5em;
+	font-weight: normal;
+	letter-spacing: 0.1em;
+	margin: 0;
+}
+
+h3 {
+	margin-bottom: .2em;
+	margin-top: .5em;
+}
+
+table {
+	border-style: none;
+}
+
+div#maindiv {
+	background-color: #eee;
+	padding: 1em 1em 1em 3em;
+}
+
+div#sidebar {
+	float: right;
+	margin-left: .5em;
+	width: 20em;
+}
+
+div#support {
+	background-color: #bbf;
+	border: 1px solid black;
+	padding-left: .5em;
+	padding-right: .5em;
+}
+
+div#wishlists {
+	background-color: #bbf;
+	border: 1px solid black;
+	margin-top: 1em;
+	padding: 0 .5em .5em .5em;
+}
+
+div#sponsors {
+	background-color: #fff;
+	border: 1px solid black;
+	margin-top: 1em;
+	padding: 0 .5em .5em .5em;
+}
+
+img#appnexus-logo {
+	float: right;
+	padding: .5em;
+}
+
+td#download {
+	background-color: #cec;
+	width: 50%;
+	border-right: 1em solid #eee;
+}
+
+td#benchmark {
+	background-color: #ddd;
+}
+
+a.latest {
+	font-weight: bold;
+	font-size: 110%;
+}
+
