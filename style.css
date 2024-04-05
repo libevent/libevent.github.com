@@ -78,3 +78,6 @@ a.latest {
    font-size: 110%;
 }
 
+.nav-item#end {
+   line-height: 5px;
+}
