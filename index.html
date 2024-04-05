@@ -5,6 +5,7 @@
       <title>libevent</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <link rel="stylesheet" href="style.css" type="text/css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
    </head>
 
    <body>
@@ -15,14 +16,24 @@
          function gtag(){dataLayer.push(arguments);}
          gtag('js', new Date());
          gtag('config', 'G-M3CEY418LQ');
-      </script>
-   
-      <h1 id="head">libevent – an event notification library</h1>
+      </script>      
+      
+      <nav class="navbar bg-body-tertiary">
+         <div class="container-fluid">
+           <a class="navbar-brand" href="index.html">
+             <img src= "images\libevent3.png" alt="libevent" width="90" height="auto" class="d-inline-block align-text-top">
+           </a>
+           <span class="navbar-text">
+            An Event Notification Library
+            </span>
+         </div>
+      </nav>
+      
    
       <div id="maindiv">
          <!-- table 1: -->
          <div id="introtext">
-            <div id="sidebar">
+            <div class= "card" id="sidebar">
                <div id="support">
                   <h3>Support &amp; Info</h3>
                   Bug Tracking: <a href="https://github.com/libevent/libevent/issues">Bugs &amp; Features</a><br>
@@ -51,10 +62,11 @@
             <p>A <a href="http://archives.seul.org/libevent/users/">mailing list for libevent</a> is now available. Libevent is maintained by <a href="http://www.wangafu.net/~nickm/">Nick Mathewson</a>, <a href="https://github.com/azat">Azat Khuzhin</a> and <a href="http://www.citi.umich.edu/u/provos/">Niels Provos</a>. <!-- end of initial text. --></p>
          </div>
    
-         <table cellspacing="2" cellpadding="2">
-            <tr>
-               <td valign="top" id="download">
-                  <h3>Documentation</h3>Book: <a href="https://libevent.org/libevent-book/">Programming with Libevent</a>.<br>
+         <div class="row">
+            <div class="col card" valign="top" id="download">
+               <div class = "m-2">
+                  <h3>Documentation</h3>
+                  Book: <a href="https://libevent.org/libevent-book/">Programming with Libevent</a>.<br>
                   Reference: <a href="http://www.wangafu.net/~nickm/libevent-1.4/doxygen/html">1.4.x-stable</a> <a href="http://www.wangafu.net/~nickm/libevent-2.0/doxygen/html">2.0.x-stable</a> <a href="http://www.wangafu.net/~nickm/libevent-2.1/doxygen/html">2.1.x-stable</a> <a href="/doc">master</a><br>
                   ABI/API compatibility report: <a href="https://abi-laboratory.pro/index.php?view=timeline&amp;l=libevent">releases</a> <a href="/abi/timeline/libevent/">master</a><br>
                   What's new in: <a href="https://raw.githubusercontent.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">2.0.x-stable</a>  <a href="https://raw.githubusercontent.com/libevent/libevent/patches-2.1/whatsnew-2.1.txt">2.1.x-alpha</a>. <!-- Sample Application: <a href="event-test.c">event-test.c</a> -->
@@ -230,85 +242,84 @@
                   <h3><a href="old-releases.html">Older Releases</a></h3>
    
                   <p>Libevent has been released under a <a href="LICENSE.txt">3-clause BSD license</a>. Information on public <a href="https://github.com/libevent/libevent">git</a> access.</p>
-               </td>
-   
-               <td valign="top" id="benchmark">
-                  <h3>Benchmark</h3>Performance comparison using different event notification mechansims in Libevent. We declare interest in a large number of connections of which most are cold and only a few are active.
-   
-                  <table cellspacing="0" cellpadding="0">
-                     <tr>
-                        <td align="center" valign="top"><img src="//monkey.org/~provos/libevent/libevent-benchmarks.jpg" alt="Benchmarks with one active connection"></td>
-   
-                        <td valign="top">&nbsp;</td>
-   
-                        <td align="center" valign="top"><img src="//monkey.org/~provos/libevent/libevent-benchmark2s.jpg" alt="Benchmarks with 100 active connections"></td>
-                     </tr>
-   
-                     <tr>
-                        <td valign="top">The benchmark measures how long it takes to serve one active connection and exposes scalability issues of traditional interfaces like select or poll.</td>
-   
-                        <td valign="top">&nbsp;</td>
-   
-                        <td valign="top">The benchmark measures how long it takes to serve one hundred active connections that chain writes to new connections until thousand writes and reads have happened. It exercises the event loop several times.</td>
-                     </tr>
-                  </table>
-   
-                  <h3>Programs using libevent</h3>The usefulness of libevent API is demonstrated by the following applications:
-   
-                  <ul>
-                     <li><a href="http://www.chromium.org/Home">Chromium</a> – Google's open-source web browser (uses Libevent)</li>
-                     <li><a href="http://www.memcached.org">Memcached</a> – a high-performance, distributed memory object caching system</li>
-                     <li><a href="http://www.transmissionbt.com/">Transmission</a> – a fast, easy, and free BitTorrent client</li>
-                     <li><a href="http://www.ntp.org">NTP</a> – the network time protocol that makes your clock right (uses Libevent in SNTP)</li>
-                     <li><a href="http://tmux.sourceforge.net">tmux</a> – A clean, modern, BSD-licensed terminal multiplexer, similar to GNU screen</li>
-                     <li><a href="https://www.torproject.org/">Tor</a> – an anonymous Internet communication system.</li>
-                     <li><a href="https://github.com/criticalstack/libevhtp">libevhtp</a> – A fast and flexible replacement for libevent's http client/server API</li>
-                     <li><a href="http://prosody.im/">Prosody</a> – A Jabber/XMPP server written in Lua</li>
-                     <li><a href="http://wiki.postgresql.org/wiki/PgBouncer">PgBouncer</a> – Lightweight connection pooler for PostgreSQL</li>
-                     <li><a href="http://darkk.net.ru/redsocks/">redsocks</a> – a simple transparent TCP -&gt; Socks5/HTTPS proxy daemon.</li>
-                     <li><a href="http://monkey.org/~provos/vomit/">Vomit</a> – Voice Over Misconfigured Internet Telephones</li>
-                     <li><a href="http://monkey.org/~provos/crawl/">Crawl</a> – A Small and Efficient HTTP Crawler</li>
-                     <li><a href="http://monkey.org/~provos/libio/">Libio</a> – an input/output abstraction library</li>
-                     <li><a href="http://www.honeyd.org/">Honeyd</a> – a virtual honeynet daemon – can be used to <a href="http://www.honeyd.org/worms.php">fight Internet worms</a>.</li>
-                     <li><a href="http://www.monkey.org/~dugsong/fragroute/">Fragroute</a> – an IDS testing tool</li>
-                     <li><a href="http://monkey.org/~marius/nylon/">Nylon</a> – nested proxy server</li>
-                     <li><a href="http://monkey.org/~provos/disconcert/">Disconcert</a> – a Distributed Computing Framework for Loosely-Coupled Workstations.</li><!-- <li><a href="http://plb.sunsite.dk/">PLB</a> &ndash; pure load balancer: a
-     free high-performance load balancer for Unix.</li> -->
-                     <li><a href="https://github.com/mariusae/trickle">Trickle</a> – a lightweight userspace bandwidth shaper.</li>
-                     <li><a href="http://oss.digirati.com.br/watchcatd/">watchcatd</a> – software watchdog designed to take actions not as drastic as the usual solutions, which reset the machine.</li>
-                     <li><a href="http://monkey.org/~provos/scanssh/">ScanSSH</a> – a fast SSH server and open proxy scanner.</li>
-                     <li><a href="http://www.honeyd.org/tools.php#nttlscan">Nttlscan</a> – a network topology scanner for Honeyd.</li>
-                     <li><a href="http://nch.sourceforge.net/">NetChat</a> – a combination of netcat and ppp's chat.</li>
-                     <li><a href="http://www.iolanguage.com/">Io</a> – a small programming language; uses libevent for network communication.</li>
-                     <li><a href="http://www.systrace.org/">Systrace</a> – a system call sandbox.</li>
-                     <li><a href="http://www.spybye.org/">SpyBye</a> – detect malware on web pages.</li>
-                     <li><a href="http://www.greensql.net/">GreenSQL</a> – an SQL database firewall.</li>
-                     <li><a href="http://monkey.org/~provos/dnsscan/">dnsscan</a> – a fast scanner for identifying open recursive dns resolvers</li>
-                     <li><a href="http://code.google.com/p/kargo-event/">Kargo Event</a> – a PHP extension for libevent.</li>
-                     <li><a href="http://maximelabelle.bitbucket.org/">Scytale</a> – a database encryption tool.</li>
-                     <li><a href="https://github.com/coturn/coturn">Coturn</a> – Free open source implementation of TURN and STUN Server.</li>
-                  </ul>
-               </td>
-            </tr>
-         </table>
+               </div>
+            </div>
+               
+               <div class="col card" valign="top" id="benchmark">
+                  <div class="m-2">
+                     <h3>Benchmark</h3>Performance comparison using different event notification mechansims in Libevent. We declare interest in a large number of connections of which most are cold and only a few are active.
+      
+                     <table cellspacing="0" cellpadding="0">
+                        <tr>
+                           <td align="center" valign="top"><img src="//monkey.org/~provos/libevent/libevent-benchmarks.jpg" alt="Benchmarks with one active connection"></td>
+      
+                           <td valign="top">&nbsp;</td>
+      
+                           <td align="center" valign="top"><img src="//monkey.org/~provos/libevent/libevent-benchmark2s.jpg" alt="Benchmarks with 100 active connections"></td>
+                        </tr>
+      
+                        <tr>
+                           <td valign="top">The benchmark measures how long it takes to serve one active connection and exposes scalability issues of traditional interfaces like select or poll.</td>
+      
+                           <td valign="top">&nbsp;</td>
+      
+                           <td valign="top">The benchmark measures how long it takes to serve one hundred active connections that chain writes to new connections until thousand writes and reads have happened. It exercises the event loop several times.</td>
+                        </tr>
+                     </table>
+      
+                     <h3>Programs using libevent</h3>The usefulness of libevent API is demonstrated by the following applications:
+      
+                     <ul>
+                        <li><a href="http://www.chromium.org/Home">Chromium</a> – Google's open-source web browser (uses Libevent)</li>
+                        <li><a href="http://www.memcached.org">Memcached</a> – a high-performance, distributed memory object caching system</li>
+                        <li><a href="http://www.transmissionbt.com/">Transmission</a> – a fast, easy, and free BitTorrent client</li>
+                        <li><a href="http://www.ntp.org">NTP</a> – the network time protocol that makes your clock right (uses Libevent in SNTP)</li>
+                        <li><a href="http://tmux.sourceforge.net">tmux</a> – A clean, modern, BSD-licensed terminal multiplexer, similar to GNU screen</li>
+                        <li><a href="https://www.torproject.org/">Tor</a> – an anonymous Internet communication system.</li>
+                        <li><a href="https://github.com/criticalstack/libevhtp">libevhtp</a> – A fast and flexible replacement for libevent's http client/server API</li>
+                        <li><a href="http://prosody.im/">Prosody</a> – A Jabber/XMPP server written in Lua</li>
+                        <li><a href="http://wiki.postgresql.org/wiki/PgBouncer">PgBouncer</a> – Lightweight connection pooler for PostgreSQL</li>
+                        <li><a href="http://darkk.net.ru/redsocks/">redsocks</a> – a simple transparent TCP -&gt; Socks5/HTTPS proxy daemon.</li>
+                        <li><a href="http://monkey.org/~provos/vomit/">Vomit</a> – Voice Over Misconfigured Internet Telephones</li>
+                        <li><a href="http://monkey.org/~provos/crawl/">Crawl</a> – A Small and Efficient HTTP Crawler</li>
+                        <li><a href="http://monkey.org/~provos/libio/">Libio</a> – an input/output abstraction library</li>
+                        <li><a href="http://www.honeyd.org/">Honeyd</a> – a virtual honeynet daemon – can be used to <a href="http://www.honeyd.org/worms.php">fight Internet worms</a>.</li>
+                        <li><a href="http://www.monkey.org/~dugsong/fragroute/">Fragroute</a> – an IDS testing tool</li>
+                        <li><a href="http://monkey.org/~marius/nylon/">Nylon</a> – nested proxy server</li>
+                        <li><a href="http://monkey.org/~provos/disconcert/">Disconcert</a> – a Distributed Computing Framework for Loosely-Coupled Workstations.</li><!-- <li><a href="http://plb.sunsite.dk/">PLB</a> &ndash; pure load balancer: a
+        free high-performance load balancer for Unix.</li> -->
+                        <li><a href="https://github.com/mariusae/trickle">Trickle</a> – a lightweight userspace bandwidth shaper.</li>
+                        <li><a href="http://oss.digirati.com.br/watchcatd/">watchcatd</a> – software watchdog designed to take actions not as drastic as the usual solutions, which reset the machine.</li>
+                        <li><a href="http://monkey.org/~provos/scanssh/">ScanSSH</a> – a fast SSH server and open proxy scanner.</li>
+                        <li><a href="http://www.honeyd.org/tools.php#nttlscan">Nttlscan</a> – a network topology scanner for Honeyd.</li>
+                        <li><a href="http://nch.sourceforge.net/">NetChat</a> – a combination of netcat and ppp's chat.</li>
+                        <li><a href="http://www.iolanguage.com/">Io</a> – a small programming language; uses libevent for network communication.</li>
+                        <li><a href="http://www.systrace.org/">Systrace</a> – a system call sandbox.</li>
+                        <li><a href="http://www.spybye.org/">SpyBye</a> – detect malware on web pages.</li>
+                        <li><a href="http://www.greensql.net/">GreenSQL</a> – an SQL database firewall.</li>
+                        <li><a href="http://monkey.org/~provos/dnsscan/">dnsscan</a> – a fast scanner for identifying open recursive dns resolvers</li>
+                        <li><a href="http://code.google.com/p/kargo-event/">Kargo Event</a> – a PHP extension for libevent.</li>
+                        <li><a href="http://maximelabelle.bitbucket.org/">Scytale</a> – a database encryption tool.</li>
+                        <li><a href="https://github.com/coturn/coturn">Coturn</a> – Free open source implementation of TURN and STUN Server.</li>
+                     </ul>
+                  </div>
+               </div>
+         </div class="row">
       </div><!-- End of "maindiv" -->
-      <hr>
-   
-      <div id="coda">
-         <address>
-            <a href="mailto:nickm@alum.mit.edu">Nick Mathewson</a>
-         </address>
-   
-         <address>
-            <a href="mailto:a3at.mail@gmail.com">Azat Khuzhin</a>
-         </address>
-   
-         <address>
-            <a href="mailto:provos@citi.umich.edu">Niels Provos</a>
-         </address>(Please do not mail us directly for technical support. Instead, please use the mailing list or the IRC channel.)<br>
-         <!-- Created: Mon Mar 11 12:43:06 EST 2002 -->
-          <!-- hhmts start -->
-          Last modified: 29 Jan 2017 <!-- hhmts end -->
-      </div><!-- end of coda -->
+
+      <nav class="navbar bg-body-tertiary" id="coda">
+         <div class="container-fluid">
+            <address><a href="mailto:nickm@alum.mit.edu">Nick Mathewson</a></address>
+            <address><a href="mailto:a3at.mail@gmail.com">Azat Khuzhin</a></address>
+            <address><a href="mailto:provos@citi.umich.edu">Niels Provos</a></address>
+            (Please do not mail us directly for technical support. Instead, please use the mailing list or the IRC channel.)<br>
+            <!-- Created: Mon Mar 11 12:43:06 EST 2002 -->
+            <!-- hhmts start -->
+            Last modified: 29 Jan 2017 <!-- hhmts end -->
+         </div>
+      </nav> <!-- end of coda -->
+      
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
    </body>
 </html>
