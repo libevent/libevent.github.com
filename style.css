@@ -79,5 +79,8 @@ a.latest {
 }
 
 .nav-item#end {
-   line-height: 5px;
+   line-height: 2px;
+}
+
+.link-underline {
 }
