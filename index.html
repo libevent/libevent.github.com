@@ -1,407 +1,314 @@
 <!doctype html>
  
 <html lang="en">
-<head>
-	<title>libevent</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" href="style.css" type="text/css">
-
-	<title></title>
-</head>
-
-<body>
-	<!-- Google tag (gtag.js) -->
-	<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M3CEY418LQ" type="text/javascript">
-</script><script type="text/javascript">
-window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-M3CEY418LQ');
-	</script>
-
-	<h1 id="head">libevent – an event notification library</h1>
-
-	<div id="maindiv">
-		<!-- table 1: -->
-
-		<div id="introtext">
-			<div id="sidebar">
-				<div id="support">
-					<h3>Support &amp; Info</h3>Bug Tracking: <a href="https://github.com/libevent/libevent/issues">Bugs &amp; Features</a><br>
-					Mailing List: <a href="http://archives.seul.org/libevent/users/">Info</a><br>
-					Git Repository: <a href="https://github.com/libevent/libevent">github</a> <a href="http://sourceforge.net/git/?group_id=50884">(sourceforge - deprecated)</a><br>
-					License: <a href="LICENSE.txt">3-clause BSD</a><br>
-					IRC: #libevent on <a href="http://www.oftc.net">OFTC</a>
-				</div>
-
-				<div id="wishlists">
-					<h3>Happy Hacking</h3>You can make Libevent developers happy by reducing our wishlists!<br>
-					<a href="http://www.amazon.com/gp/registry/wishlist/WKACB1E0HNRA">Nick's list</a> – <a href="http://www.citi.umich.edu/u/provos/wishlists/amazon.html">Niels's list</a>
-				</div>
-
-				<div id="sponsors">
-					<h3>Sponsors</h3><a href="http://appnexus.com/"><img id="appnexus-logo" src="images/sm-web-appnexus-logo.png" alt="AppNexus Logo" name="appnexus-logo"></a>Thanks to <a href="http://appnexus.com/">AppNexus</a> for sponsoring Libevent development in 2012!
-				</div>
-			</div>The <i>libevent</i> API provides a mechanism to execute a callback function when a specific event occurs on a file descriptor or after a timeout has been reached. Furthermore, <i>libevent</i> also support callbacks due to <b>signals</b> or regular <b>timeouts</b>.
-
-			<p><i>libevent</i> is meant to replace the event loop found in event driven network servers. An application just needs to call <i>event_dispatch()</i> and then add or remove events dynamically without having to change the event loop.</p>
-
-			<p>Currently, <i>libevent</i> supports <i><a href="http://download.oracle.com/docs/cd/E19253-01/816-5177/6mbbc4g9n/index.html">/dev/poll</a></i>, <i><a href="http://www.freebsd.org/cgi/man.cgi?query=kqueue&amp;apropos=0&amp;sektion=0&amp;format=html">kqueue(2)</a></i>, <i><a href="http://developers.sun.com/solaris/articles/event_completion.html">event ports</a></i>, <a href="http://manpages.debian.net/cgi-bin/man.cgi?query=select">POSIX <i>select(2)</i></a>, <a href="http://msdn.microsoft.com/en-us/library/ms740141(v=vs.85).aspx">Windows <i>select()</i></a>, <a href="http://manpages.debian.net/cgi-bin/man.cgi?query=poll"><i>poll(2)</i></a>, and <i><a href="http://www.xmailserver.org/linux-patches/epoll.txt">epoll(4)</a></i>. The internal event mechanism is completely independent of the exposed event API, and a simple update of libevent can provide new functionality without having to redesign the applications. As a result, <i>Libevent</i> allows for portable application
-			development and provides the most scalable event notification mechanism available on an operating system. Libevent can also be used for multi-threaded applications, either by isolating each event_base so that only a single thread accesses it, or by locked access to a single shared event_base. <i>Libevent</i> should compile on Linux, *BSD, Mac OS X, Solaris, Windows, and more.</p>
-
-			<p>Libevent additionally provides a sophisticated framework for buffered network IO, with support for sockets, filters, rate-limiting, SSL, zero-copy file transmission, and IOCP. Libevent includes support for several useful protocols, including DNS, HTTP, and a minimal RPC framework.</p>
-
-			<p>More information about event notification mechanisms for network servers can be found on Dan Kegel's "<a href="http://www.kegel.com/c10k.html">The C10K problem</a>" web page. <!--Another library that abstracts asynchronous event notification is <a href="http://liboop.ofb.net/">liboop</a>.--></p>
-
-			<p>A <a href="http://archives.seul.org/libevent/users/">mailing list for libevent</a> is now available. Libevent is maintained by <a href="http://www.wangafu.net/~nickm/">Nick Mathewson</a>, <a href="https://github.com/azat">Azat Khuzhin</a> and <a href="http://www.citi.umich.edu/u/provos/">Niels Provos</a>. <!-- end of initial text. --></p>
-		</div>
-
-		<table cellspacing="2" cellpadding="2">
-			<tr>
-				<td valign="top" id="download">
-					<h3>Documentation</h3>Book: <a href="https://libevent.org/libevent-book/">Programming with Libevent</a>.<br>
-					Reference: <a href="http://www.wangafu.net/~nickm/libevent-1.4/doxygen/html">1.4.x-stable</a> <a href="http://www.wangafu.net/~nickm/libevent-2.0/doxygen/html">2.0.x-stable</a> <a href="http://www.wangafu.net/~nickm/libevent-2.1/doxygen/html">2.1.x-stable</a> <a href="/doc">master</a><br>
-					ABI/API compatibility report: <a href="https://abi-laboratory.pro/index.php?view=timeline&amp;l=libevent">releases</a> <a href="/abi/timeline/libevent/">master</a><br>
-					What's new in: <a href="https://raw.githubusercontent.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">2.0.x-stable</a>  <a href="https://raw.githubusercontent.com/libevent/libevent/patches-2.1/whatsnew-2.1.txt">2.1.x-alpha</a>. <!-- Sample Application: <a href="event-test.c">event-test.c</a> -->
-
-					<h3>Download–Stable releases</h3>
-
-					<p class="releasenote">These are the ones you probably want for software development, unless you like to track the latest development versions and report bugs in them.</p>
-
-					<ul class="tight">
-						<li><a class="latest" href="https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz">libevent-2.1.12-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.12-stable/ChangeLog">ChangeLog</a><br>
-						<a href="https://github.com/libevent/libevent/pull/1045">PR</a><br>
-						Released 2020-07-05</li>
-
-						<li><a href="https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz">libevent-2.1.11-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.11-stable/ChangeLog">ChangeLog</a><br>
-						Released 2019-08-01 (ABI changed)</li>
-
-						<li><a href="https://github.com/libevent/libevent/releases/download/release-2.1.10-stable/libevent-2.1.10-stable.tar.gz">libevent-2.1.10-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.10-stable/libevent-2.1.10-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.10-stable/ChangeLog">ChangeLog</a><br>
-						Released 2019-05-26</li>
-
-						<li>
-							<a href="https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz">libevent-2.1.8-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.8-stable/ChangeLog">ChangeLog</a><br>
-							Released 2017-01-22
-
-							<ul>
-								<li>Changelog to follow</li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz">libevent-2.0.22-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.0.22-stable/ChangeLog">ChangeLog</a><br>
-							Released 2014-01-05
-
-							<ul>
-								<li>Changelog to follow</li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz">libevent-2.0.21-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.0.21-stable/ChangeLog">ChangeLog</a><br>
-							Released 2012-11-18
-
-							<ul>
-								<li>Several SSL correctness and performance fixes.</li>
-
-								<li>Build fixes for mingw64</li>
-
-								<li>Avoid a few resource leaks</li>
-
-								<li>and more...</li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz">libevent-2.0.20-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.0.20-stable/ChangeLog">ChangeLog</a><br>
-							Released 2012-08-23
-
-							<ul>
-								<li>Fix a crash on windows.</li>
-
-								<li>Make event_pending() threadsafe.</li>
-
-								<li>Another SSL callback behavior fixes</li>
-
-								<li>Avoid an evdns segfault (Greg Hazel)</li>
-
-								<li>and more...</li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="https://github.com/libevent/libevent/archive/release-1.4.15-stable.tar.gz">libevent-1.4.15-stable.tar.gz</a> <a href="https://raw.githubusercontent.com/libevent/libevent/release-1.4.15-stable/ChangeLog">ChangeLog</a><br>
-							Released 2015-01-05
-
-							<ul>
-								<li>Changelog to follow</li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz">libevent-1.4.14b-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz.sig">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-1.4.14b-stable/ChangeLog">ChangeLog</a><br>
-							Released 2010-06-07
-
-							<ul>
-								<li>Backport evbuffer_readln()</li>
-
-								<li>Fix a crash when reading badly formatted resolve.conf (Yasuoka Masahiko)</li>
-
-								<li>Make evutil_make_socket_nonblocking() leave any other flags alone (Jardel Weyrich)</li>
-
-								<li>Adjusted fcntl() retval comparison on evutil_make_socket_nonblocking() (Jardel Weyrich)</li>
-
-								<li>Re-add event_siglcb; some old code _was_ still using it. :(</li>
-
-								<li>Make Libevent 1.4 build on win32 with Unicode enabled. (Brodie Thiesfield)</li>
-
-								<li>Distribute nmake makefile for 1.4</li>
-
-								<li>Define _REENTRANT as needed on Solaris, elsewhere (6cbea13)</li>
-
-								<li>Other bugfixes for http, memory management, and cleanup.</li>
-							</ul>
-						</li>
-					</ul>
-
-					<h4>Download release candidates</h4>
-
-					<p class="releasenote">This is a release candidate. If you find any bugs, please let us know!</p>
-
-					<ul class="tight">
-						<li>
-							<a href="https://github.com/libevent/libevent/archive/release-2.1.7-rc.tar.gz">libevent-2.1.7-rc.tar.gz</a> <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.7-rc/ChangeLog">ChangeLog</a><br>
-							Released 2016-11-05
-
-							<ul>
-								<li>Changelog to follow.</li>
-							</ul>
-						</li>
-					</ul>
-
-					<h4>Download–Alpha releases</h4>
-
-					<p class="releasenote">This is alpha code. If you find any bugs, please let us know!</p>
-
-					<ul class="tight">
-						<li><a href="https://github.com/libevent/libevent/releases/download/release-2.2.1-alpha/libevent-2.2.1-alpha-dev.tar.gz">libevent-2.2.1-alpha-dev.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.2.1-alpha/libevent-2.2.1-alpha-dev.tar.gz.asc">GPG Sig</a>] <a href="https://github.com/libevent/libevent/blob/release-2.2.1-alpha/ChangeLog">ChangeLog</a><br>
-						Released 2023-05-21</li>
-
-						<li><a href="https://github.com/libevent/libevent/releases/download/release-2.1.9-beta/libevent-2.1.9-beta.tar.gz">libevent-2.1.9-beta.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.9-beta/libevent-2.1.9-beta.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.9-beta/ChangeLog">ChangeLog</a><br>
-						Released 2019-02-10</li>
-
-						<li><a href="https://github.com/libevent/libevent/releases/download/release-2.0.23-beta/libevent-2.0.23-beta.tar.gz">libevent-2.0.23-beta.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.0.23-beta/libevent-2.0.23-beta.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.0.23-beta/ChangeLog">ChangeLog</a><br>
-						Released 2019-01-20</li>
-
-						<li>
-							<a href="https://github.com/libevent/libevent/archive/release-2.1.6-beta.tar.gz">libevent-2.1.6-beta.tar.gz</a> <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.6-beta/ChangeLog">ChangeLog</a><br>
-							Released 2016-08-27
-
-							<ul>
-								<li>Changelog to follow.</li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="http://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.5-beta.tar.gz/download">libevent-2.1.5-beta.tar.gz</a> [<a href="http://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.5-beta.tar.gz.asc/download">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.5-beta/ChangeLog">ChangeLog</a><br>
-							Released 2015-01-05
-
-							<ul>
-								<li>Changelog to follow.</li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.4-alpha.tar.gz/download">libevent-2.1.4-alpha.tar.gz</a> [<a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.4-alpha.tar.gz.asc/download">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.4-alpha/ChangeLog">ChangeLog</a><br>
-							Released 2014-03-21
-
-							<ul>
-								<li>Several new utility APIs in libevent core, bufferevents, and evhttp.</li>
-
-								<li>Detect closes early with EPOLLRDHUP.</li>
-
-								<li>(Optional) support for buildint with cmake.</li>
-
-								<li>Bugfixes too numerous to mention.</li>
-
-								<li><a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.4-alpha/whatsnew-2.1.txt">and much more...</a></li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.3-alpha.tar.gz/download">libevent-2.1.3-alpha.tar.gz</a> [<a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.3-alpha.tar.gz.asc/download">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.3-alpha/ChangeLog">ChangeLog</a><br>
-							Released 2013-05-01
-
-							<ul>
-								<li>New finalization API with fix for bufferevent deadlock issue.</li>
-
-								<li>New evdns and evhttp option.</li>
-
-								<li>Several new unit tests.</li>
-
-								<li>Bugfixes and portability fixes and build fixes too numerous to mention.</li>
-
-								<li><a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.3-alpha/whatsnew-2.1.txt">and much more...</a></li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz">libevent-2.1.2-alpha.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.2-alpha/ChangeLog">ChangeLog</a><br>
-							Released 2012-11-18
-
-							<ul>
-								<li>Various new functions in the core, evbuffer, and bufferevent APIs</li>
-
-								<li>Even more backends can now use portable monotonic timers.</li>
-
-								<li>Updated autotools build infrastructure for faster builds.</li>
-
-								<li>More reliable unit tests</li>
-
-								<li>Internal event-callback interface now refactored for flexibility and performance</li>
-
-								<li>Faster notification with kqueue, faster/more precise timers on Linux</li>
-
-								<li>Numerous small performance improvements and data structure tweaks throughout the codebase</li>
-
-								<li>Various bugfixes against 2.1.1-alpha</li>
-
-								<li><a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.2-alpha/whatsnew-2.1.txt">and much more...</a></li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz">libevent-2.1.1-alpha.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.1-alpha/ChangeLog">ChangeLog</a><br>
-							Released 2012-04-03
-
-							<ul>
-								<li>First alpha release in the 2.1.x series.</li>
-
-								<li>Useful features for controlling the event loop and avoiding priority inversion</li>
-
-								<li>New debugging features.</li>
-
-								<li>New evbuffer functionality, including an improved sendfile/mmap wrapper, the ability to add one evbuffer to another, and more ways to avoid needless copies.</li>
-
-								<li>Numerous small performance improvements and data structure tweaks throughout the codebase.</li>
-
-								<li><a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.1-alpha/whatsnew-2.1.txt">and much more...</a></li>
-							</ul>
-						</li>
-					</ul>
-
-					<h3><a href="old-releases.html">Older Releases</a></h3>
-
-					<p>Libevent has been released under a <a href="LICENSE.txt">3-clause BSD license</a>. Information on public <a href="https://github.com/libevent/libevent">git</a> access.</p>
-				</td>
-
-				<td valign="top" id="benchmark">
-					<h3>Benchmark</h3>Performance comparison using different event notification mechansims in Libevent. We declare interest in a large number of connections of which most are cold and only a few are active.
-
-					<table cellspacing="0" cellpadding="0">
-						<tr>
-							<td align="center" valign="top"><img src="//monkey.org/~provos/libevent/libevent-benchmarks.jpg" alt="Benchmarks with one active connection"></td>
-
-							<td valign="top">&nbsp;</td>
-
-							<td align="center" valign="top"><img src="//monkey.org/~provos/libevent/libevent-benchmark2s.jpg" alt="Benchmarks with 100 active connections"></td>
-						</tr>
-
-						<tr>
-							<td valign="top">The benchmark measures how long it takes to serve one active connection and exposes scalability issues of traditional interfaces like select or poll.</td>
-
-							<td valign="top">&nbsp;</td>
-
-							<td valign="top">The benchmark measures how long it takes to serve one hundred active connections that chain writes to new connections until thousand writes and reads have happened. It exercises the event loop several times.</td>
-						</tr>
-					</table>
-
-					<h3>Programs using libevent</h3>The usefulness of libevent API is demonstrated by the following applications:
-
-					<ul>
-						<li><a href="http://www.chromium.org/Home">Chromium</a> – Google's open-source web browser (uses Libevent)</li>
-
-						<li><a href="http://www.memcached.org">Memcached</a> – a high-performance, distributed memory object caching system</li>
-
-						<li><a href="http://www.transmissionbt.com/">Transmission</a> – a fast, easy, and free BitTorrent client</li>
-
-						<li><a href="http://www.ntp.org">NTP</a> – the network time protocol that makes your clock right (uses Libevent in SNTP)</li>
-
-						<li><a href="http://tmux.sourceforge.net">tmux</a> – A clean, modern, BSD-licensed terminal multiplexer, similar to GNU screen</li>
-
-						<li><a href="https://www.torproject.org/">Tor</a> – an anonymous Internet communication system.</li>
-
-						<li><a href="https://github.com/criticalstack/libevhtp">libevhtp</a> – A fast and flexible replacement for libevent's http client/server API</li>
-
-						<li><a href="http://prosody.im/">Prosody</a> – A Jabber/XMPP server written in Lua</li>
-
-						<li><a href="http://wiki.postgresql.org/wiki/PgBouncer">PgBouncer</a> – Lightweight connection pooler for PostgreSQL</li>
-
-						<li><a href="http://darkk.net.ru/redsocks/">redsocks</a> – a simple transparent TCP -&gt; Socks5/HTTPS proxy daemon.</li>
-
-						<li><a href="http://monkey.org/~provos/vomit/">Vomit</a> – Voice Over Misconfigured Internet Telephones</li>
-
-						<li><a href="http://monkey.org/~provos/crawl/">Crawl</a> – A Small and Efficient HTTP Crawler</li>
-
-						<li><a href="http://monkey.org/~provos/libio/">Libio</a> – an input/output abstraction library</li>
-
-						<li><a href="http://www.honeyd.org/">Honeyd</a> – a virtual honeynet daemon – can be used to <a href="http://www.honeyd.org/worms.php">fight Internet worms</a>.</li>
-
-						<li><a href="http://www.monkey.org/~dugsong/fragroute/">Fragroute</a> – an IDS testing tool</li>
-
-						<li><a href="http://monkey.org/~marius/nylon/">Nylon</a> – nested proxy server</li>
-
-						<li><a href="http://monkey.org/~provos/disconcert/">Disconcert</a> – a Distributed Computing Framework for Loosely-Coupled Workstations.</li><!-- <li><a href="http://plb.sunsite.dk/">PLB</a> &ndash; pure load balancer: a
-  free high-performance load balancer for Unix.</li> -->
-
-						<li><a href="https://github.com/mariusae/trickle">Trickle</a> – a lightweight userspace bandwidth shaper.</li>
-
-						<li><a href="http://oss.digirati.com.br/watchcatd/">watchcatd</a> – software watchdog designed to take actions not as drastic as the usual solutions, which reset the machine.</li>
-
-						<li><a href="http://monkey.org/~provos/scanssh/">ScanSSH</a> – a fast SSH server and open proxy scanner.</li>
-
-						<li><a href="http://www.honeyd.org/tools.php#nttlscan">Nttlscan</a> – a network topology scanner for Honeyd.</li>
-
-						<li><a href="http://nch.sourceforge.net/">NetChat</a> – a combination of netcat and ppp's chat.</li>
-
-						<li><a href="http://www.iolanguage.com/">Io</a> – a small programming language; uses libevent for network communication.</li>
-
-						<li><a href="http://www.systrace.org/">Systrace</a> – a system call sandbox.</li>
-
-						<li><a href="http://www.spybye.org/">SpyBye</a> – detect malware on web pages.</li>
-
-						<li><a href="http://www.greensql.net/">GreenSQL</a> – an SQL database firewall.</li>
-
-						<li><a href="http://monkey.org/~provos/dnsscan/">dnsscan</a> – a fast scanner for identifying open recursive dns resolvers</li>
-
-						<li><a href="http://code.google.com/p/kargo-event/">Kargo Event</a> – a PHP extension for libevent.</li>
-
-						<li><a href="http://maximelabelle.bitbucket.org/">Scytale</a> – a database encryption tool.</li>
-
-						<li><a href="https://github.com/coturn/coturn">Coturn</a> – Free open source implementation of TURN and STUN Server.</li>
-					</ul>
-				</td>
-			</tr>
-		</table>
-	</div><!-- End of "maindiv" -->
-	<hr>
-
-	<div id="coda">
-		<address>
-			<a href="mailto:nickm@alum.mit.edu">Nick Mathewson</a>
-		</address>
-
-		<address>
-			<a href="mailto:a3at.mail@gmail.com">Azat Khuzhin</a>
-		</address>
-
-		<address>
-			<a href="mailto:provos@citi.umich.edu">Niels Provos</a>
-		</address>(Please do not mail us directly for technical support. Instead, please use the mailing list or the IRC channel.)<br>
-		<!-- Created: Mon Mar 11 12:43:06 EST 2002 -->
-		 <!-- hhmts start -->
-		 Last modified: 29 Jan 2017 <!-- hhmts end -->
-	</div><!-- end of coda -->
-</body>
+   <head>
+      <title>libevent</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" href="style.css" type="text/css">
+   </head>
+
+   <body>
+      <!-- Google tag (gtag.js) -->
+      <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M3CEY418LQ" type="text/javascript"></script>
+      <script type="text/javascript"> 
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'G-M3CEY418LQ');
+      </script>
+   
+      <h1 id="head">libevent – an event notification library</h1>
+   
+      <div id="maindiv">
+         <!-- table 1: -->
+         <div id="introtext">
+            <div id="sidebar">
+               <div id="support">
+                  <h3>Support &amp; Info</h3>
+                  Bug Tracking: <a href="https://github.com/libevent/libevent/issues">Bugs &amp; Features</a><br>
+                  Mailing List: <a href="http://archives.seul.org/libevent/users/">Info</a><br>
+                  Git Repository: <a href="https://github.com/libevent/libevent">github</a> <a href="http://sourceforge.net/git/?group_id=50884">(sourceforge - deprecated)</a><br>
+                  License: <a href="LICENSE.txt">3-clause BSD</a><br>
+                  IRC: #libevent on <a href="http://www.oftc.net">OFTC</a>
+               </div>
+   
+               <div id="wishlists">
+                  <h3>Happy Hacking</h3>You can make Libevent developers happy by reducing our wishlists!<br>
+                  <a href="http://www.amazon.com/gp/registry/wishlist/WKACB1E0HNRA">Nick's list</a> – <a href="http://www.citi.umich.edu/u/provos/wishlists/amazon.html">Niels's list</a>
+               </div>
+   
+               <div id="sponsors">
+                  <h3>Sponsors</h3><a href="http://appnexus.com/"><img id="appnexus-logo" src="images/sm-web-appnexus-logo.png" alt="AppNexus Logo" name="appnexus-logo"></a>Thanks to <a href="http://appnexus.com/">AppNexus</a> for sponsoring Libevent development in 2012!
+               </div>
+            </div>
+            
+            The <i>libevent</i> API provides a mechanism to execute a callback function when a specific event occurs on a file descriptor or after a timeout has been reached. Furthermore, <i>libevent</i> also support callbacks due to <b>signals</b> or regular <b>timeouts</b>.
+            <p><i>libevent</i> is meant to replace the event loop found in event driven network servers. An application just needs to call <i>event_dispatch()</i> and then add or remove events dynamically without having to change the event loop.</p>
+            <p>Currently, <i>libevent</i> supports <i><a href="http://download.oracle.com/docs/cd/E19253-01/816-5177/6mbbc4g9n/index.html">/dev/poll</a></i>, <i><a href="http://www.freebsd.org/cgi/man.cgi?query=kqueue&amp;apropos=0&amp;sektion=0&amp;format=html">kqueue(2)</a></i>, <i><a href="http://developers.sun.com/solaris/articles/event_completion.html">event ports</a></i>, <a href="http://manpages.debian.net/cgi-bin/man.cgi?query=select">POSIX <i>select(2)</i></a>, <a href="http://msdn.microsoft.com/en-us/library/ms740141(v=vs.85).aspx">Windows <i>select()</i></a>, <a href="http://manpages.debian.net/cgi-bin/man.cgi?query=poll"><i>poll(2)</i></a>, and <i><a href="http://www.xmailserver.org/linux-patches/epoll.txt">epoll(4)</a></i>. The internal event mechanism is completely independent of the exposed event API, and a simple update of libevent can provide new functionality without having to redesign the applications. As a result, <i>Libevent</i> allows for portable application
+            development and provides the most scalable event notification mechanism available on an operating system. Libevent can also be used for multi-threaded applications, either by isolating each event_base so that only a single thread accesses it, or by locked access to a single shared event_base. <i>Libevent</i> should compile on Linux, *BSD, Mac OS X, Solaris, Windows, and more.</p>
+            <p>Libevent additionally provides a sophisticated framework for buffered network IO, with support for sockets, filters, rate-limiting, SSL, zero-copy file transmission, and IOCP. Libevent includes support for several useful protocols, including DNS, HTTP, and a minimal RPC framework.</p>
+            <p>More information about event notification mechanisms for network servers can be found on Dan Kegel's "<a href="http://www.kegel.com/c10k.html">The C10K problem</a>" web page. <!--Another library that abstracts asynchronous event notification is <a href="http://liboop.ofb.net/">liboop</a>.--></p>
+            <p>A <a href="http://archives.seul.org/libevent/users/">mailing list for libevent</a> is now available. Libevent is maintained by <a href="http://www.wangafu.net/~nickm/">Nick Mathewson</a>, <a href="https://github.com/azat">Azat Khuzhin</a> and <a href="http://www.citi.umich.edu/u/provos/">Niels Provos</a>. <!-- end of initial text. --></p>
+         </div>
+   
+         <table cellspacing="2" cellpadding="2">
+            <tr>
+               <td valign="top" id="download">
+                  <h3>Documentation</h3>Book: <a href="https://libevent.org/libevent-book/">Programming with Libevent</a>.<br>
+                  Reference: <a href="http://www.wangafu.net/~nickm/libevent-1.4/doxygen/html">1.4.x-stable</a> <a href="http://www.wangafu.net/~nickm/libevent-2.0/doxygen/html">2.0.x-stable</a> <a href="http://www.wangafu.net/~nickm/libevent-2.1/doxygen/html">2.1.x-stable</a> <a href="/doc">master</a><br>
+                  ABI/API compatibility report: <a href="https://abi-laboratory.pro/index.php?view=timeline&amp;l=libevent">releases</a> <a href="/abi/timeline/libevent/">master</a><br>
+                  What's new in: <a href="https://raw.githubusercontent.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">2.0.x-stable</a>  <a href="https://raw.githubusercontent.com/libevent/libevent/patches-2.1/whatsnew-2.1.txt">2.1.x-alpha</a>. <!-- Sample Application: <a href="event-test.c">event-test.c</a> -->
+   
+                  <h3>Download–Stable releases</h3>
+                  <p class="releasenote">These are the ones you probably want for software development, unless you like to track the latest development versions and report bugs in them.</p>
+   
+                  <ul class="tight">
+                     <li><a class="latest" href="https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz">libevent-2.1.12-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.12-stable/ChangeLog">ChangeLog</a><br>
+                     <a href="https://github.com/libevent/libevent/pull/1045">PR</a><br>
+                     Released 2020-07-05</li>
+   
+                     <li><a href="https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz">libevent-2.1.11-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.11-stable/ChangeLog">ChangeLog</a><br>
+                     Released 2019-08-01 (ABI changed)</li>
+   
+                     <li><a href="https://github.com/libevent/libevent/releases/download/release-2.1.10-stable/libevent-2.1.10-stable.tar.gz">libevent-2.1.10-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.10-stable/libevent-2.1.10-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.10-stable/ChangeLog">ChangeLog</a><br>
+                     Released 2019-05-26</li>
+   
+                     <li>
+                        <a href="https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz">libevent-2.1.8-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.8-stable/ChangeLog">ChangeLog</a><br>
+                        Released 2017-01-22
+                        <ul><li>Changelog to follow</li></ul>
+                     </li>
+   
+                     <li>
+                        <a href="https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz">libevent-2.0.22-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.0.22-stable/ChangeLog">ChangeLog</a><br>
+                        Released 2014-01-05
+                        <ul><li>Changelog to follow</li></ul>
+                     </li>
+   
+                     <li>
+                        <a href="https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz">libevent-2.0.21-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.0.21-stable/ChangeLog">ChangeLog</a><br>
+                        Released 2012-11-18
+                        <ul>
+                           <li>Several SSL correctness and performance fixes.</li>
+                           <li>Build fixes for mingw64</li>
+                           <li>Avoid a few resource leaks</li>
+                           <li>and more...</li>
+                        </ul>
+                     </li>
+   
+                     <li>
+                        <a href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz">libevent-2.0.20-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.0.20-stable/ChangeLog">ChangeLog</a><br>
+                        Released 2012-08-23
+                        <ul>
+                           <li>Fix a crash on windows.</li>
+                           <li>Make event_pending() threadsafe.</li>
+                           <li>Another SSL callback behavior fixes</li>
+                           <li>Avoid an evdns segfault (Greg Hazel)</li>
+                           <li>and more...</li>
+                        </ul>
+                     </li>
+   
+                     <li>
+                        <a href="https://github.com/libevent/libevent/archive/release-1.4.15-stable.tar.gz">libevent-1.4.15-stable.tar.gz</a> <a href="https://raw.githubusercontent.com/libevent/libevent/release-1.4.15-stable/ChangeLog">ChangeLog</a><br>
+                        Released 2015-01-05
+                        <ul><li>Changelog to follow</li></ul>
+                     </li>
+   
+                     <li>
+                        <a href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz">libevent-1.4.14b-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz.sig">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-1.4.14b-stable/ChangeLog">ChangeLog</a><br>
+                        Released 2010-06-07
+                        <ul>
+                           <li>Backport evbuffer_readln()</li>
+                           <li>Fix a crash when reading badly formatted resolve.conf (Yasuoka Masahiko)</li>
+                           <li>Make evutil_make_socket_nonblocking() leave any other flags alone (Jardel Weyrich)</li>
+                           <li>Adjusted fcntl() retval comparison on evutil_make_socket_nonblocking() (Jardel Weyrich)</li>
+                           <li>Re-add event_siglcb; some old code _was_ still using it. :(</li>
+                           <li>Make Libevent 1.4 build on win32 with Unicode enabled. (Brodie Thiesfield)</li>
+                           <li>Distribute nmake makefile for 1.4</li>
+                           <li>Define _REENTRANT as needed on Solaris, elsewhere (6cbea13)</li>
+                           <li>Other bugfixes for http, memory management, and cleanup.</li>
+                        </ul>
+                     </li>
+                  </ul>
+   
+                  <h4>Download release candidates</h4>
+                  <p class="releasenote">This is a release candidate. If you find any bugs, please let us know!</p>
+   
+                  <ul class="tight">
+                     <li>
+                        <a href="https://github.com/libevent/libevent/archive/release-2.1.7-rc.tar.gz">libevent-2.1.7-rc.tar.gz</a> <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.7-rc/ChangeLog">ChangeLog</a><br>
+                        Released 2016-11-05
+                        <ul><li>Changelog to follow.</li></ul>
+                     </li>
+                  </ul>
+   
+                  <h4>Download–Alpha releases</h4>
+                  <p class="releasenote">This is alpha code. If you find any bugs, please let us know!</p>
+   
+                  <ul class="tight">
+                     <li><a href="https://github.com/libevent/libevent/releases/download/release-2.2.1-alpha/libevent-2.2.1-alpha-dev.tar.gz">libevent-2.2.1-alpha-dev.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.2.1-alpha/libevent-2.2.1-alpha-dev.tar.gz.asc">GPG Sig</a>] <a href="https://github.com/libevent/libevent/blob/release-2.2.1-alpha/ChangeLog">ChangeLog</a><br>
+                        Released 2023-05-21
+                     </li>
+   
+                     <li><a href="https://github.com/libevent/libevent/releases/download/release-2.1.9-beta/libevent-2.1.9-beta.tar.gz">libevent-2.1.9-beta.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.9-beta/libevent-2.1.9-beta.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.9-beta/ChangeLog">ChangeLog</a><br>
+                        Released 2019-02-10
+                     </li>
+   
+                     <li><a href="https://github.com/libevent/libevent/releases/download/release-2.0.23-beta/libevent-2.0.23-beta.tar.gz">libevent-2.0.23-beta.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.0.23-beta/libevent-2.0.23-beta.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.0.23-beta/ChangeLog">ChangeLog</a><br>
+                        Released 2019-01-20
+                     </li>
+   
+                     <li>
+                        <a href="https://github.com/libevent/libevent/archive/release-2.1.6-beta.tar.gz">libevent-2.1.6-beta.tar.gz</a> <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.6-beta/ChangeLog">ChangeLog</a><br>
+                        Released 2016-08-27
+                        <ul><li>Changelog to follow.</li></ul>
+                     </li>
+   
+                     <li>
+                        <a href="http://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.5-beta.tar.gz/download">libevent-2.1.5-beta.tar.gz</a> [<a href="http://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.5-beta.tar.gz.asc/download">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.5-beta/ChangeLog">ChangeLog</a><br>
+                        Released 2015-01-05
+                        <ul><li>Changelog to follow.</li></ul>
+                     </li>
+   
+                     <li>
+                        <a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.4-alpha.tar.gz/download">libevent-2.1.4-alpha.tar.gz</a> [<a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.4-alpha.tar.gz.asc/download">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.4-alpha/ChangeLog">ChangeLog</a><br>
+                        Released 2014-03-21
+                        <ul>
+                           <li>Several new utility APIs in libevent core, bufferevents, and evhttp.</li>
+                           <li>Detect closes early with EPOLLRDHUP.</li>
+                           <li>(Optional) support for buildint with cmake.</li>
+                           <li>Bugfixes too numerous to mention.</li>
+                           <li><a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.4-alpha/whatsnew-2.1.txt">and much more...</a></li>
+                        </ul>
+                     </li>
+   
+                     <li>
+                        <a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.3-alpha.tar.gz/download">libevent-2.1.3-alpha.tar.gz</a> [<a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.3-alpha.tar.gz.asc/download">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.3-alpha/ChangeLog">ChangeLog</a><br>
+                        Released 2013-05-01
+                        
+                        <ul>
+                           <li>New finalization API with fix for bufferevent deadlock issue.</li>
+                           <li>New evdns and evhttp option.</li>
+                           <li>Several new unit tests.</li>
+                           <li>Bugfixes and portability fixes and build fixes too numerous to mention.</li>
+                           <li><a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.3-alpha/whatsnew-2.1.txt">and much more...</a></li>
+                        </ul>
+                     </li>
+   
+                     <li>
+                        <a href="https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz">libevent-2.1.2-alpha.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.2-alpha/ChangeLog">ChangeLog</a><br>
+                        Released 2012-11-18
+   
+                        <ul>
+                           <li>Various new functions in the core, evbuffer, and bufferevent APIs</li>
+                           <li>Even more backends can now use portable monotonic timers.</li>
+                           <li>Updated autotools build infrastructure for faster builds.</li>
+                           <li>More reliable unit tests</li>
+                           <li>Internal event-callback interface now refactored for flexibility and performance</li>
+                           <li>Faster notification with kqueue, faster/more precise timers on Linux</li>
+                           <li>Numerous small performance improvements and data structure tweaks throughout the codebase</li>
+                           <li>Various bugfixes against 2.1.1-alpha</li>
+                           <li><a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.2-alpha/whatsnew-2.1.txt">and much more...</a></li>
+                        </ul>
+                     </li>
+   
+                     <li>
+                        <a href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz">libevent-2.1.1-alpha.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.1-alpha/ChangeLog">ChangeLog</a><br>
+                        Released 2012-04-03
+   
+                        <ul>
+                           <li>First alpha release in the 2.1.x series.</li>
+                           <li>Useful features for controlling the event loop and avoiding priority inversion</li>
+                           <li>New debugging features.</li>
+                           <li>New evbuffer functionality, including an improved sendfile/mmap wrapper, the ability to add one evbuffer to another, and more ways to avoid needless copies.</li>
+                           <li>Numerous small performance improvements and data structure tweaks throughout the codebase.</li>
+                           <li><a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.1-alpha/whatsnew-2.1.txt">and much more...</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+   
+                  <h3><a href="old-releases.html">Older Releases</a></h3>
+   
+                  <p>Libevent has been released under a <a href="LICENSE.txt">3-clause BSD license</a>. Information on public <a href="https://github.com/libevent/libevent">git</a> access.</p>
+               </td>
+   
+               <td valign="top" id="benchmark">
+                  <h3>Benchmark</h3>Performance comparison using different event notification mechansims in Libevent. We declare interest in a large number of connections of which most are cold and only a few are active.
+   
+                  <table cellspacing="0" cellpadding="0">
+                     <tr>
+                        <td align="center" valign="top"><img src="//monkey.org/~provos/libevent/libevent-benchmarks.jpg" alt="Benchmarks with one active connection"></td>
+   
+                        <td valign="top">&nbsp;</td>
+   
+                        <td align="center" valign="top"><img src="//monkey.org/~provos/libevent/libevent-benchmark2s.jpg" alt="Benchmarks with 100 active connections"></td>
+                     </tr>
+   
+                     <tr>
+                        <td valign="top">The benchmark measures how long it takes to serve one active connection and exposes scalability issues of traditional interfaces like select or poll.</td>
+   
+                        <td valign="top">&nbsp;</td>
+   
+                        <td valign="top">The benchmark measures how long it takes to serve one hundred active connections that chain writes to new connections until thousand writes and reads have happened. It exercises the event loop several times.</td>
+                     </tr>
+                  </table>
+   
+                  <h3>Programs using libevent</h3>The usefulness of libevent API is demonstrated by the following applications:
+   
+                  <ul>
+                     <li><a href="http://www.chromium.org/Home">Chromium</a> – Google's open-source web browser (uses Libevent)</li>
+                     <li><a href="http://www.memcached.org">Memcached</a> – a high-performance, distributed memory object caching system</li>
+                     <li><a href="http://www.transmissionbt.com/">Transmission</a> – a fast, easy, and free BitTorrent client</li>
+                     <li><a href="http://www.ntp.org">NTP</a> – the network time protocol that makes your clock right (uses Libevent in SNTP)</li>
+                     <li><a href="http://tmux.sourceforge.net">tmux</a> – A clean, modern, BSD-licensed terminal multiplexer, similar to GNU screen</li>
+                     <li><a href="https://www.torproject.org/">Tor</a> – an anonymous Internet communication system.</li>
+                     <li><a href="https://github.com/criticalstack/libevhtp">libevhtp</a> – A fast and flexible replacement for libevent's http client/server API</li>
+                     <li><a href="http://prosody.im/">Prosody</a> – A Jabber/XMPP server written in Lua</li>
+                     <li><a href="http://wiki.postgresql.org/wiki/PgBouncer">PgBouncer</a> – Lightweight connection pooler for PostgreSQL</li>
+                     <li><a href="http://darkk.net.ru/redsocks/">redsocks</a> – a simple transparent TCP -&gt; Socks5/HTTPS proxy daemon.</li>
+                     <li><a href="http://monkey.org/~provos/vomit/">Vomit</a> – Voice Over Misconfigured Internet Telephones</li>
+                     <li><a href="http://monkey.org/~provos/crawl/">Crawl</a> – A Small and Efficient HTTP Crawler</li>
+                     <li><a href="http://monkey.org/~provos/libio/">Libio</a> – an input/output abstraction library</li>
+                     <li><a href="http://www.honeyd.org/">Honeyd</a> – a virtual honeynet daemon – can be used to <a href="http://www.honeyd.org/worms.php">fight Internet worms</a>.</li>
+                     <li><a href="http://www.monkey.org/~dugsong/fragroute/">Fragroute</a> – an IDS testing tool</li>
+                     <li><a href="http://monkey.org/~marius/nylon/">Nylon</a> – nested proxy server</li>
+                     <li><a href="http://monkey.org/~provos/disconcert/">Disconcert</a> – a Distributed Computing Framework for Loosely-Coupled Workstations.</li><!-- <li><a href="http://plb.sunsite.dk/">PLB</a> &ndash; pure load balancer: a
+     free high-performance load balancer for Unix.</li> -->
+                     <li><a href="https://github.com/mariusae/trickle">Trickle</a> – a lightweight userspace bandwidth shaper.</li>
+                     <li><a href="http://oss.digirati.com.br/watchcatd/">watchcatd</a> – software watchdog designed to take actions not as drastic as the usual solutions, which reset the machine.</li>
+                     <li><a href="http://monkey.org/~provos/scanssh/">ScanSSH</a> – a fast SSH server and open proxy scanner.</li>
+                     <li><a href="http://www.honeyd.org/tools.php#nttlscan">Nttlscan</a> – a network topology scanner for Honeyd.</li>
+                     <li><a href="http://nch.sourceforge.net/">NetChat</a> – a combination of netcat and ppp's chat.</li>
+                     <li><a href="http://www.iolanguage.com/">Io</a> – a small programming language; uses libevent for network communication.</li>
+                     <li><a href="http://www.systrace.org/">Systrace</a> – a system call sandbox.</li>
+                     <li><a href="http://www.spybye.org/">SpyBye</a> – detect malware on web pages.</li>
+                     <li><a href="http://www.greensql.net/">GreenSQL</a> – an SQL database firewall.</li>
+                     <li><a href="http://monkey.org/~provos/dnsscan/">dnsscan</a> – a fast scanner for identifying open recursive dns resolvers</li>
+                     <li><a href="http://code.google.com/p/kargo-event/">Kargo Event</a> – a PHP extension for libevent.</li>
+                     <li><a href="http://maximelabelle.bitbucket.org/">Scytale</a> – a database encryption tool.</li>
+                     <li><a href="https://github.com/coturn/coturn">Coturn</a> – Free open source implementation of TURN and STUN Server.</li>
+                  </ul>
+               </td>
+            </tr>
+         </table>
+      </div><!-- End of "maindiv" -->
+      <hr>
+   
+      <div id="coda">
+         <address>
+            <a href="mailto:nickm@alum.mit.edu">Nick Mathewson</a>
+         </address>
+   
+         <address>
+            <a href="mailto:a3at.mail@gmail.com">Azat Khuzhin</a>
+         </address>
+   
+         <address>
+            <a href="mailto:provos@citi.umich.edu">Niels Provos</a>
+         </address>(Please do not mail us directly for technical support. Instead, please use the mailing list or the IRC channel.)<br>
+         <!-- Created: Mon Mar 11 12:43:06 EST 2002 -->
+          <!-- hhmts start -->
+          Last modified: 29 Jan 2017 <!-- hhmts end -->
+      </div><!-- end of coda -->
+   </body>
 </html>
