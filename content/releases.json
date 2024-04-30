@@ -1,0 +1,21 @@
+{
+    "stable releases":{
+        "latest release":{},
+
+        "other releases":[
+            {}
+        ]
+    },
+
+    "release candidates":[
+        {}
+    ],
+
+    "alpha releases":[
+        {}
+    ],
+
+    "older releases":[
+        {}
+    ]
+}
