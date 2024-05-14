@@ -1,9 +1,116 @@
 {
-    "stable releases":{
-        "latest release":{},
+    "release info template":
+    {
+        "name":"", 
+        "version":"",
+        "release date":"", 
+        "download link":"", 
+        "GPG Sig":"", 
+        "change log":"", 
+        "PR":"", 
+        "comments":[""]
+    },
 
-        "other releases":[
-            {}
+    "stable releases":{
+        "latest release": {
+            "name":"libevent-2.1.12-stable.tar.gz", 
+            "version":"2.1.12",
+            "release date":"2020-07-05", 
+            "download link":"https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz", 
+            "GPG Sig":"https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz.asc", 
+            "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.12-stable/ChangeLog", 
+            "PR":"https://github.com/libevent/libevent/pull/1045", 
+            "comments":[]
+        },
+
+        "other stable releases":[
+            {
+                "name":"libevent-2.1.11-stable.tar.gz", 
+                "version":"2.1.11",
+                "release date":"2019-08-01 (ABI changed)", 
+                "download link":"https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz", 
+                "GPG Sig":"https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz.asc", 
+                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.11-stable/ChangeLog"
+            },
+            {
+                "name":"libevent-2.1.10-stable.tar.gz", 
+                "version":"2.1.10",
+                "release date":"2019-05-26", 
+                "download link":"https://github.com/libevent/libevent/releases/download/release-2.1.10-stable/libevent-2.1.10-stable.tar.gz", 
+                "GPG Sig":"https://github.com/libevent/libevent/releases/download/release-2.1.10-stable/libevent-2.1.10-stable.tar.gz.asc", 
+                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.10-stable/ChangeLog"
+            },
+            {
+                "name":"libevent-2.1.8-stable.tar.gz", 
+                "version":"2.1.8",
+                "release date":"2017-01-22", 
+                "download link":"https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz", 
+                "GPG Sig":"https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz.asc", 
+                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.8-stable/ChangeLog", 
+                "comments":["Changelog to follow"]
+            },
+            {
+                "name":"libevent-2.0.22-stable.tar.gz", 
+                "version":"2.0.22",
+                "release date":"2014-01-05", 
+                "download link":"https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz", 
+                "GPG Sig":"https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz.asc", 
+                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.0.22-stable/ChangeLog", 
+                "comments":["Changelog to follow"]
+            },
+            {
+                "name":"libevent-2.0.21-stable.tar.gz", 
+                "version":"2.0.21",
+                "release date":"2012-11-18", 
+                "download link":"https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz", 
+                "GPG Sig":"https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz.asc", 
+                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.0.21-stable/ChangeLog", 
+                "comments":["Several SSL correctness and performance fixes.", 
+                    "Build fixes for mingw64", 
+                    "Avoid a few resource leaks", 
+                    "and more..."
+                ]
+            },
+            {
+                "name":"libevent-2.0.20-stable.tar.gz", 
+                "version":"2.0.20",
+                "release date":"2012-08-23", 
+                "download link":"https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz", 
+                "GPG Sig":"https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz.asc", 
+                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.0.20-stable/ChangeLog", 
+                "comments": ["Fix a crash on windows.", 
+                    "Make event_pending() threadsafe.", 
+                    "Another SSL callback behavior fixes", 
+                    "Avoid an evdns segfault (Greg Hazel)", 
+                    "and more..."
+                ]
+            },
+            {
+                "name":"libevent-1.4.15-stable.tar.gz", 
+                "version":"1.4.15",
+                "release date":"2015-01-05", 
+                "download link":"https://github.com/libevent/libevent/archive/release-1.4.15-stable.tar.gz", 
+                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-1.4.15-stable/ChangeLog", 
+                "comments":["Changelog to follow"]
+            },
+            {
+                "name":"libevent-1.4.14b-stable.tar.gz", 
+                "version":"1.4.14b",
+                "release date":"2010-06-07", 
+                "download link":"https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz", 
+                "GPG Sig":"https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz.sig", 
+                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-1.4.14b-stable/ChangeLog", 
+                "comments": ["Backport evbuffer_readln()", 
+                    "Fix a crash when reading badly formatted resolve.conf (Yasuoka Masahiko)", 
+                    "Make evutil_make_socket_nonblocking() leave any other flags alone (Jardel Weyrich)", 
+                    "Adjusted fcntl() retval comparison on evutil_make_socket_nonblocking() (Jardel Weyrich)",
+                    "Re-add event_siglcb; some old code _was_ still using it. :(",
+                    "Make Libevent 1.4 build on win32 with Unicode enabled. (Brodie Thiesfield)",
+                    "Distribute nmake makefile for 1.4",
+                    "Define _REENTRANT as needed on Solaris, elsewhere (6cbea13)",
+                    "Other bugfixes for http, memory management, and cleanup."
+                ]
+            }
         ]
     },
 
