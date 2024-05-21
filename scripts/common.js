@@ -17,15 +17,6 @@ const navBarHTML = `<nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
 </div>
 </nav>`;
 
-const googleTag = `<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M3CEY418LQ" type="text/javascript"></script>
-<script type="text/javascript">
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
-   gtag('config', 'G-M3CEY418LQ');
-</script>`;
-
 const footer = `<nav class="nav bg-body-tertiary position-relative" id="coda">
 <li class= "nav-item pt-2 px-3" id="end">
    <address><a class="pt-1 link-primary icon-link active pb-0 link-underline-opacity-0 link-underline-opacity-25-hover" href="mailto:nickm@alum.mit.edu">
@@ -59,5 +50,4 @@ const footer = `<nav class="nav bg-body-tertiary position-relative" id="coda">
 
 
 document.body.insertAdjacentHTML("afterbegin", navBarHTML); // insert nav bar html after start of body
-document.body.insertAdjacentHTML("afterbegin", googleTag);  // insert google tag script after start of body
 document.body.insertAdjacentHTML("afterend", footer);
