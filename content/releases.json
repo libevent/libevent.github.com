@@ -1,69 +1,69 @@
 {
-    "release info template":
+    "releaseInfoTemplate":
     {
         "name":"", 
         "version":"",
-        "release date":"", 
-        "download link":"", 
-        "GPG Sig":"", 
-        "change log":"", 
+        "releaseDate":"", 
+        "downloadLink":"", 
+        "GPGsig":"", 
+        "changeLog":"", 
         "PR":"", 
         "comments":[""]
     },
 
-    "stable releases":{
-        "latest release": {
+    "stableReleases":{
+        "latestRelease": {
             "name":"libevent-2.1.12-stable.tar.gz", 
             "version":"2.1.12",
-            "release date":"2020-07-05", 
-            "download link":"https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz", 
-            "GPG Sig":"https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz.asc", 
-            "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.12-stable/ChangeLog", 
+            "releaseDate":"2020-07-05", 
+            "downloadLink":"https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz", 
+            "GPGsig":"https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz.asc", 
+            "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.12-stable/ChangeLog", 
             "PR":"https://github.com/libevent/libevent/pull/1045"
         },
 
-        "other stable releases":[
+        "otherStableReleases":[
             {
                 "name":"libevent-2.1.11-stable.tar.gz", 
                 "version":"2.1.11",
-                "release date":"2019-08-01 (ABI changed)", 
-                "download link":"https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz", 
-                "GPG Sig":"https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz.asc", 
-                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.11-stable/ChangeLog"
+                "releaseDate":"2019-08-01 (ABI changed)", 
+                "downloadLink":"https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz", 
+                "GPGsig":"https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz.asc", 
+                "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.11-stable/ChangeLog"
             },
             {
                 "name":"libevent-2.1.10-stable.tar.gz", 
                 "version":"2.1.10",
-                "release date":"2019-05-26", 
-                "download link":"https://github.com/libevent/libevent/releases/download/release-2.1.10-stable/libevent-2.1.10-stable.tar.gz", 
-                "GPG Sig":"https://github.com/libevent/libevent/releases/download/release-2.1.10-stable/libevent-2.1.10-stable.tar.gz.asc", 
-                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.10-stable/ChangeLog"
+                "releaseDate":"2019-05-26", 
+                "downloadLink":"https://github.com/libevent/libevent/releases/download/release-2.1.10-stable/libevent-2.1.10-stable.tar.gz", 
+                "GPGsig":"https://github.com/libevent/libevent/releases/download/release-2.1.10-stable/libevent-2.1.10-stable.tar.gz.asc", 
+                "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.10-stable/ChangeLog"
             },
             {
                 "name":"libevent-2.1.8-stable.tar.gz", 
                 "version":"2.1.8",
-                "release date":"2017-01-22", 
-                "download link":"https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz", 
-                "GPG Sig":"https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz.asc", 
-                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.8-stable/ChangeLog", 
+                "releaseDate":"2017-01-22", 
+                "downloadLink":"https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz", 
+                "GPGsig":"https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz.asc", 
+                "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.8-stable/ChangeLog", 
                 "comments":["Changelog to follow"]
             },
             {
                 "name":"libevent-2.0.22-stable.tar.gz", 
                 "version":"2.0.22",
-                "release date":"2014-01-05", 
-                "download link":"https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz", 
-                "GPG Sig":"https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz.asc", 
-                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.0.22-stable/ChangeLog", 
+                "releaseDate":"2014-01-05", 
+                "downloadLink":"https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz", 
+                "GPGsig":"https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz.asc", 
+                "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.0.22-stable/ChangeLog", 
                 "comments":["Changelog to follow"]
             },
             {
                 "name":"libevent-2.0.21-stable.tar.gz", 
                 "version":"2.0.21",
-                "release date":"2012-11-18", 
-                "download link":"https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz", 
-                "GPG Sig":"https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz.asc", 
-                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.0.21-stable/ChangeLog", 
+                "releaseDate":"2012-11-18", 
+                "downloadLink":"https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz", 
+                "GPGsig":"https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz.asc", 
+                "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.0.21-stable/ChangeLog", 
                 "comments":[
                     "Several SSL correctness and performance fixes.", 
                     "Build fixes for mingw64", 
@@ -74,10 +74,10 @@
             {
                 "name":"libevent-2.0.20-stable.tar.gz", 
                 "version":"2.0.20",
-                "release date":"2012-08-23", 
-                "download link":"https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz", 
-                "GPG Sig":"https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz.asc", 
-                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.0.20-stable/ChangeLog", 
+                "releaseDate":"2012-08-23", 
+                "downloadLink":"https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz", 
+                "GPGsig":"https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz.asc", 
+                "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.0.20-stable/ChangeLog", 
                 "comments": [
                     "Fix a crash on windows.", 
                     "Make event_pending() threadsafe.", 
@@ -89,18 +89,18 @@
             {
                 "name":"libevent-1.4.15-stable.tar.gz", 
                 "version":"1.4.15",
-                "release date":"2015-01-05", 
-                "download link":"https://github.com/libevent/libevent/archive/release-1.4.15-stable.tar.gz", 
-                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-1.4.15-stable/ChangeLog", 
+                "releaseDate":"2015-01-05", 
+                "downloadLink":"https://github.com/libevent/libevent/archive/release-1.4.15-stable.tar.gz", 
+                "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-1.4.15-stable/ChangeLog", 
                 "comments":["Changelog to follow"]
             },
             {
                 "name":"libevent-1.4.14b-stable.tar.gz", 
                 "version":"1.4.14b",
-                "release date":"2010-06-07", 
-                "download link":"https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz", 
-                "GPG Sig":"https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz.sig", 
-                "change log":"https://raw.githubusercontent.com/libevent/libevent/release-1.4.14b-stable/ChangeLog", 
+                "releaseDate":"2010-06-07", 
+                "downloadLink":"https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz", 
+                "GPGsig":"https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz.sig", 
+                "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-1.4.14b-stable/ChangeLog", 
                 "comments": [
                     "Backport evbuffer_readln()", 
                     "Fix a crash when reading badly formatted resolve.conf (Yasuoka Masahiko)", 
@@ -116,65 +116,65 @@
         ]
     },
 
-    "release candidates": [
+    "releaseCandidates": [
         {
             "name":"libevent-2.1.7-rc.tar.gz ChangeLog", 
             "version":"2.1.7-rc",
-            "release date":"2016-11-05", 
-            "download link":"https://github.com/libevent/libevent/archive/release-2.1.7-rc.tar.gz", 
-            "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.7-rc/ChangeLog", 
+            "releaseDate":"2016-11-05", 
+            "downloadLink":"https://github.com/libevent/libevent/archive/release-2.1.7-rc.tar.gz", 
+            "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.7-rc/ChangeLog", 
             "comments":["Changelog to follow."]
         }
     ],
 
-    "alpha releases": [
+    "alphaReleases": [
         {
             "name":"libevent-2.2.1-alpha-dev.tar.gz", 
             "version":"2.2.1-alpha",
-            "release date":"2023-05-21", 
-            "download link":"https://github.com/libevent/libevent/releases/download/release-2.2.1-alpha/libevent-2.2.1-alpha-dev.tar.gz", 
-            "GPG Sig":"https://github.com/libevent/libevent/releases/download/release-2.2.1-alpha/libevent-2.2.1-alpha-dev.tar.gz.asc", 
-            "change log":"https://github.com/libevent/libevent/blob/release-2.2.1-alpha/ChangeLog"
+            "releaseDate":"2023-05-21", 
+            "downloadLink":"https://github.com/libevent/libevent/releases/download/release-2.2.1-alpha/libevent-2.2.1-alpha-dev.tar.gz", 
+            "GPGsig":"https://github.com/libevent/libevent/releases/download/release-2.2.1-alpha/libevent-2.2.1-alpha-dev.tar.gz.asc", 
+            "changeLog":"https://github.com/libevent/libevent/blob/release-2.2.1-alpha/ChangeLog"
         },
         {
             "name":"libevent-2.1.9-beta.tar.gz", 
             "version":"2.1.9-beta",
-            "release date":"2019-02-10", 
-            "download link":"https://github.com/libevent/libevent/releases/download/release-2.1.9-beta/libevent-2.1.9-beta.tar.gz", 
-            "GPG Sig":"https://github.com/libevent/libevent/releases/download/release-2.1.9-beta/libevent-2.1.9-beta.tar.gz.asc", 
-            "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.9-beta/ChangeLog"
+            "releaseDate":"2019-02-10", 
+            "downloadLink":"https://github.com/libevent/libevent/releases/download/release-2.1.9-beta/libevent-2.1.9-beta.tar.gz", 
+            "GPGsig":"https://github.com/libevent/libevent/releases/download/release-2.1.9-beta/libevent-2.1.9-beta.tar.gz.asc", 
+            "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.9-beta/ChangeLog"
         },
         {
             "name":"libevent-2.0.23-beta.tar.gz", 
             "version":"2.0.23-beta",
-            "release date":"2019-01-20", 
-            "download link":"https://github.com/libevent/libevent/releases/download/release-2.0.23-beta/libevent-2.0.23-beta.tar.gz", 
-            "GPG Sig":"https://github.com/libevent/libevent/releases/download/release-2.0.23-beta/libevent-2.0.23-beta.tar.gz.asc", 
-            "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.0.23-beta/ChangeLog"
+            "releaseDate":"2019-01-20", 
+            "downloadLink":"https://github.com/libevent/libevent/releases/download/release-2.0.23-beta/libevent-2.0.23-beta.tar.gz", 
+            "GPGsig":"https://github.com/libevent/libevent/releases/download/release-2.0.23-beta/libevent-2.0.23-beta.tar.gz.asc", 
+            "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.0.23-beta/ChangeLog"
         },
         {
             "name":"libevent-2.1.6-beta.tar.gz", 
             "version":"2.1.6-beta",
-            "release date":"2016-08-27", 
-            "download link":"https://github.com/libevent/libevent/archive/release-2.1.6-beta.tar.gz", 
-            "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.6-beta/ChangeLog"
+            "releaseDate":"2016-08-27", 
+            "downloadLink":"https://github.com/libevent/libevent/archive/release-2.1.6-beta.tar.gz", 
+            "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.6-beta/ChangeLog"
         },
         {
             "name":"libevent-2.1.5-beta.tar.gz", 
             "version":"2.1.5-beta",
-            "release date":"2015-01-05", 
-            "download link":"http://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.5-beta.tar.gz/download", 
-            "GPG Sig":"http://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.5-beta.tar.gz.asc/download", 
-            "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.5-beta/ChangeLog", 
+            "releaseDate":"2015-01-05", 
+            "downloadLink":"http://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.5-beta.tar.gz/download", 
+            "GPGsig":"http://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.5-beta.tar.gz.asc/download", 
+            "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.5-beta/ChangeLog", 
             "comments":["Changelog to follow."]
         },
         {
             "name":"libevent-2.1.4-alpha.tar.gz", 
             "version":"2.1.4-alpha",
-            "release date":"2014-03-21", 
-            "download link":"https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.4-alpha.tar.gz/download", 
-            "GPG Sig":"https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.4-alpha.tar.gz.asc/download", 
-            "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.4-alpha/ChangeLog", 
+            "releaseDate":"2014-03-21", 
+            "downloadLink":"https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.4-alpha.tar.gz/download", 
+            "GPGsig":"https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.4-alpha.tar.gz.asc/download", 
+            "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.4-alpha/ChangeLog", 
             "comments":[
                 "Several new utility APIs in libevent core, bufferevents, and evhttp.",
                 "Detect closes early with EPOLLRDHUP.",
@@ -186,10 +186,10 @@
         {
             "name":"libevent-2.1.3-alpha.tar.gz", 
             "version":"2.1.3-alpha",
-            "release date":"2013-05-01", 
-            "download link":"https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.3-alpha.tar.gz/download", 
-            "GPG Sig":"https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.3-alpha.tar.gz.asc/download", 
-            "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.3-alpha/ChangeLog", 
+            "releaseDate":"2013-05-01", 
+            "downloadLink":"https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.3-alpha.tar.gz/download", 
+            "GPGsig":"https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.3-alpha.tar.gz.asc/download", 
+            "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.3-alpha/ChangeLog", 
             "comments":[
                 "New finalization API with fix for bufferevent deadlock issue.",
                 "New evdns and evhttp option.",
@@ -201,10 +201,10 @@
         {
             "name":"libevent-2.1.2-alpha.tar.gz", 
             "version":"2.1.2-alpha",
-            "release date":"2012-11-18", 
-            "download link":"https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz", 
-            "GPG Sig":"https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz.asc", 
-            "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.2-alpha/ChangeLog", 
+            "releaseDate":"2012-11-18", 
+            "downloadLink":"https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz", 
+            "GPGsig":"https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz.asc", 
+            "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.2-alpha/ChangeLog", 
             "comments":[
                 "Various new functions in the core, evbuffer, and bufferevent APIs",
                 "Even more backends can now use portable monotonic timers.",
@@ -220,10 +220,10 @@
         {
             "name":"libevent-2.1.1-alpha.tar.gz", 
             "version":"2.1.1-alpha",
-            "release date":"2012-04-03", 
-            "download link":"https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz", 
-            "GPG Sig":"https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz.asc", 
-            "change log":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.1-alpha/ChangeLog", 
+            "releaseDate":"2012-04-03", 
+            "downloadLink":"https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz", 
+            "GPGsig":"https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz.asc", 
+            "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.1-alpha/ChangeLog", 
             "comments":[
                 "First alpha release in the 2.1.x series.",
                 "Useful features for controlling the event loop and avoiding priority inversion",
@@ -235,5 +235,5 @@
         }
     ],
 
-    "older releases": []
+    "olderReleases": []
 }
