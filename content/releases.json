@@ -12,7 +12,7 @@
     },
 
     "stableReleases":{
-        "latestRelease": {
+        "latestRelease": [{
             "name":"libevent-2.1.12-stable.tar.gz", 
             "version":"2.1.12",
             "releaseDate":"2020-07-05", 
@@ -20,7 +20,7 @@
             "GPGsig":"https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz.asc", 
             "changeLog":"https://raw.githubusercontent.com/libevent/libevent/release-2.1.12-stable/ChangeLog", 
             "PR":"https://github.com/libevent/libevent/pull/1045"
-        },
+        }],
 
         "otherStableReleases":[
             {
@@ -118,7 +118,7 @@
 
     "releaseCandidates": [
         {
-            "name":"libevent-2.1.7-rc.tar.gz ChangeLog", 
+            "name":"libevent-2.1.7-rc.tar.gz", 
             "version":"2.1.7-rc",
             "releaseDate":"2016-11-05", 
             "downloadLink":"https://github.com/libevent/libevent/archive/release-2.1.7-rc.tar.gz", 
