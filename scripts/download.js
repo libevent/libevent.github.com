@@ -15,7 +15,7 @@ async function processJson(){
     const releasesInfo = await temp.json();
 
 
-    StableCards += makeCard(releasesInfo.stableReleases.latestRelease);
+    StableCards += makeCard(releasesInfo.stableReleases.latestRelease[0]);
 
     for (i in releasesInfo.stableReleases.otherStableReleases) {
         StableNavItems += makeNavItem(releasesInfo.stableReleases.otherStableReleases[i]);
@@ -37,14 +37,14 @@ async function processJson(){
         OlderCards += makeCard(releasesInfo.olderReleases[i]);
     }
 
-    // add cards
+    // add cards to download.html
     document.getElementById("stable-releases").insertAdjacentHTML("beforeend", StableCards);
     document.getElementById("release-candidates").insertAdjacentHTML("beforeend", RCCards);
     document.getElementById("alpha-releases").insertAdjacentHTML("beforeend", AlphaCards);
     document.getElementById("older-releases").insertAdjacentHTML("beforeend", OlderCards);
 
 
-    // add Nav items
+    // add Nav items to download.html
     document.getElementById("stable-nav").insertAdjacentHTML("beforeend", StableNavItems);
     document.getElementById("rc-nav").innerHTML = RCNavItems;
     document.getElementById("alpha-nav").innerHTML = AlphaNavItems;
