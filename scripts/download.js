@@ -52,20 +52,19 @@ async function processJson(){
 }
 
 function makeCard(release) {
-    let cards = `<div class="card" id="item-1-3">
-                     <div class="card-body">`;
-    cards = cards + release.name;
-    cards +='</div></div>';
+    let cards = ``;
 
-    return cards;
+    return `<div class="card" id="` + release.version + `"><div class="card-body">` 
+            + `<a href="` + release.downloadLink + `">` + release.name + `</a>`
+            + ` [<a href="` + release.GPGSig + `">GPGSig</a>] `
+            + `<a href="` + release.changeLog + `">ChangeLog</a><br>`
+            + `Released ` + release.releaseDate 
+        + `</div> </div>`;
 }
 
 function makeNavItem(release) {
-    let navItem = '<p>';
-    navItem = navItem + release.version;
-    navItem += '</p>';
-
-    return navItem;
+    return '<a class="nav-link ms-3 my-1" href="#' + release.version + '">' 
+            + release.version + '</a>';
 }
 
 processJson();
