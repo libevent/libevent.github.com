@@ -2,6 +2,10 @@
    font-family: arial, helvetica, sans-serif;
 }
 
+body {
+   background-color: white;
+}
+
 h1,h2,h3,h4,h5 {
    font-weight: bold;
 }
@@ -22,10 +26,6 @@ p.releasenote {
    font-size: smaller;
 }
 
-body {
-   background-color: white;
-}
-
 h3 {
    margin-bottom: .2em;
    margin-top: .5em;
@@ -33,6 +33,11 @@ h3 {
 
 table {
    border-style: none;
+}
+
+div.card {
+   margin-bottom: 0.5em;
+   margin-top: 0.5em;
 }
 
 div#maindiv {
@@ -88,5 +93,6 @@ a.latest {
 .vh80 {
    position: relative;
    overflow: auto;
-   height: 80vh;
+   max-height: 80vh;
+   
 }

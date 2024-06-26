@@ -16,6 +16,7 @@ async function processJson(){
 
 
     StableCards += makeCard(releasesInfo.stableReleases.latestRelease[0]);
+    StableNavItems += makeNavItem(releasesInfo.stableReleases.latestRelease[0]);
 
     for (i in releasesInfo.stableReleases.otherStableReleases) {
         StableNavItems += makeNavItem(releasesInfo.stableReleases.otherStableReleases[i]);
