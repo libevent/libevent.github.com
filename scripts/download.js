@@ -53,17 +53,44 @@ async function processJson(){
 }
 
 function makeCard(release) {
-    let cards = ``;
+    let card = `<div class="card" id="` + release.version + `"><div class="card-body">`;
 
-    return `<div class="card" id="` + release.version + `"><div class="card-body">` 
-            + `<a href="` + release.downloadLink + `">` + release.name + `</a>`
-            + ` [<a href="` + release.GPGSig + `">GPGSig</a>] `
-            + `<a href="` + release.changeLog + `">ChangeLog</a><br>`
-            + `Released ` + release.releaseDate 
-        + `</div> </div>`;
+    card += `<a href="` + release.downloadLink + `">` + release.name + `</a>`;
+    
+    if ('GPGsig' in release) {
+        card += ` [<a href="` + release.GPGSig + `">GPGSig</a>] `; 
+    }
+    if ('changeLog' in release) {
+        card += `<a href="` + release.changeLog + `">ChangeLog</a> <br>`;
+    }
+    if ('PR' in release){
+        card += `<a href="` + release.PR + `">PR</a> <br>`;
+    }
+
+    if ('releaseDate' in release){
+        card += `Released ` + release.releaseDate ;
+    }
+    
+
+    if ('comments' in release){
+        card += `<ul class='mb-0'>`;
+
+        for (i in release.comments) {
+            if (typeof release.comments[i] == 'object') {
+                card += `<li><a href="` + release.comments[i].link + `">` + release.comments[i].text + `</a> <br></li>`;
+            }
+            else {
+                card += '<li>' + release.comments[i] + '</li>';
+            }
+        }
+
+        card += '</ul>';
+    }
+
+    return card + `</div> </div>`;
 }
 
-function makeNavItem(release) {
+function makeNavItem (release) {
     return '<a class="nav-link ms-3 my-1" href="#' + release.version + '">' 
             + release.version + '</a>';
 }
