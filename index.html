@@ -249,23 +249,18 @@
                   <div class="m-2">
                      <h3>Benchmark</h3>Performance comparison using different event notification mechansims in Libevent. We declare interest in a large number of connections of which most are cold and only a few are active.
 
-                     <table cellspacing="0" cellpadding="0">
-                        <tr>
-                           <td align="center" valign="top"><img src="//monkey.org/~provos/libevent/libevent-benchmarks.jpg" alt="Benchmarks with one active connection"></td>
-
-                           <td valign="top">&nbsp;</td>
-
-                           <td align="center" valign="top"><img src="//monkey.org/~provos/libevent/libevent-benchmark2s.jpg" alt="Benchmarks with 100 active connections"></td>
-                        </tr>
-
-                        <tr>
-                           <td valign="top">The benchmark measures how long it takes to serve one active connection and exposes scalability issues of traditional interfaces like select or poll.</td>
-
-                           <td valign="top">&nbsp;</td>
-
-                           <td valign="top">The benchmark measures how long it takes to serve one hundred active connections that chain writes to new connections until thousand writes and reads have happened. It exercises the event loop several times.</td>
-                        </tr>
-                     </table>
+                     <div class="container text-center">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="//monkey.org/~provos/libevent/libevent-benchmarks.jpg" alt="Benchmarks with one active connection" class="img-fluid">
+                                <p>The benchmark measures how long it takes to serve one active connection and exposes scalability issues of traditional interfaces like select or poll.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="//monkey.org/~provos/libevent/libevent-benchmark2s.jpg" alt="Benchmarks with 100 active connections" class="img-fluid">
+                                <p>The benchmark measures how long it takes to serve one hundred active connections that chain writes to new connections until a thousand writes and reads have happened. It exercises the event loop several times.</p>
+                            </div>
+                        </div>
+                    </div>
 
                      <h3>Programs using libevent</h3>The usefulness of libevent API is demonstrated by the following applications:
 
