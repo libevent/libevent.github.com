@@ -11,7 +11,7 @@ var OlderNavItems = '';
 var OlderCards = '';
 
 async function processJson(){   
-    const temp = await fetch("https://raw.githubusercontent.com/emma-coronado/libevent.github.com/5e9d74bd9833ca3f4b3143375f26cbee35de08cb/content/releases.json");
+    const temp = await fetch("./content/releases.json");
     const releasesInfo = await temp.json();
 
     StableCards += makeCard(releasesInfo.stableReleases.latestRelease[0]);
