@@ -10,6 +10,7 @@
 
    <body>
       <script src="scripts/common.js"></script>
+      <script src="scripts/index.js"></script>
 
       <!-- Google tag (gtag.js) -->
       <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M3CEY418LQ" type="text/javascript"></script>
@@ -61,175 +62,10 @@
                   ABI/API compatibility report: <a href="https://abi-laboratory.pro/index.php?view=timeline&amp;l=libevent">releases</a> <a href="/abi/timeline/libevent/">master</a><br>
                   What's new in: <a href="https://raw.githubusercontent.com/libevent/libevent/patches-2.0/whatsnew-2.0.txt">2.0.x-stable</a>  <a href="https://raw.githubusercontent.com/libevent/libevent/patches-2.1/whatsnew-2.1.txt">2.1.x-alpha</a>. <!-- Sample Application: <a href="event-test.c">event-test.c</a> -->
 
-                  <h3>Download–Stable releases</h3>
-                  <p class="releasenote">These are the ones you probably want for software development, unless you like to track the latest development versions and report bugs in them.</p>
-
-                  <ul class="tight">
-                     <li><a class="latest" href="https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz">libevent-2.1.12-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.12-stable/ChangeLog">ChangeLog</a><br>
-                     <a href="https://github.com/libevent/libevent/pull/1045">PR</a><br>
-                     Released 2020-07-05</li>
-
-                     <li><a href="https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz">libevent-2.1.11-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.11-stable/ChangeLog">ChangeLog</a><br>
-                     Released 2019-08-01 (ABI changed)</li>
-
-                     <li><a href="https://github.com/libevent/libevent/releases/download/release-2.1.10-stable/libevent-2.1.10-stable.tar.gz">libevent-2.1.10-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.10-stable/libevent-2.1.10-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.10-stable/ChangeLog">ChangeLog</a><br>
-                     Released 2019-05-26</li>
-
-                     <li>
-                        <a href="https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz">libevent-2.1.8-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.8-stable/ChangeLog">ChangeLog</a><br>
-                        Released 2017-01-22
-                        <ul><li>Changelog to follow</li></ul>
-                     </li>
-
-                     <li>
-                        <a href="https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz">libevent-2.0.22-stable.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.0.22-stable/ChangeLog">ChangeLog</a><br>
-                        Released 2014-01-05
-                        <ul><li>Changelog to follow</li></ul>
-                     </li>
-
-                     <li>
-                        <a href="https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz">libevent-2.0.21-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.21-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.0.21-stable/ChangeLog">ChangeLog</a><br>
-                        Released 2012-11-18
-                        <ul>
-                           <li>Several SSL correctness and performance fixes.</li>
-                           <li>Build fixes for mingw64</li>
-                           <li>Avoid a few resource leaks</li>
-                           <li>and more...</li>
-                        </ul>
-                     </li>
-
-                     <li>
-                        <a href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz">libevent-2.0.20-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.0.20-stable.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.0.20-stable/ChangeLog">ChangeLog</a><br>
-                        Released 2012-08-23
-                        <ul>
-                           <li>Fix a crash on windows.</li>
-                           <li>Make event_pending() threadsafe.</li>
-                           <li>Another SSL callback behavior fixes</li>
-                           <li>Avoid an evdns segfault (Greg Hazel)</li>
-                           <li>and more...</li>
-                        </ul>
-                     </li>
-
-                     <li>
-                        <a href="https://github.com/libevent/libevent/archive/release-1.4.15-stable.tar.gz">libevent-1.4.15-stable.tar.gz</a> <a href="https://raw.githubusercontent.com/libevent/libevent/release-1.4.15-stable/ChangeLog">ChangeLog</a><br>
-                        Released 2015-01-05
-                        <ul><li>Changelog to follow</li></ul>
-                     </li>
-
-                     <li>
-                        <a href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz">libevent-1.4.14b-stable.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz.sig">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-1.4.14b-stable/ChangeLog">ChangeLog</a><br>
-                        Released 2010-06-07
-                        <ul>
-                           <li>Backport evbuffer_readln()</li>
-                           <li>Fix a crash when reading badly formatted resolve.conf (Yasuoka Masahiko)</li>
-                           <li>Make evutil_make_socket_nonblocking() leave any other flags alone (Jardel Weyrich)</li>
-                           <li>Adjusted fcntl() retval comparison on evutil_make_socket_nonblocking() (Jardel Weyrich)</li>
-                           <li>Re-add event_siglcb; some old code _was_ still using it. :(</li>
-                           <li>Make Libevent 1.4 build on win32 with Unicode enabled. (Brodie Thiesfield)</li>
-                           <li>Distribute nmake makefile for 1.4</li>
-                           <li>Define _REENTRANT as needed on Solaris, elsewhere (6cbea13)</li>
-                           <li>Other bugfixes for http, memory management, and cleanup.</li>
-                        </ul>
-                     </li>
-                  </ul>
-
-                  <h4>Download release candidates</h4>
-                  <p class="releasenote">This is a release candidate. If you find any bugs, please let us know!</p>
-
-                  <ul class="tight">
-                     <li>
-                        <a href="https://github.com/libevent/libevent/archive/release-2.1.7-rc.tar.gz">libevent-2.1.7-rc.tar.gz</a> <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.7-rc/ChangeLog">ChangeLog</a><br>
-                        Released 2016-11-05
-                        <ul><li>Changelog to follow.</li></ul>
-                     </li>
-                  </ul>
-
-                  <h4>Download–Alpha releases</h4>
-                  <p class="releasenote">This is alpha code. If you find any bugs, please let us know!</p>
-
-                  <ul class="tight">
-                     <li><a href="https://github.com/libevent/libevent/releases/download/release-2.2.1-alpha/libevent-2.2.1-alpha-dev.tar.gz">libevent-2.2.1-alpha-dev.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.2.1-alpha/libevent-2.2.1-alpha-dev.tar.gz.asc">GPG Sig</a>] <a href="https://github.com/libevent/libevent/blob/release-2.2.1-alpha/ChangeLog">ChangeLog</a><br>
-                        Released 2023-05-21
-                     </li>
-
-                     <li><a href="https://github.com/libevent/libevent/releases/download/release-2.1.9-beta/libevent-2.1.9-beta.tar.gz">libevent-2.1.9-beta.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.1.9-beta/libevent-2.1.9-beta.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.9-beta/ChangeLog">ChangeLog</a><br>
-                        Released 2019-02-10
-                     </li>
-
-                     <li><a href="https://github.com/libevent/libevent/releases/download/release-2.0.23-beta/libevent-2.0.23-beta.tar.gz">libevent-2.0.23-beta.tar.gz</a> [<a href="https://github.com/libevent/libevent/releases/download/release-2.0.23-beta/libevent-2.0.23-beta.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.0.23-beta/ChangeLog">ChangeLog</a><br>
-                        Released 2019-01-20
-                     </li>
-
-                     <li>
-                        <a href="https://github.com/libevent/libevent/archive/release-2.1.6-beta.tar.gz">libevent-2.1.6-beta.tar.gz</a> <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.6-beta/ChangeLog">ChangeLog</a><br>
-                        Released 2016-08-27
-                        <ul><li>Changelog to follow.</li></ul>
-                     </li>
-
-                     <li>
-                        <a href="http://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.5-beta.tar.gz/download">libevent-2.1.5-beta.tar.gz</a> [<a href="http://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.5-beta.tar.gz.asc/download">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.5-beta/ChangeLog">ChangeLog</a><br>
-                        Released 2015-01-05
-                        <ul><li>Changelog to follow.</li></ul>
-                     </li>
-
-                     <li>
-                        <a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.4-alpha.tar.gz/download">libevent-2.1.4-alpha.tar.gz</a> [<a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.4-alpha.tar.gz.asc/download">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.4-alpha/ChangeLog">ChangeLog</a><br>
-                        Released 2014-03-21
-                        <ul>
-                           <li>Several new utility APIs in libevent core, bufferevents, and evhttp.</li>
-                           <li>Detect closes early with EPOLLRDHUP.</li>
-                           <li>(Optional) support for buildint with cmake.</li>
-                           <li>Bugfixes too numerous to mention.</li>
-                           <li><a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.4-alpha/whatsnew-2.1.txt">and much more...</a></li>
-                        </ul>
-                     </li>
-
-                     <li>
-                        <a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.3-alpha.tar.gz/download">libevent-2.1.3-alpha.tar.gz</a> [<a href="https://sourceforge.net/projects/levent/files/libevent/libevent-2.1/libevent-2.1.3-alpha.tar.gz.asc/download">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.3-alpha/ChangeLog">ChangeLog</a><br>
-                        Released 2013-05-01
-
-                        <ul>
-                           <li>New finalization API with fix for bufferevent deadlock issue.</li>
-                           <li>New evdns and evhttp option.</li>
-                           <li>Several new unit tests.</li>
-                           <li>Bugfixes and portability fixes and build fixes too numerous to mention.</li>
-                           <li><a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.3-alpha/whatsnew-2.1.txt">and much more...</a></li>
-                        </ul>
-                     </li>
-
-                     <li>
-                        <a href="https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz">libevent-2.1.2-alpha.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.2-alpha.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.2-alpha/ChangeLog">ChangeLog</a><br>
-                        Released 2012-11-18
-
-                        <ul>
-                           <li>Various new functions in the core, evbuffer, and bufferevent APIs</li>
-                           <li>Even more backends can now use portable monotonic timers.</li>
-                           <li>Updated autotools build infrastructure for faster builds.</li>
-                           <li>More reliable unit tests</li>
-                           <li>Internal event-callback interface now refactored for flexibility and performance</li>
-                           <li>Faster notification with kqueue, faster/more precise timers on Linux</li>
-                           <li>Numerous small performance improvements and data structure tweaks throughout the codebase</li>
-                           <li>Various bugfixes against 2.1.1-alpha</li>
-                           <li><a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.2-alpha/whatsnew-2.1.txt">and much more...</a></li>
-                        </ul>
-                     </li>
-
-                     <li>
-                        <a href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz">libevent-2.1.1-alpha.tar.gz</a> [<a href="https://github.com/downloads/libevent/libevent/libevent-2.1.1-alpha.tar.gz.asc">GPG Sig</a>] <a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.1-alpha/ChangeLog">ChangeLog</a><br>
-                        Released 2012-04-03
-
-                        <ul>
-                           <li>First alpha release in the 2.1.x series.</li>
-                           <li>Useful features for controlling the event loop and avoiding priority inversion</li>
-                           <li>New debugging features.</li>
-                           <li>New evbuffer functionality, including an improved sendfile/mmap wrapper, the ability to add one evbuffer to another, and more ways to avoid needless copies.</li>
-                           <li>Numerous small performance improvements and data structure tweaks throughout the codebase.</li>
-                           <li><a href="https://raw.githubusercontent.com/libevent/libevent/release-2.1.1-alpha/whatsnew-2.1.txt">and much more...</a></li>
-                        </ul>
-                     </li>
-                  </ul>
-
-                  <h3><a href="old-releases.html">Older Releases</a></h3>
+                  <h3 class="py-2">Download–Latest Stable Release</h3>
+                  <ul><li id="latestReleaseInfo"></li></ul>
+                  
+                  <h4>Visit our <a href="./download.html">Downloads</a> page for all other stable releases, alpha releases and release candidates!</h4>
 
                   <p>Libevent has been released under a <a href="LICENSE.txt">3-clause BSD license</a>. Information on public <a href="https://github.com/libevent/libevent">git</a> access.</p>
                </div>
