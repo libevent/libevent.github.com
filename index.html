@@ -253,6 +253,19 @@
                   <section>
                      <h3>Benchmark</h3>Performance comparison using different event notification mechansims in Libevent. We declare interest in a large number of connections of which most are cold and only a few are active.
 
+                     <div class="container text-center">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="//monkey.org/~provos/libevent/libevent-benchmarks.jpg" alt="Benchmarks with one active connection" class="img-fluid">
+                                <p>The benchmark measures how long it takes to serve one active connection and exposes scalability issues of traditional interfaces like select or poll.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="//monkey.org/~provos/libevent/libevent-benchmark2s.jpg" alt="Benchmarks with 100 active connections" class="img-fluid">
+                                <p>The benchmark measures how long it takes to serve one hundred active connections that chain writes to new connections until a thousand writes and reads have happened. It exercises the event loop several times.</p>
+                            </div>
+                        </div>
+                    </div>
+
                      <table cellspacing="0" cellpadding="0">
                         <tr>
                            <td align="center" valign="top">
